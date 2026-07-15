@@ -1,0 +1,14 @@
+Section,Details
+Project Purpose,Automates browser-based testing for HRM Genie using Python, pytest, and Playwright.
+Main Files,automation.py; coverage_audit.py; coverage_config.json; coverage_report.json; pytest.ini; requirements.txt; screenshots/; tests/
+Requirements,Python 3.9+, pip, Git, Node.js
+Setup Steps,Create virtual environment; activate it; install requirements; install Playwright browser binaries
+Run Tests,pytest -q; pytest -q tests/test_1_login.py; pytest -q tests/test_2_work_location.py -k create
+Environment Variables,PLAYWRIGHT_HEADLESS; PLAYWRIGHT_KEEP_BROWSER_OPEN; PLAYWRIGHT_SLOW_MO
+Screenshots,Screenshots are stored in the screenshots/ folder for debugging and review.
+Test Files,tests/test_1_login.py - login flow; tests/test_2_work_location.py - work location flows; tests/test_3_Department.py - department flows; tests/test_4_Employment-type.py - employment type flows; tests/test_5_region.py - region module placeholder
+Fixtures,tests/conftest.py contains browser, page, login, and screenshot fixtures.
+Coverage Audit,python3 coverage_audit.py reads coverage_config.json and writes coverage_report.json.
+Coverage Config,Defines features, source files, test files, and keywords for coverage comparison.
+Common Issues,pytest not found; Playwright browser not installed; login failure; missing coverage mapping
+Recommended Workflow,Activate venv; run tests; review screenshots; update tests; run audit; share report
