@@ -1,8 +1,8 @@
 from playwright.sync_api import Playwright, sync_playwright
-from test_01_login import login
+from test_01_login import login, navigate_to_region
 
 
-def run(playwright: Playwright) -> None:
+def test_create_region(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(
         channel="chrome",
         headless=False,
@@ -13,11 +13,11 @@ def run(playwright: Playwright) -> None:
     )
     page = context.new_page()
     login(page)
+    navigate_to_region(page)
 
     ## Creating region with all values given
 
     # Clicking the Create region button
-    page.get_by_role("button", name="Region").click()
     page.get_by_role("main").get_by_role("button", name="Region").click()
 
     # Selecting the country
@@ -46,5 +46,6 @@ def run(playwright: Playwright) -> None:
     browser.close()
 
 
-with sync_playwright() as playwright:
-    run(playwright)
+if __name__ == "__main__":
+    with sync_playwright() as playwright:
+        test_create_region(playwright)

@@ -1,6 +1,7 @@
-from playwright.sync_api import Playwright, sync_playwright
+from playwright.sync_api import Page, Playwright, sync_playwright
+import re
 
-
+BASE_URL = "https://qa.hrmgenie.outstrive.co/"
 def login(page):
     page.goto("https://qa.hrmgenie.outstrive.co/login")
     page.get_by_role("textbox", name="Enter email").click()
@@ -13,7 +14,15 @@ def login(page):
     page.wait_for_load_state("networkidle")
 
 
-def run(playwright: Playwright) -> None:
+def navigate_to_region(page: Page) -> None:
+    """Navigates to the Region configuration page."""
+    page.wait_for_load_state("networkidle")
+    page.locator("div").filter(has_text=re.compile(r"^HRM Configuration$")).click()
+    page.get_by_role("button", name="Region").click()
+    page.wait_for_load_state("networkidle")
+
+
+def test_login(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(
         channel="chrome",
         headless=False,
@@ -24,13 +33,13 @@ def run(playwright: Playwright) -> None:
     )
     page = context.new_page()
     login(page)
-    page.locator("div:nth-child(9) > .inline-flex").click()
-    page.get_by_role("button", name="Region").click()
+    navigate_to_region(page)
 
     # ---------------------
     context.close()
     browser.close()
 
 
-with sync_playwright() as playwright:
-    run(playwright)
+if __name__ == "__main__":
+    with sync_playwright() as playwright:
+        test_login(playwright)
