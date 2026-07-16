@@ -30,10 +30,10 @@ def test_search_text(playwright: Playwright) -> None:
     login(page)
     navigate_to_region(page)
 
-    # --- 1. Search for existing region "India" ---
-    search_text(page, "India")
+    # --- 1. Search for existing region "South West" ---
+    search_text(page, "South West")
     page.get_by_role("textbox", name="Search", exact=True).press("Enter")
-    page.get_by_role("cell", name="India North").click()
+    page.get_by_role("cell", name="South West").click()
     reset_filters(page)
 
     # --- 2. Clear search input via keyboard shortcuts ---
