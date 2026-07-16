@@ -1,11 +1,9 @@
 import re
-from playwright.sync_api import Playwright, sync_playwright, expect
+from playwright.sync_api import Page, expect
 
 
-def run(playwright: Playwright) -> None:
-    browser = playwright.chromium.launch(channel="chrome",headless=False,args=["--start-maximized"])
-    context = browser.new_context(no_viewport=True)
-    page = context.new_page()
+def test_create_holiday(holidays_page: Page) -> None:
+    page = holidays_page
     page.get_by_role("button", name="+ New Holiday").click()
     page.get_by_label("Country *").click()
     page.get_by_label("India").click()
@@ -17,18 +15,11 @@ def run(playwright: Playwright) -> None:
     page.get_by_placeholder("e.g. Independence Day").click()
     page.get_by_placeholder("e.g. Independence Day").fill("testing-diwali")
     page.get_by_label("Start Date *").click()
-    page.get_by_label("Friday, July 17th,").click()
+    page.get_by_label("Friday, July 17th,").first.click()
     page.get_by_label("End Date *").click()
-    page.get_by_label("Friday, July 17th, 2026,").click()
-    page.get_by_label("Friday, July 17th,").click()
+    page.get_by_label("Friday, July 17th, 2026,").first.click()
+    page.get_by_label("Friday, July 17th,").first.click()
     page.locator("div").filter(has_text=re.compile(r"^Send this update to all employees$")).first.click()
     page.get_by_role("button", name="Create").click()
     page.get_by_label("Notifications (F8)").get_by_role("button").click()
 
-    # ---------------------
-    context.close()
-    browser.close()
-
-
-with sync_playwright() as playwright:
-    run(playwright)

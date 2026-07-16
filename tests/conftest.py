@@ -150,3 +150,18 @@ def logged_in_page(page):
     page.wait_for_load_state("networkidle")
     print("Login successful. Reusing page for all tests.")
     yield page
+
+
+@pytest.fixture(scope="function")
+def holidays_page(logged_in_page):
+    """Ensure page is on the Holidays configuration page."""
+    page = logged_in_page
+    # If not on the holidays page, navigate to it
+    if "/hrm-configuration/holidays" not in page.url:
+        page.goto("https://qa.hrmgenie.outstrive.co/")
+        page.wait_for_load_state("networkidle")
+        page.locator("div").filter(has_text=re.compile(r"^HRM Configuration$")).get_by_role("button").click()
+        page.get_by_role("button", name="Holidays").click()
+        page.wait_for_load_state("networkidle")
+    yield page
+
