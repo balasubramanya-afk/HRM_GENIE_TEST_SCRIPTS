@@ -35,6 +35,11 @@ def reset_filters(page: Page) -> None:
     close_branch_dropdown(page)
     page.get_by_role("button", name="Reset Filters").click()
     page.wait_for_timeout(500)
+    search_input = page.get_by_role("textbox", name="Search", exact=True)
+    if search_input.count() > 0 and search_input.input_value() != "":
+        search_input.press("ControlOrMeta+a")
+        search_input.fill("")
+        page.wait_for_timeout(300)
 
 
 def test_combined_search(playwright: Playwright) -> None:
