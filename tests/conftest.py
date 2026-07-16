@@ -5,6 +5,8 @@ import pytest
 from pathlib import Path
 from playwright.sync_api import sync_playwright
 
+from dotenv import load_dotenv
+load_dotenv()
 
 def _get_test_screenshot_dir(config, item):
     """Create a single screenshot directory per test session run.
