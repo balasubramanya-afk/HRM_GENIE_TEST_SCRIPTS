@@ -42,13 +42,13 @@ def test_create_employee(page: Page) -> None:
     page.get_by_label("Bangalore", exact=True).get_by_text("Bangalore").click()
 
     page.get_by_role("combobox").filter(has_text=re.compile(r"^Select Department$")).click()
-    page.get_by_label("Logistics").get_by_text("Logistics").click()
+    page.get_by_role("option", name="Logistics", exact=True).click()
 
     page.get_by_role("combobox").filter(has_text="Select Department First").click()
-    page.get_by_label("Warehousing & Inventory").get_by_text("Warehousing & Inventory").click()
+    page.get_by_role("option", name="Warehousing & Inventory Management", exact=True).click()
 
     page.get_by_role("combobox").filter(has_text=re.compile(r"^Select Designation$")).click()
-    page.get_by_label("Warehouse Supervisor").get_by_text("Warehouse Supervisor").click()
+    page.get_by_role("option", name="Warehouse Supervisor", exact=True).click()
 
     page.get_by_role("combobox").filter(has_text="Select Work Shift").click()
     page.get_by_label("Sample_Update_1784089023").get_by_text("Sample_Update_1784089023").click()
