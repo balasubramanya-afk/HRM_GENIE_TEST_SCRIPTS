@@ -9,30 +9,26 @@ def test_distribution_charts(page: Page):
     
     page.get_by_role("heading", name="Department Distribution").click()
     
-    page.get_by_text("Services").first.click()
-    page.wait_for_timeout(1000)
-    expect(page).to_have_url(re.compile(r".*/employee/all-employees.*"))
-    _screenshot(page, "test_09_dept_services")
-    page.go_back()
-    page.wait_for_timeout(1000)
+    departments = [
+        "Services", "Shipment", "Logistics", "Marketing", "Networking",
+        "Operations", "Presales", "Sales", "Finance", "AVSI",
+        "IT Compute", "Administration", "UC", "Quality Assurance (QA)", "Testing"
+    ]
     
-    page.get_by_text("Shipment").first.click()
-    page.wait_for_timeout(1000)
-    expect(page).to_have_url(re.compile(r".*/employee/all-employees.*"))
-    _screenshot(page, "test_09_dept_shipment")
-    page.go_back()
-    page.wait_for_timeout(1000)
-    
-    page.get_by_text("Logistics").first.click()
-    page.wait_for_timeout(1000)
-    expect(page).to_have_url(re.compile(r".*/employee/all-employees.*"))
-    _screenshot(page, "test_09_dept_logistics")
-    page.go_back()
-    page.wait_for_timeout(1000)
-    
-    page.get_by_text("Sales", exact=True).first.click()
-    page.wait_for_timeout(1000)
-    expect(page).to_have_url(re.compile(r".*/employee/all-employees.*"))
-    _screenshot(page, "test_09_dept_sales")
-    page.go_back()
-    page.wait_for_timeout(1000)
+    for dept in departments:
+        page.get_by_role("heading", name="Department Distribution").scroll_into_view_if_needed()
+        page.wait_for_timeout(500)
+        
+        loc = page.get_by_text(dept, exact=True)
+        if loc.count() == 0:
+            loc = page.get_by_text(dept)
+            
+        loc.first.click()
+        page.wait_for_timeout(1000)
+        expect(page).to_have_url(re.compile(r".*/employee/all-employees.*"))
+        
+        screenshot_name = f"test_09_dept_{dept.lower().replace(' ', '_').replace('(', '').replace(')', '')}"
+        _screenshot(page, screenshot_name)
+        
+        page.go_back()
+        page.wait_for_timeout(1000)
