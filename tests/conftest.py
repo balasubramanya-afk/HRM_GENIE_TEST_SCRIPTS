@@ -6,6 +6,7 @@ from pathlib import Path
 from playwright.sync_api import sync_playwright
 
 from dotenv import load_dotenv
+
 load_dotenv()
 
 def _get_test_screenshot_dir(config, item):
@@ -26,7 +27,6 @@ def _get_test_screenshot_dir(config, item):
     return run_dir
 
 
-
 def pytest_sessionstart(session):
     """Initialize run metadata without creating screenshot folders up front."""
     now = datetime.now()
@@ -41,7 +41,12 @@ def browser():
         headless = os.getenv("PLAYWRIGHT_HEADLESS", "false").lower() == "true"
         keep_open = os.getenv("PLAYWRIGHT_KEEP_BROWSER_OPEN", "false").lower() == "true"
         slow_mo = int(os.getenv("PLAYWRIGHT_SLOW_MO", "0"))
-        browser = p.chromium.launch(headless=headless, slow_mo=slow_mo)
+        browser = p.chromium.launch(
+            channel="chrome",
+            headless=headless,
+            slow_mo=slow_mo,
+            args=["--start-maximized"],
+        )
         yield browser
         if not keep_open:
             browser.close()
@@ -59,10 +64,12 @@ def page(browser):
 @pytest.fixture(scope="function")
 def save_step(page, request):
     """Record a named step without taking screenshots during successful runs."""
+
     def _save_step(name: str):
         steps = getattr(request.node, "_captured_steps", [])
         steps.append(name)
         request.node._captured_steps = steps
+
     return _save_step
 
 
@@ -110,7 +117,9 @@ def pytest_runtest_makereport(item, call):
                 line_no = excinfo.value.__traceback__.tb_lineno
 
         if line_no == "n/a":
-            match = re.search(r"(?P<file>.+?\.py):(?P<line>\d+)", report.captext or "", re.MULTILINE)
+            match = re.search(
+                r"(?P<file>.+?\.py):(?P<line>\d+)", report.captext or "", re.MULTILINE
+            )
             if match:
                 file_path = match.group("file")
                 line_no = int(match.group("line"))
