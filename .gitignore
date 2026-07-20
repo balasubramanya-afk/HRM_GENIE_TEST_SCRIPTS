@@ -1,6 +1,13 @@
-.venv/
+# Python cache 
 __pycache__/
 *.pyc
-*venv*/
 
+# Python venv
+*venv*/
+.venv/
+
+# Environment variables
 .env
+
+# MAC files
+.DS_Store
