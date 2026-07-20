@@ -11,7 +11,8 @@ def test_team_members(playwright: Playwright) -> None:
     page = context.new_page()
 
     login(page)
-
+    page.wait_for_timeout(2000)
+    
     # Navigate to Employee module
     page.goto("https://qa.hrmgenie.outstrive.co/employee/general")
     page.get_by_role("button", name="Team's Members").click()
