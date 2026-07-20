@@ -2,7 +2,7 @@ import re
 from playwright.sync_api import expect
 from config import _screenshot, login_and_navigate_to_resignation
 
-def test_reject_resignation(page):
+def test_approve_resignation(page):
     # ==========================================
     # PART 1: Login and Navigate to Resignation
     # ==========================================
@@ -26,23 +26,20 @@ def test_reject_resignation(page):
     panel = page.locator("div[role='dialog'], [aria-label='Employee Detail']").first
     expect(panel.get_by_role("heading", name="Employee Detail")).to_be_visible()
     
-    # Fill in the manager comments if enabled
+    # Fill in the manager comments
     comments_area = panel.get_by_placeholder("Write your comments here...").first
     comments_area.scroll_into_view_if_needed()
+    comments_area.fill("Approved by automation script.")
     
-    if comments_area.is_enabled():
-        comments_area.fill("Denied by automation script.")
-        
-        # Click the Deny button
-        deny_button = panel.get_by_role("button", name="Deny").first
-        deny_button.scroll_into_view_if_needed()
-        page.wait_for_timeout(500)
-        
-        deny_button.click()
-    else:
-        print("Comments area is disabled, meaning this resignation is already processed.")
+    # Click the Approve button
+    approve_button = panel.get_by_role("button", name="Approve").first
+    approve_button.scroll_into_view_if_needed()
+    page.wait_for_timeout(500)
     
-    # Wait a moment for the panel to automatically close after rejecting
+    
+    approve_button.click()
+    
+    # Wait a moment for the panel to automatically close after approving
     page.wait_for_timeout(1500)
     
     # Close panel manually just in case it didn't close automatically
@@ -61,4 +58,4 @@ def test_reject_resignation(page):
     except Exception:
         print("Toast message did not appear or timed out.")
         
-    _screenshot(page, "test_05_after_reject")
+    _screenshot(page, "test_04_after_approve")

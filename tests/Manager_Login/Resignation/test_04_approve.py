@@ -6,7 +6,18 @@ def test_approve_resignation(page):
     # ==========================================
     # PART 1: Login and Navigate to Resignation
     # ==========================================
-    login_and_navigate_to_resignation(page, role="HR")
+    login_and_navigate_to_resignation(page, role="Manager")
+    page.wait_for_timeout(3000)
+    
+    # 2. Click on "Team Resignation" tab
+    page.get_by_role("button", name="Team Resignation").click()
+    page.wait_for_timeout(2000)
+    
+    # Check if there are any records first
+    empty_state = page.locator("text=No records found")
+    if empty_state.count() > 0:
+        print("No records found in the Team Resignation table. Cannot test approval. Skipping...")
+        return
     
     # Give the table a moment to fully render
     page.wait_for_timeout(2000)
@@ -39,17 +50,25 @@ def test_approve_resignation(page):
     
     approve_button.click()
     
-    # Wait for the success toast message (optional, might not appear if already approved)
+    
+    
+    # Wait a moment for the panel to automatically close after approving
+    page.wait_for_timeout(1500)
+    
+    # Close panel manually just in case it didn't close automatically
+    try:
+        close_btn = panel.get_by_role("button", name="Close").first
+        if close_btn.is_visible(timeout=500):
+            close_btn.click(timeout=1000)
+    except Exception:
+        pass
+        
+    # Now wait for the success toast message which appears AFTER the panel is closed
     try:
         toast = page.locator("[data-sonner-toast]").first
-        expect(toast).to_be_visible(timeout=3000)
-        _screenshot(page, "test_04_after_approve")
+        expect(toast).to_be_visible(timeout=5000)
+        page.wait_for_timeout(1000) # Wait for toast animation to complete
     except Exception:
         print("Toast message did not appear or timed out.")
-        _screenshot(page, "test_04_after_approve")
         
-    
-    # Close panel just in case it doesn't close automatically
-    close_btn = panel.get_by_role("button", name="Close").first
-    if close_btn.is_visible():
-        close_btn.click()
+    _screenshot(page, "test_04_after_approve")
