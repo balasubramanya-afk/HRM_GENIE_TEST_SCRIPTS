@@ -1,0 +1,6 @@
+Employee ID,Employee Name,Employee Email,Department,Designation,Manager Name,Resignation Date,Notice Date,Description,Approved Message,Status
+1335,Venkateswarlu,venkateswarlu.v@brilyant.com,Networking,Support Engineer,Rajendra singh,2026-07-17,2026-09-15,Resigning!!,Approved by automation script.,Accepted
+1337,Mohanpradeep V,mohanpradeep.v@brilyant.com,Networking,Cyber Security Analyst,Rajendra singh,2026-07-17,2026-09-15,Resigning!!,Approved by automation script.,Accepted
+1355,Swamy Krishna,swamy@yopmail.com,UC,Sr Engineer – AV,Bhanu Prakash,2026-07-17,2026-09-15,Resigning!,Rejecting!!!,Rejected
+1362,Anish Kumar,anish.kumar@brilyant.com,Shipment,Zoho Developer,Bhanu Prakash,2026-07-17,2026-09-15,Resigning!,Rejecting,Accepted
+1361,Vasanth Kumar,vasanthakumar.g@brilyant.com,Shipment,Zoho Developer,S Jagadesh,2026-07-17,2026-09-15,Resigning!,Approved,Accepted

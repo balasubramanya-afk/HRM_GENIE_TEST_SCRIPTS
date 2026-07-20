@@ -1,3 +1,10 @@
 .venv/
 __pycache__/
 *.pyc
+venv/
+screenshot/
+screenshots/
+created_policy_name.txt
+downloaded_policy.pdf
+POSH_NEW.pdf
+created_document_type.txt
