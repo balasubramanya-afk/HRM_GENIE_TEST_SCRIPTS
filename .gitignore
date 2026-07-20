@@ -4,7 +4,11 @@ __pycache__/
 venv/
 screenshot/
 screenshots/
-created_policy_name.txt
-downloaded_policy.pdf
-POSH_NEW.pdf
-created_document_type.txt
+# Text tracking files and debug logs
+*.txt
+
+# Uploaded and downloaded files
+*.pdf
+*.csv
+*.xlsx
+.DS_Store   
