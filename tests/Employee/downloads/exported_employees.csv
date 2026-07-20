@@ -1,38 +1,39 @@
 Employee ID,Employee Name,Email,DOJ,Department,Designation,Manager,Office Location,Status,Probation
+BITECOS1374,EditTest_41521,chandrika_40975@yopmail.com,2026-07-14,Finance,Finance Manager,Kavya TN,Bangalore,Active,Yes
 BITECOS1373,boopati,boopati@yopmail.com,2026-07-15,Logistics,Warehouse Specialist,VijayKumar S Kale,Tumkur,Active,Yes
 BITECOS1372,Chandrika_test,chandrika05@yopmail.com,2025-01-01,Logistics,Warehouse Supervisor,Kavya TN,HAL Bangalore ,Active,Yes
 BITECOS1371,chandrika_47312,chandrika_47312@yopmail.com,2026-07-14,Logistics,Warehouse Supervisor,Kavya TN,Bangalore,Active,Yes
-BITECOS1370,chandrika_65432,chandrika_65432@yopmail.com,2026-07-14,Logistics,Warehouse Supervisor,Kavya TN,Bangalore,Inactive,Yes
-BITECOS1369,EditTest_56998,chandrika_25408@yopmail.com,2026-07-14,Finance,Finance Manager,Kavya TN,Bangalore,Active,No
+BITECOS1370,chandrika_65432,chandrika_65432@yopmail.com,2026-07-14,Logistics,Warehouse Supervisor,Kavya TN,Bangalore,Active,Yes
+BITECOS1369,EditTest_56998,chandrika_25408@yopmail.com,2026-07-14,Finance,Finance Manager,Kavya TN,Bangalore,Inactive,No
 BITECOS1368,edited_name_x72h5,chandrika_yspcp@yopmail.com,2026-07-15,Services,Warehouse Supervisor,Ramesh Mali,626637367464,Active,Yes
 BITECOS1367,edited_name_67gum,edited_name_a4id6@yopmail.com,2026-07-16,Shipment,Warehouse Supervisor,Devakumar N,Coimbatore,Active,Yes
-BITECOS1366,chandrika_vulapu,chandrika01@yop.com,2026-07-14,Logistics,Warehouse Supervisor,Kavya TN,Bangalore,Active,Yes
+BITECOS1366,chandrika_vulapu,chandrika01@yop.com,2026-07-14,Logistics,Warehouse Supervisor,Kavya TN,Bangalore,Inactive,Yes
 BITECOS1365,chandrika,chandrika@yop.com,2026-07-14,Logistics,Warehouse Supervisor,Kavya TN,Bangalore,Active,Yes
 BITECOS1364,ycgeisyhjc,rjbkerj@yopmail.com,2026-07-14,Logistics,Warehouse Supervisor,VijayKumar S Kale,626637367464,Active,Yes
 BITECOS1363,Bala Subramanya Iyyangar,Balaiyyangar3@yopmail.com,2026-06-16,Shipment,Zoho Developer,Bandi Prasanth Babu,HAL Bangalore ,Active,Yes
 BITECOS1362,Anish Kumar,anish.kumar@brilyant.com,2023-06-01,Shipment,Zoho Developer,Bhanu Prakash,Gurugram,Active,Yes
 BITECOS1361,Vasanth Kumar,vasanthakumar.g@brilyant.com,2026-05-01,Shipment,Zoho Developer,S Jagadesh,Kerala,Active,Yes
-BITECOS1360,Thomas J,zensar.demo1@brilyant.com,2026-05-18,Shipment,Python Developer,Bhanu Prakash,Coimbatore,Inactive,No
+BITECOS1360,Thomas J,zensar.demo1@brilyant.com,2026-05-18,Shipment,Python Developer,Bhanu Prakash,Coimbatore,Active,No
 BITECOS1359,Ravi Rhanderj,zensar.demo@brilyant.com,2026-05-12,Shipment,Python Developer,Bhanu Prakash,Coimbatore,Active,Yes
 BITECOS1358,Sara Connor,sara.connor@gmail.com,2026-05-14,Sales,Key Account Manager,Devakumar N,HAL Bangalore ,Active,Yes
 BITECOS1357,Mike Wilson,mike.wilson@gmail.com,2026-05-11,Shipment,Python Developer,VijayKumar S Kale,Coimbatore,Active,Yes
-BITECOS1356,New Intern Employee,test@gmail.com,2026-04-09,UC,Sr Engineer – AV,Dinesh Doddaga,HAL Bangalore ,Inactive,Yes
-BITECOS1355,Swamy Krishna,swamy@yopmail.com,2026-04-09,UC,Sr Engineer – AV,Bhanu Prakash,Kerala,Inactive,No
-BITECOS1354,Lasya,lasya.p@brilyant.com,2026-04-09,UC,Sr Engineer – AV,Syed khaja Irfanuddin,Mumbai,Inactive,No
+BITECOS1356,New Intern Employee,test@gmail.com,2026-04-09,UC,Sr Engineer – AV,Dinesh Doddaga,HAL Bangalore ,Active,Yes
+BITECOS1355,Swamy Krishna,swamy@yopmail.com,2026-04-09,UC,Sr Engineer – AV,Bhanu Prakash,Kerala,Active,No
+BITECOS1354,Lasya,lasya.p@brilyant.com,2026-04-09,UC,Sr Engineer – AV,Syed khaja Irfanuddin,Mumbai,Active,No
 BITECOS1353,Bhanu Prakash,bhanuprakash.r@brilyant.com,2021-01-13,Finance,Finance Controller,,Kozhikode,Active,No
 BITECOS1352,Ayushri,ayushri.k@brilyant.com,2026-04-01,UC,Support Engineer - AVSI,Syed khaja Irfanuddin,Mumbai,Active,No
 BITECOS1351,S Jagadesh,jagadesh.s@brilyant.com,2023-02-09,Shipment,Director-Products & SW Development,Kavya TN,Bangalore,Active,No
 BITECOS1350,Sangili Boopathi,sangili.boopathi@brilyant.com,2026-03-17,Finance,Finance Manager,VijayKumar S Kale,Bangalore,Active,No
 BITECOS1349,Kruthi Kumari,Kruthi.s@brilynat.com,2026-03-10,Services,Engineering Manager,Syed khaja Irfanuddin,Port Blair,Active,No
 BITECOS1348,Vulapu Chandrika,chandrika.v@brilyant.com,2026-01-05,Finance,Senior FP&A Analyst,VijayKumar S Kale,Tumkur,Active,No
-BITECOS1347,Test Email,test.email@brilyant.com,2025-01-20,Shipment,Engineering Manager,Devakumar N,Bangalore,Inactive,No
+BITECOS1347,Test Email,test.email@brilyant.com,2025-01-20,Shipment,Engineering Manager,Devakumar N,Bangalore,Active,No
 BITECOS1346,Kavya TN,kavya.tn@brilyant.com,2020-03-10,Finance,Senior FP&A Analyst,Bhanu Prakash,Kerala,Active,No
 BITECOS1345,Rajendra singh,Rajendra.singh@brilyant.com,2022-12-07,Networking,Business Development Manager- Networking,Sagarika,Bangalore,Active,No
 BITECOS1344,Ganesh Mali,ganesh.mali@brilyant.com,2024-03-10,Shipment,Engineering Manager,Devakumar N,Bangalore,Active,No
-BITECOS1343,Test Attendance 2 ,testattandance2@yopmail.com,2026-02-01,Quality Assurance (QA),Quality Associate Analyst,Rajendra singh,Bangalore,Inactive,No
-BITECOS1342,Test Attandance 1,attandance1@yopmail.com,2026-02-01,Quality Assurance (QA),Quality Associate Analyst,Rajendra singh,Tumkur,Inactive,No
-BITECOS1341,testing email,emailtesting12345@yopmail.com,2025-10-20,UC,Senior Support Specialist - UC,Bandi Prasanth Babu,Tumkur,Inactive,No
-BITECOS1340,New CC,new-cc@brilyant.com,2025-09-22,Quality Assurance (QA),QA Engineer,Bandi Prasanth Babu,Bangalore,Inactive,No
+BITECOS1343,Test Attendance 2 ,testattandance2@yopmail.com,2026-02-01,Quality Assurance (QA),Quality Associate Analyst,Rajendra singh,Bangalore,Active,No
+BITECOS1342,Test Attandance 1,attandance1@yopmail.com,2026-02-01,Quality Assurance (QA),Quality Associate Analyst,Rajendra singh,Tumkur,Active,No
+BITECOS1341,testing email,emailtesting12345@yopmail.com,2025-10-20,UC,Senior Support Specialist - UC,Bandi Prasanth Babu,Tumkur,Active,No
+BITECOS1340,New CC,new-cc@brilyant.com,2025-09-22,Quality Assurance (QA),QA Engineer,Bandi Prasanth Babu,Bangalore,Active,No
 BITECOS1339, Selvaganapathi K,selvaganapathi.k@brilyant.com,2023-02-07,Networking,Presales Specialist- AVSI,Rajendra singh,Mumbai,Active,No
 BITECOS1338,Dinesh Doddaga,dinesh.doddaga@brilyant.com,2025-03-10,Logistics,Admin Manager,Syed khaja Irfanuddin,Kozhikode,Active,No
 BITECOS1337,Mohanpradeep V,mohanpradeep.v@brilyant.com,2021-03-10,Networking,Cyber Security Analyst,Rajendra singh,Mumbai,Active,No

@@ -48,27 +48,27 @@ def _get_numeric_options(page):
     return []
 
 
+def _get_pagination_nav(page):
+    """Locate the pagination container navigation element specifically."""
+    for loc in [
+        page.get_by_label("pagination"),
+        page.locator("nav[aria-label='pagination']"),
+        page.locator("[aria-label='pagination']"),
+    ]:
+        if loc.count() > 0:
+            return loc.first
+    return None
+
+
 def _get_page_number_links(page):
     """
     Return sorted list of (element, page_number_int) for page-number links
     between the < and > arrows in the pagination bar.
-
-    The pagination uses <a> tags (not <button>) for page numbers.
-    We look for the pagination <nav> or the container near the prev/next arrows,
-    and find all visible elements whose text is a plain number.
     """
     page_links = []
-
-    # The page numbers are <a> or <button> elements inside the pagination nav.
-    # The reference script uses page.get_by_text("2", exact=True) to click them.
-    # We look for all visible elements with purely numeric text near pagination.
-
-    # Strategy: find elements within the pagination area.
-    # The pagination <nav> typically contains the arrows and page numbers.
-    nav = page.locator("nav").first
-    if nav.count() > 0:
-        # Search within the nav for numeric links
-        children = nav.locator("a, button").all()
+    p_nav = _get_pagination_nav(page)
+    if p_nav:
+        children = p_nav.locator("a, button").all()
         for child in children:
             try:
                 if not child.is_visible():
@@ -79,9 +79,8 @@ def _get_page_number_links(page):
             except Exception:
                 pass
 
-    # If nothing found in <nav>, fall back to broader search
+    # If nothing found in pagination nav, fall back to searching <a> tags
     if not page_links:
-        # Look for <a> tags with purely numeric text (page number links)
         all_links = page.locator("a").all()
         for link in all_links:
             try:
@@ -101,6 +100,15 @@ def _get_page_number_links(page):
             seen.add(num)
             result.append((el, num))
     return result
+
+
+def _click_page_number(page, num):
+    """Click a page number button safely by scoping to the pagination nav container."""
+    p_nav = _get_pagination_nav(page)
+    if p_nav:
+        p_nav.get_by_text(str(num), exact=True).first.click()
+    else:
+        page.locator("a").filter(has_text=re.compile(rf"^{num}$")).first.click()
 # ===========================================================================
 # SINGLE TEST – login once, test everything in sequence
 # ===========================================================================
@@ -220,7 +228,7 @@ def test_pagination(page):
     print(f"  ✓ Set rows-per-page to {smallest_value}")
 
     # Navigate to page 1 first
-    page.get_by_text("1", exact=True).click()
+    _click_page_number(page, 1)
     page.wait_for_timeout(1000)
 
     # ── Discover and click every page-number link ──────────────────────
@@ -234,15 +242,15 @@ def test_pagination(page):
         for _, target_page in page_links:
             print(f"\n  → Clicking page [{target_page}]")
 
-            # Use get_by_text for reliability (matches the reference script approach)
-            page.get_by_text(str(target_page), exact=True).click()
+            # Use _click_page_number for reliability scoped to nav
+            _click_page_number(page, target_page)
             page.wait_for_timeout(1000)
             print(f"     ✓ Clicked page [{target_page}]")
 
     # ── Test > (Next) arrow ──────────────────────────────────────────────
     # First go back to page 1 so Next is available
     print("\n  → Going to page 1 before testing arrows")
-    page.get_by_text("1", exact=True).click()
+    _click_page_number(page, 1)
     page.wait_for_timeout(1000)
 
     print("  → Testing > Next arrow")
