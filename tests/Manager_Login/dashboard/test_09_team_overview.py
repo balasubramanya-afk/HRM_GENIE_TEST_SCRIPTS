@@ -14,4 +14,10 @@ def test_team_overview(page: Page):
         page.get_by_role("button", name=btn_name).click()
         page.wait_for_timeout(500)
         expect(page).to_have_url(re.compile(r".*/dashboard"))
-        _screenshot(page, f"test_10_team_overview_{btn_name.lower().replace(' ', '_')}")
+        
+        # Verify either "No team members to display" or team member details with "BITECOS" is visible
+        expect(
+            page.get_by_text(re.compile(r"(No team members to display|BITECOS)", re.IGNORECASE)).first
+        ).to_be_visible()
+        
+        _screenshot(page, f"test_09_team_overview_{btn_name.lower().replace(' ', '_')}")

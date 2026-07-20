@@ -13,7 +13,7 @@ def test_leave_wfh(page: Page):
     page.get_by_role("button", name="Apply For Leave").click()
     page.wait_for_timeout(1000)
     expect(page).to_have_url(re.compile(r".*/my-leave"))
-    _screenshot(page, "test_12_leave_wfh_apply_leave")
+    _screenshot(page, "test_11_leave_wfh_apply_leave")
     page.go_back()
     page.wait_for_timeout(1000)
     
@@ -21,6 +21,6 @@ def test_leave_wfh(page: Page):
     page.get_by_role("button", name="Request WFH").click()
     page.wait_for_timeout(1000)
     expect(page).to_have_url(re.compile(r".*/work-from-home"))
-    _screenshot(page, "test_12_leave_wfh_request_wfh")
+    _screenshot(page, "test_11_leave_wfh_request_wfh")
     page.go_back()
     page.wait_for_timeout(1000)

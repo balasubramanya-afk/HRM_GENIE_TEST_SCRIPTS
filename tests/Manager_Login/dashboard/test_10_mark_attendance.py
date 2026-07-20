@@ -14,4 +14,4 @@ def test_mark_attendance(page: Page):
     expect(page.get_by_text("Check-Out")).to_be_visible()
     expect(page.get_by_text("Total Hours")).to_be_visible()
     
-    _screenshot(page, "test_11_mark_attendance")
+    _screenshot(page, "test_10_mark_attendance")

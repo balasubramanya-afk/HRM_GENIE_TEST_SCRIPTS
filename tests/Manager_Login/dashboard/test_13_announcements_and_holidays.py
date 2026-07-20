@@ -8,6 +8,6 @@ def test_announcements_and_holidays(page: Page):
     page.wait_for_timeout(2000)
     
     page.get_by_role("heading", name=re.compile(r"^Announcements")).click()
-    page.get_by_role("heading", name=re.compile(r"Holidays$")).click()
+    page.get_by_role("heading", name=re.compile(r"Current Month's Holidays$")).click()
     
-    _screenshot(page, "test_16_announcements_and_holidays")
+    _screenshot(page, "test_15_announcements_and_holidays")
