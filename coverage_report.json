@@ -1,6 +1,6 @@
 {
-  "source_dir": "/Users/bits-blr-bala/Documents/HRMS_NodeJs",
-  "test_dir": "/Users/bits-blr-bala/Playwrite Automation/tests",
+  "source_dir": "/Users/bits-blr-lasyareddy/HRMS_NodeJs",
+  "test_dir": "/Users/bits-blr-lasyareddy/HRM_Genie_Test_Scripts/",
   "source_files": [
     "/Users/bits-blr-bala/Documents/HRMS_NodeJs/backend/app.js",
     "/Users/bits-blr-bala/Documents/HRMS_NodeJs/backend/config/db.js",

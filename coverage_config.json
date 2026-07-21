@@ -1,5 +1,5 @@
 {
-  "source_dir": "/Users/bits-blr-bala/Documents/HRMS_NodeJs",
+  "source_dir": "/Users/bits-blr-lasyareddy/HRMS_NodeJs",
   "test_dir": "tests",
   "features": [
     {
@@ -209,6 +209,84 @@
           "source_keywords": ["TableFooter", "currentPage", "entriesPerPage", "onPageChange", "onEntriesPerPageChange"],
           "test_paths": ["test_5_region.py"],
           "test_keywords": ["Go to previous page", "Go to next page", "10", "20", "30"]
+        }
+      ]
+    },
+    {
+      "name": "document_type",
+      "source_keywords": [
+        "frontend/src/pages/HRM-Config/document-type/page.tsx",
+        "frontend/src/pages/HRM-Config/components/create-document-type-sheet.tsx",
+        "frontend/src/pages/HRM-Config/components/edit-document-type-sheet.tsx",
+        "frontend/src/pages/HRM-Config/components/delete-document-type-dialog.tsx",
+        "backend/controllers/documentTypeController.js",
+        "backend/routes/documentTypeRoutes.js"
+      ],
+      "test_keywords": [
+        "test_01_login.py",
+        "test_02_pagination.py",
+        "test_03_create.py",
+        "test_04_search.py",
+        "test_05_edit.py",
+        "test_06_delete.py"
+      ],
+      "actions": [
+        {
+          "name": "login_and_navigate",
+          "source_paths": ["frontend/src/pages/HRM-Config/document-type/page.tsx"],
+          "source_keywords": ["Document Type", "HRM Configuration", "Enter email", "Enter password", "Login"],
+          "test_paths": ["test_01_login.py"],
+          "test_keywords": ["Document Type", "Enter email", "Enter password", "Login", "+ Document Type", "Search", "Actions", "Outstrive"]
+        },
+        {
+          "name": "pagination_and_page_size",
+          "source_paths": ["frontend/src/pages/HRM-Config/document-type/page.tsx"],
+          "source_keywords": ["TableFooter", "onPageChange", "onEntriesPerPageChange", "currentPage", "entriesPerPage"],
+          "test_paths": ["test_02_pagination.py"],
+          "test_keywords": ["Go to previous page", "Go to next page", "10", "20", "30", "40"]
+        },
+        {
+          "name": "create_document_type",
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/document-type/page.tsx",
+            "frontend/src/pages/HRM-Config/components/create-document-type-sheet.tsx",
+            "backend/controllers/documentTypeController.js",
+            "backend/routes/documentTypeRoutes.js"
+          ],
+          "source_keywords": ["+ Document Type", "Document Type", "Create", "createDocumentType", "onSuccess"],
+          "test_paths": ["test_03_create.py"],
+          "test_keywords": ["+ Document Type", "Document Type", "Create", "created_document_type.txt", "Employee", "Documents"]
+        },
+        {
+          "name": "search_document_type",
+          "source_paths": ["frontend/src/pages/HRM-Config/document-type/page.tsx"],
+          "source_keywords": ["Search", "setSearchQuery"],
+          "test_paths": ["test_04_search.py"],
+          "test_keywords": ["Search", "created_document_type.txt", "to_be_visible"]
+        },
+        {
+          "name": "edit_document_type",
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/document-type/page.tsx",
+            "frontend/src/pages/HRM-Config/components/edit-document-type-sheet.tsx",
+            "backend/controllers/documentTypeController.js",
+            "backend/routes/documentTypeRoutes.js"
+          ],
+          "source_keywords": ["Edit", "Update", "updateDocumentType", "selectedDocumentType"],
+          "test_paths": ["test_05_edit.py"],
+          "test_keywords": ["Edit", "Update", "_Edited", "created_document_type.txt", "Employee", "Documents"]
+        },
+        {
+          "name": "delete_document_type",
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/document-type/page.tsx",
+            "frontend/src/pages/HRM-Config/components/delete-document-type-dialog.tsx",
+            "backend/controllers/documentTypeController.js",
+            "backend/routes/documentTypeRoutes.js"
+          ],
+          "source_keywords": ["Delete", "handleDelete", "handleDeleteConfirm", "deleteDocumentType"],
+          "test_paths": ["test_06_delete.py"],
+          "test_keywords": ["Delete", "not_to_be_visible", "created_document_type.txt", "Employee", "Documents"]
         }
       ]
     }

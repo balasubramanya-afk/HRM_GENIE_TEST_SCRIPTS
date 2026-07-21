@@ -15,6 +15,9 @@ def test_search_document(page):
     page.get_by_placeholder("Search", exact=True).press("Enter")
     page.wait_for_timeout(2000)
     
+    # Assert that the searched document type appears in the table results
+    expect(page.get_by_role("row", name=doc_name)).to_be_visible()
+    
     _screenshot(page, "test_04_search")
 
 
