@@ -1,41 +1,21 @@
-from playwright.sync_api import Page, Playwright, sync_playwright
-import re
+import sys
+from pathlib import Path
 
-BASE_URL = "https://qa.hrmgenie.outstrive.co/"
-def login(page):
-    page.goto("https://qa.hrmgenie.outstrive.co/login")
-    page.get_by_role("textbox", name="Enter email").click()
-    page.get_by_role("textbox", name="Enter email").fill("hr@out-strive.com")
-    page.get_by_role("textbox", name="Enter password").click()
-    page.get_by_role("textbox", name="Enter password").fill("HR@dmin06")
-    page.get_by_role("button", name="Show password").click()
-    page.get_by_role("button", name="Hide password").click()
-    page.get_by_role("button", name="Login").click()
-    page.wait_for_load_state("networkidle")
+sys.path.insert(0, str(Path(__file__).parent))
 
-
-def navigate_to_region(page: Page) -> None:
-    """Navigates to the Region configuration page."""
-    page.wait_for_load_state("networkidle")
-    page.locator("div").filter(has_text=re.compile(r"^HRM Configuration$")).click()
-    page.get_by_role("button", name="Region").click()
-    page.wait_for_load_state("networkidle")
+from playwright.sync_api import Playwright, sync_playwright
+from config import login_as, _screenshot, navigate_to_region
 
 
 def test_login(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(
-        channel="chrome",
-        headless=False,
-        args=["--start-maximized"]
+        channel="chrome", headless=False, args=["--start-maximized"]
     )
-    context = browser.new_context(
-        no_viewport=True
-    )
+    context = browser.new_context(no_viewport=True)
     page = context.new_page()
-    login(page)
+    login_as(page, "HR")
     navigate_to_region(page)
-
-    # ---------------------
+    _screenshot(page, "test_01_region_module")
     context.close()
     browser.close()
 
