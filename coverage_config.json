@@ -1,6 +1,6 @@
 {
   "source_dir": "/Users/bits-blr-lasyareddy/HRMS_NodeJs",
-  "test_dir": "tests",
+  "test_dir": "/Users/bits-blr-lasyareddy/HRM_Genie_Test_Scripts/tests",
   "features": [
     {
       "name": "login",
