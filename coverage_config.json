@@ -1,164 +1,469 @@
 {
-  "source_dir": "/Users/bits-blr-bala/Documents/HRMS_NodeJs",
+  "source_dir": "/Users/bits-blr-sangiliboopathi/HRMS_NodeJs",
   "test_dir": "tests",
   "features": [
     {
       "name": "login",
-      "source_keywords": ["frontend/src/pages/Auth/login.tsx", "backend/controllers/authController.js", "backend/routes/authRoutes.js", "frontend/src/pages/Auth/otp-verification.tsx", "frontend/src/pages/Auth/update-password.tsx"],
-      "test_keywords": ["test_1_login.py"],
+      "source_keywords": [
+        "frontend/src/pages/Auth/login.tsx",
+        "backend/controllers/authController.js",
+        "backend/routes/authRoutes.js",
+        "frontend/src/pages/Auth/otp-verification.tsx",
+        "frontend/src/pages/Auth/update-password.tsx"
+      ],
+      "test_keywords": [
+        "test_1_login.py"
+      ],
       "actions": [
         {
           "name": "login_form_and_submit",
-          "source_paths": ["frontend/src/pages/Auth/login.tsx"],
-          "source_keywords": ["Enter email", "Enter password", "Forgot Password ?", "Login", "/auth/login"],
-          "test_paths": ["test_1_login.py"],
-          "test_keywords": ["Enter email", "Enter password", "Login", "empty credentials", "invalid credentials"]
+          "source_paths": [
+            "frontend/src/pages/Auth/login.tsx"
+          ],
+          "source_keywords": [
+            "Enter email",
+            "Enter password",
+            "Forgot Password ?",
+            "Login",
+            "/auth/login"
+          ],
+          "test_paths": [
+            "test_1_login.py"
+          ],
+          "test_keywords": [
+            "Enter email",
+            "Enter password",
+            "Login",
+            "empty credentials",
+            "invalid credentials"
+          ]
         },
         {
           "name": "forgot_password_flow",
-          "source_paths": ["frontend/src/pages/Auth/login.tsx"],
-          "source_keywords": ["Forgot Password ?", "/reset-password"],
-          "test_paths": ["test_1_login.py"],
+          "source_paths": [
+            "frontend/src/pages/Auth/login.tsx"
+          ],
+          "source_keywords": [
+            "Forgot Password ?",
+            "/reset-password"
+          ],
+          "test_paths": [
+            "test_1_login.py"
+          ],
           "test_keywords": []
         },
         {
           "name": "otp_verification_flow",
-          "source_paths": ["frontend/src/pages/Auth/otp-verification.tsx"],
-          "source_keywords": ["OTP Verification", "Resend OTP ?", "/auth/reset-password-check-otp"],
-          "test_paths": ["test_1_login.py"],
+          "source_paths": [
+            "frontend/src/pages/Auth/otp-verification.tsx"
+          ],
+          "source_keywords": [
+            "OTP Verification",
+            "Resend OTP ?",
+            "/auth/reset-password-check-otp"
+          ],
+          "test_paths": [
+            "test_1_login.py"
+          ],
           "test_keywords": []
         },
         {
           "name": "password_update_flow",
-          "source_paths": ["frontend/src/pages/Auth/update-password.tsx"],
-          "source_keywords": ["Update password", "New Password", "Confirmation New Password", "/auth/reset-password"],
-          "test_paths": ["test_1_login.py"],
+          "source_paths": [
+            "frontend/src/pages/Auth/update-password.tsx"
+          ],
+          "source_keywords": [
+            "Update password",
+            "New Password",
+            "Confirmation New Password",
+            "/auth/reset-password"
+          ],
+          "test_paths": [
+            "test_1_login.py"
+          ],
           "test_keywords": []
         }
       ]
     },
     {
       "name": "work_location",
-      "source_keywords": ["frontend/src/pages/HRM-Config/work-location/page.tsx", "frontend/src/pages/HRM-Config/components/create-new-location-sheet.tsx", "frontend/src/pages/HRM-Config/components/edit-location-sheet.tsx", "frontend/src/pages/HRM-Config/components/location-delete-dialog.tsx", "backend/controllers/branchController.js", "backend/routes/branchRoutes.js"],
-      "test_keywords": ["test_2_work_location.py"],
+      "source_keywords": [
+        "frontend/src/pages/HRM-Config/work-location/page.tsx",
+        "frontend/src/pages/HRM-Config/components/create-new-location-sheet.tsx",
+        "frontend/src/pages/HRM-Config/components/edit-location-sheet.tsx",
+        "frontend/src/pages/HRM-Config/components/location-delete-dialog.tsx",
+        "backend/controllers/branchController.js",
+        "backend/routes/branchRoutes.js"
+      ],
+      "test_keywords": [
+        "test_2_work_location.py"
+      ],
       "actions": [
         {
           "name": "search_and_filters",
-          "source_paths": ["frontend/src/pages/HRM-Config/work-location/page.tsx"],
-          "source_keywords": ["Search location, country", "resetFilters", "Reset Filters", "onReset", "selectedCountry", "selectedState"],
-          "test_paths": ["test_2_work_location.py"],
-          "test_keywords": ["Search location, country,", "Reset Filters", "All Countries", "All States"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/work-location/page.tsx"
+          ],
+          "source_keywords": [
+            "Search location, country",
+            "resetFilters",
+            "Reset Filters",
+            "onReset",
+            "selectedCountry",
+            "selectedState"
+          ],
+          "test_paths": [
+            "test_2_work_location.py"
+          ],
+          "test_keywords": [
+            "Search location, country,",
+            "Reset Filters",
+            "All Countries",
+            "All States"
+          ]
         },
         {
           "name": "create_location",
-          "source_paths": ["frontend/src/pages/HRM-Config/work-location/page.tsx", "frontend/src/pages/HRM-Config/components/create-new-location-sheet.tsx"],
-          "source_keywords": ["+ Add Type", "CreateLocationSheet", "Create", "createLocation", "onSuccess"],
-          "test_paths": ["test_2_work_location.py"],
-          "test_keywords": ["+ Add Type", "Location *", "Location Code *", "Create"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/work-location/page.tsx",
+            "frontend/src/pages/HRM-Config/components/create-new-location-sheet.tsx"
+          ],
+          "source_keywords": [
+            "+ Add Type",
+            "CreateLocationSheet",
+            "Create",
+            "createLocation",
+            "onSuccess"
+          ],
+          "test_paths": [
+            "test_2_work_location.py"
+          ],
+          "test_keywords": [
+            "+ Add Type",
+            "Location *",
+            "Location Code *",
+            "Create"
+          ]
         },
         {
           "name": "create_dialog_close_cancel",
-          "source_paths": ["frontend/src/pages/HRM-Config/components/create-new-location-sheet.tsx"],
-          "source_keywords": ["Close", "Cancel", "onOpenChange(false)", "handleCountryChange", "handleStateChange"],
-          "test_paths": ["test_2_work_location.py"],
-          "test_keywords": ["Close", "Cancel", "+ Add Type"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/components/create-new-location-sheet.tsx"
+          ],
+          "source_keywords": [
+            "Close",
+            "Cancel",
+            "onOpenChange(false)",
+            "handleCountryChange",
+            "handleStateChange"
+          ],
+          "test_paths": [
+            "test_2_work_location.py"
+          ],
+          "test_keywords": [
+            "Close",
+            "Cancel",
+            "+ Add Type"
+          ]
         },
         {
           "name": "edit_location",
-          "source_paths": ["frontend/src/pages/HRM-Config/work-location/page.tsx", "frontend/src/pages/HRM-Config/components/edit-location-sheet.tsx"],
-          "source_keywords": ["EditLocationSheet", "handleEdit", "Update", "updateWorkLocation", "onSuccess"],
-          "test_paths": ["test_2_work_location.py"],
-          "test_keywords": ["Edit", "Update", "Bengaluaru", "Testing QA QAA"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/work-location/page.tsx",
+            "frontend/src/pages/HRM-Config/components/edit-location-sheet.tsx"
+          ],
+          "source_keywords": [
+            "EditLocationSheet",
+            "handleEdit",
+            "Update",
+            "updateWorkLocation",
+            "onSuccess"
+          ],
+          "test_paths": [
+            "test_2_work_location.py"
+          ],
+          "test_keywords": [
+            "Edit",
+            "Update",
+            "Bengaluaru",
+            "Testing QA QAA"
+          ]
         },
         {
           "name": "delete_location",
-          "source_paths": ["frontend/src/pages/HRM-Config/work-location/page.tsx", "frontend/src/pages/HRM-Config/components/location-delete-dialog.tsx"],
-          "source_keywords": ["LocationDeleteDialog", "handleDelete", "Delete", "handleDeleteConfirm"],
-          "test_paths": ["test_2_work_location.py"],
-          "test_keywords": ["Delete", "Cancel", "Close"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/work-location/page.tsx",
+            "frontend/src/pages/HRM-Config/components/location-delete-dialog.tsx"
+          ],
+          "source_keywords": [
+            "LocationDeleteDialog",
+            "handleDelete",
+            "Delete",
+            "handleDeleteConfirm"
+          ],
+          "test_paths": [
+            "test_2_work_location.py"
+          ],
+          "test_keywords": [
+            "Delete",
+            "Cancel",
+            "Close"
+          ]
         },
         {
           "name": "pagination_and_page_size",
-          "source_paths": ["frontend/src/pages/HRM-Config/work-location/page.tsx"],
-          "source_keywords": ["TableFooter", "onPageChange", "onEntriesPerPageChange", "currentPage", "entriesPerPage"],
-          "test_paths": ["test_2_work_location.py"],
-          "test_keywords": ["Go to previous page", "Go to next page", "10", "20", "30", "40"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/work-location/page.tsx"
+          ],
+          "source_keywords": [
+            "TableFooter",
+            "onPageChange",
+            "onEntriesPerPageChange",
+            "currentPage",
+            "entriesPerPage"
+          ],
+          "test_paths": [
+            "test_2_work_location.py"
+          ],
+          "test_keywords": [
+            "Go to previous page",
+            "Go to next page",
+            "10",
+            "20",
+            "30",
+            "40"
+          ]
         }
       ]
     },
     {
       "name": "department",
-      "source_keywords": ["frontend/src/pages/HRM-Config/department/page.tsx", "frontend/src/pages/HRM-Config/department/department-manager/page.tsx", "frontend/src/pages/HRM-Config/components/create-new-department-sheet.tsx", "frontend/src/pages/HRM-Config/components/edit-department-sheet.tsx", "frontend/src/pages/HRM-Config/components/create-designation-sheet.tsx", "frontend/src/pages/HRM-Config/components/edit-designation-sheet.tsx", "frontend/src/pages/HRM-Config/department/sub-department/page.tsx", "frontend/src/pages/HRM-Config/department/practice-maanger/pages.tsx", "frontend/src/pages/HRM-Config/designation/page.tsx"],
-      "test_keywords": ["test_3_Department.py"],
+      "source_keywords": [
+        "frontend/src/pages/HRM-Config/department/page.tsx",
+        "frontend/src/pages/HRM-Config/department/department-manager/page.tsx",
+        "frontend/src/pages/HRM-Config/components/create-new-department-sheet.tsx",
+        "frontend/src/pages/HRM-Config/components/edit-department-sheet.tsx",
+        "frontend/src/pages/HRM-Config/components/create-designation-sheet.tsx",
+        "frontend/src/pages/HRM-Config/components/edit-designation-sheet.tsx",
+        "frontend/src/pages/HRM-Config/department/sub-department/page.tsx",
+        "frontend/src/pages/HRM-Config/department/practice-maanger/pages.tsx",
+        "frontend/src/pages/HRM-Config/designation/page.tsx"
+      ],
+      "test_keywords": [
+        "test_3_Department.py"
+      ],
       "actions": [
         {
           "name": "department_create_update",
-          "source_paths": ["frontend/src/pages/HRM-Config/department/department-manager/page.tsx", "frontend/src/pages/HRM-Config/components/create-new-department-sheet.tsx", "backend/controllers/departmentController.js", "backend/routes/departmentRoutes.js"],
-          "source_keywords": ["Add Department", "Update Department", "Select BUHead", "Select CXO", "getAllDepartment", "createDepartment", "updateDepartment"],
-          "test_paths": ["test_3_Department.py"],
-          "test_keywords": ["Add Department", "Update Department", "Select BUHead", "Select CXO"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/department/department-manager/page.tsx",
+            "frontend/src/pages/HRM-Config/components/create-new-department-sheet.tsx",
+            "backend/controllers/departmentController.js",
+            "backend/routes/departmentRoutes.js"
+          ],
+          "source_keywords": [
+            "Add Department",
+            "Update Department",
+            "Select BUHead",
+            "Select CXO",
+            "getAllDepartment",
+            "createDepartment",
+            "updateDepartment"
+          ],
+          "test_paths": [
+            "test_3_Department.py"
+          ],
+          "test_keywords": [
+            "Add Department",
+            "Update Department",
+            "Select BUHead",
+            "Select CXO"
+          ]
         },
         {
           "name": "sub_department_create_update",
-          "source_paths": ["frontend/src/pages/HRM-Config/department/sub-department/page.tsx", "frontend/src/pages/HRM-Config/department/sub-department/sub-department-form-sheet.tsx"],
-          "source_keywords": ["Add Sub Department", "Update Sub Department"],
-          "test_paths": ["test_3_Department.py"],
-          "test_keywords": ["Add Sub Department", "Update Sub Department"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/department/sub-department/page.tsx",
+            "frontend/src/pages/HRM-Config/department/sub-department/sub-department-form-sheet.tsx"
+          ],
+          "source_keywords": [
+            "Add Sub Department",
+            "Update Sub Department"
+          ],
+          "test_paths": [
+            "test_3_Department.py"
+          ],
+          "test_keywords": [
+            "Add Sub Department",
+            "Update Sub Department"
+          ]
         },
         {
           "name": "practice_create_update_delete",
-          "source_paths": ["frontend/src/pages/HRM-Config/department/practice-maanger/pages.tsx", "frontend/src/pages/HRM-Config/department/practice-maanger/practice-form-sheet.tsx"],
-          "source_keywords": ["Add Practice", "Update Practice", "Delete"],
-          "test_paths": ["test_3_Department.py"],
-          "test_keywords": ["Add Practice", "Update Practice", "Delete"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/department/practice-maanger/pages.tsx",
+            "frontend/src/pages/HRM-Config/department/practice-maanger/practice-form-sheet.tsx"
+          ],
+          "source_keywords": [
+            "Add Practice",
+            "Update Practice",
+            "Delete"
+          ],
+          "test_paths": [
+            "test_3_Department.py"
+          ],
+          "test_keywords": [
+            "Add Practice",
+            "Update Practice",
+            "Delete"
+          ]
         },
         {
           "name": "designation_create_update_delete",
-          "source_paths": ["frontend/src/pages/HRM-Config/components/create-designationdialog.tsx", "frontend/src/pages/HRM-Config/department/department-manager/designation-form-sheet.tsx", "backend/controllers/designationController.js", "backend/routes/designationRoutes.js"],
-          "source_keywords": ["Add Designation", "Save Changes", "Delete", "getAllDesignation", "createDesignation", "updateDesignation"],
-          "test_paths": ["test_3_Department.py"],
-          "test_keywords": ["Add Designation", "Save Changes", "Delete"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/components/create-designationdialog.tsx",
+            "frontend/src/pages/HRM-Config/department/department-manager/designation-form-sheet.tsx",
+            "backend/controllers/designationController.js",
+            "backend/routes/designationRoutes.js"
+          ],
+          "source_keywords": [
+            "Add Designation",
+            "Save Changes",
+            "Delete",
+            "getAllDesignation",
+            "createDesignation",
+            "updateDesignation"
+          ],
+          "test_paths": [
+            "test_3_Department.py"
+          ],
+          "test_keywords": [
+            "Add Designation",
+            "Save Changes",
+            "Delete"
+          ]
         }
       ]
     },
     {
       "name": "employment_type",
-      "source_keywords": ["frontend/src/pages/HRM-Config/employment_type/page.tsx", "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx", "frontend/src/pages/HRM-Config/components/delete-employment-type-dialog.tsx", "frontend/src/store/slice/employment-type-slice.tsx"],
-      "test_keywords": ["test_4_Employment-type.py"],
+      "source_keywords": [
+        "frontend/src/pages/HRM-Config/employment_type/page.tsx",
+        "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx",
+        "frontend/src/pages/HRM-Config/components/delete-employment-type-dialog.tsx",
+        "frontend/src/store/slice/employment-type-slice.tsx"
+      ],
+      "test_keywords": [
+        "test_4_Employment-type.py"
+      ],
       "actions": [
         {
           "name": "create_employment_type",
-          "source_paths": ["frontend/src/pages/HRM-Config/employment_type/page.tsx", "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx"],
-          "source_keywords": ["+ Add Type", "createEmployment", "Add Employment", "employment_type", "is_active"],
-          "test_paths": ["test_4_Employment-type.py"],
-          "test_keywords": ["+ Add Type", "Add Employment", "e.g., Full Time", "switch", "Testing-", "Testing QA Task"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/employment_type/page.tsx",
+            "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx"
+          ],
+          "source_keywords": [
+            "+ Add Type",
+            "createEmployment",
+            "Add Employment",
+            "employment_type",
+            "is_active"
+          ],
+          "test_paths": [
+            "test_4_Employment-type.py"
+          ],
+          "test_keywords": [
+            "+ Add Type",
+            "Add Employment",
+            "e.g., Full Time",
+            "switch",
+            "Testing-",
+            "Testing QA Task"
+          ]
         },
         {
           "name": "create_dialog_close_cancel",
-          "source_paths": ["frontend/src/pages/HRM-Config/employment_type/page.tsx", "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx"],
-          "source_keywords": ["Close", "Cancel", "handleClose", "setOpen(false)"],
-          "test_paths": ["test_4_Employment-type.py"],
-          "test_keywords": ["Close", "Cancel", "+ Add Type"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/employment_type/page.tsx",
+            "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx"
+          ],
+          "source_keywords": [
+            "Close",
+            "Cancel",
+            "handleClose",
+            "setOpen(false)"
+          ],
+          "test_paths": [
+            "test_4_Employment-type.py"
+          ],
+          "test_keywords": [
+            "Close",
+            "Cancel",
+            "+ Add Type"
+          ]
         },
         {
           "name": "edit_employment_type",
-          "source_paths": ["frontend/src/pages/HRM-Config/employment_type/page.tsx", "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx"],
-          "source_keywords": ["Edit", "Update Employment", "updateEmployment", "selectedEmployment", "setSelectedEmployment"],
-          "test_paths": ["test_4_Employment-type.py"],
-          "test_keywords": ["Edit", "Update Employment", "switch", "Testing QA Task", "Testing QA QAA"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/employment_type/page.tsx",
+            "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx"
+          ],
+          "source_keywords": [
+            "Edit",
+            "Update Employment",
+            "updateEmployment",
+            "selectedEmployment",
+            "setSelectedEmployment"
+          ],
+          "test_paths": [
+            "test_4_Employment-type.py"
+          ],
+          "test_keywords": [
+            "Edit",
+            "Update Employment",
+            "switch",
+            "Testing QA Task",
+            "Testing QA QAA"
+          ]
         },
         {
           "name": "delete_employment_type",
-          "source_paths": ["frontend/src/pages/HRM-Config/employment_type/page.tsx", "frontend/src/pages/HRM-Config/components/delete-employment-type-dialog.tsx"],
-          "source_keywords": ["EmploymentDeleteDialog", "Delete", "handleDelete", "onDelete", "setIsDeleteDialogOpen"],
-          "test_paths": ["test_4_Employment-type.py"],
-          "test_keywords": ["Delete", "Cancel", "Close"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/employment_type/page.tsx",
+            "frontend/src/pages/HRM-Config/components/delete-employment-type-dialog.tsx"
+          ],
+          "source_keywords": [
+            "EmploymentDeleteDialog",
+            "Delete",
+            "handleDelete",
+            "onDelete",
+            "setIsDeleteDialogOpen"
+          ],
+          "test_paths": [
+            "test_4_Employment-type.py"
+          ],
+          "test_keywords": [
+            "Delete",
+            "Cancel",
+            "Close"
+          ]
         },
         {
           "name": "pagination",
-          "source_paths": ["frontend/src/pages/HRM-Config/employment_type/page.tsx"],
-          "source_keywords": ["TableFooter", "onPageChange", "onEntriesPerPageChange", "currentPage", "entriesPerPage"],
-          "test_paths": ["test_4_Employment-type.py"],
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/employment_type/page.tsx"
+          ],
+          "source_keywords": [
+            "TableFooter",
+            "onPageChange",
+            "onEntriesPerPageChange",
+            "currentPage",
+            "entriesPerPage"
+          ],
+          "test_paths": [
+            "test_4_Employment-type.py"
+          ],
           "test_keywords": []
         }
       ]
@@ -173,42 +478,148 @@
         "backend/controllers/regionController.js",
         "backend/routes/regionRoutes.js"
       ],
-      "test_keywords": ["test_5_region.py"],
+      "test_keywords": [
+        "test_5_region.py"
+      ],
       "actions": [
         {
           "name": "search_and_filters",
-          "source_paths": ["frontend/src/pages/HRM-Config/region/page.tsx"],
-          "source_keywords": ["Search", "All Branch", "Reset Filters", "Region", "Branch", "Head", "setSearchQuery", "selectedBranch", "resetFilters", "TableFooter", "onPageChange", "onEntriesPerPageChange"],
-          "test_paths": ["test_5_region.py"],
-          "test_keywords": ["Search", "All Branch", "Reset Filters", "Region", "Branch", "Head", "Go to previous page", "Go to next page"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/region/page.tsx"
+          ],
+          "source_keywords": [
+            "Search",
+            "All Branch",
+            "Reset Filters",
+            "Region",
+            "Branch",
+            "Head",
+            "setSearchQuery",
+            "selectedBranch",
+            "resetFilters",
+            "TableFooter",
+            "onPageChange",
+            "onEntriesPerPageChange"
+          ],
+          "test_paths": [
+            "test_5_region.py"
+          ],
+          "test_keywords": [
+            "Search",
+            "All Branch",
+            "Reset Filters",
+            "Region",
+            "Branch",
+            "Head",
+            "Go to previous page",
+            "Go to next page"
+          ]
         },
         {
           "name": "create_region",
-          "source_paths": ["frontend/src/pages/HRM-Config/region/page.tsx", "frontend/src/pages/HRM-Config/components/create-region-sheet.tsx", "backend/controllers/regionController.js", "backend/routes/regionRoutes.js"],
-          "source_keywords": ["Create Region", "createRegion", "Region created successfully", "Enter Region", "Choose Region Head", "Region name already exists", "/region", "POST"],
-          "test_paths": ["test_5_region.py"],
-          "test_keywords": ["Create Region", "Enter Region", "Choose Region Head", "Region created successfully", "Create"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/region/page.tsx",
+            "frontend/src/pages/HRM-Config/components/create-region-sheet.tsx",
+            "backend/controllers/regionController.js",
+            "backend/routes/regionRoutes.js"
+          ],
+          "source_keywords": [
+            "Create Region",
+            "createRegion",
+            "Region created successfully",
+            "Enter Region",
+            "Choose Region Head",
+            "Region name already exists",
+            "/region",
+            "POST"
+          ],
+          "test_paths": [
+            "test_5_region.py"
+          ],
+          "test_keywords": [
+            "Create Region",
+            "Enter Region",
+            "Choose Region Head",
+            "Region created successfully",
+            "Create"
+          ]
         },
         {
           "name": "edit_region",
-          "source_paths": ["frontend/src/pages/HRM-Config/region/page.tsx", "frontend/src/pages/HRM-Config/components/edit-region-sheet.tsx", "backend/controllers/regionController.js", "backend/routes/regionRoutes.js"],
-          "source_keywords": ["Edit Region", "Update Region", "updateRegion", "Region updated successfully", "Choose Region Head", "Enter Region", "PUT"],
-          "test_paths": ["test_5_region.py"],
-          "test_keywords": ["Edit", "Update Region", "Save Changes", "Region updated successfully"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/region/page.tsx",
+            "frontend/src/pages/HRM-Config/components/edit-region-sheet.tsx",
+            "backend/controllers/regionController.js",
+            "backend/routes/regionRoutes.js"
+          ],
+          "source_keywords": [
+            "Edit Region",
+            "Update Region",
+            "updateRegion",
+            "Region updated successfully",
+            "Choose Region Head",
+            "Enter Region",
+            "PUT"
+          ],
+          "test_paths": [
+            "test_5_region.py"
+          ],
+          "test_keywords": [
+            "Edit",
+            "Update Region",
+            "Save Changes",
+            "Region updated successfully"
+          ]
         },
         {
           "name": "delete_region",
-          "source_paths": ["frontend/src/pages/HRM-Config/region/page.tsx", "frontend/src/pages/HRM-Config/components/delete-region-sheet.tsx", "backend/controllers/regionController.js", "backend/routes/regionRoutes.js"],
-          "source_keywords": ["Delete", "RegionDeleteDialog", "handleDelete", "handleDeleteConfirm", "deleteRegion", "Region has been successfully deleted", "DELETE"],
-          "test_paths": ["test_5_region.py"],
-          "test_keywords": ["Delete", "Cancel", "Close", "Region has been successfully deleted"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/region/page.tsx",
+            "frontend/src/pages/HRM-Config/components/delete-region-sheet.tsx",
+            "backend/controllers/regionController.js",
+            "backend/routes/regionRoutes.js"
+          ],
+          "source_keywords": [
+            "Delete",
+            "RegionDeleteDialog",
+            "handleDelete",
+            "handleDeleteConfirm",
+            "deleteRegion",
+            "Region has been successfully deleted",
+            "DELETE"
+          ],
+          "test_paths": [
+            "test_5_region.py"
+          ],
+          "test_keywords": [
+            "Delete",
+            "Cancel",
+            "Close",
+            "Region has been successfully deleted"
+          ]
         },
         {
           "name": "pagination",
-          "source_paths": ["frontend/src/pages/HRM-Config/region/page.tsx"],
-          "source_keywords": ["TableFooter", "currentPage", "entriesPerPage", "onPageChange", "onEntriesPerPageChange"],
-          "test_paths": ["test_5_region.py"],
-          "test_keywords": ["Go to previous page", "Go to next page", "10", "20", "30"]
+          "source_paths": [
+            "frontend/src/pages/HRM-Config/region/page.tsx"
+          ],
+          "source_keywords": [
+            "TableFooter",
+            "currentPage",
+            "entriesPerPage",
+            "onPageChange",
+            "onEntriesPerPageChange"
+          ],
+          "test_paths": [
+            "test_5_region.py"
+          ],
+          "test_keywords": [
+            "Go to previous page",
+            "Go to next page",
+            "10",
+            "20",
+            "30"
+          ]
         }
       ]
     }
