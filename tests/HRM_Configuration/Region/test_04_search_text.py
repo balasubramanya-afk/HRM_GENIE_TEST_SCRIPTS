@@ -36,7 +36,7 @@ def test_search_text(playwright: Playwright) -> None:
     # --- 1. Search for existing region "South West" (Match will found) ---
     search_text(page, "South West")
     page.get_by_role("textbox", name="Search", exact=True).press("Enter")
-    page.get_by_role("cell", name="South West").click()
+    page.get_by_role("cell", name="South West").first.click()
     page.wait_for_timeout(2000)
     _screenshot(page, "test_04_south_west_search")
     reset_filters(page)

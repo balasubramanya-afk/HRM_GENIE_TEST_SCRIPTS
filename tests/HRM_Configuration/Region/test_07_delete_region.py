@@ -21,13 +21,21 @@ def test_delete_region(playwright: Playwright) -> None:
     page.wait_for_timeout(2000)
     _screenshot(page, "test_07_before_delete_region")
 
+    # Close delete region dialog via X button
+    page.locator(
+        ".inline-flex.items-center.justify-center.gap-2.whitespace-nowrap.text-sm.font-medium.transition-colors.focus-visible\\:outline-none.focus-visible\\:ring-1.focus-visible\\:ring-ring.disabled\\:pointer-events-none.disabled\\:opacity-50.\\[\\&_svg\\]\\:pointer-events-none.\\[\\&_svg\\]\\:size-4.\\[\\&_svg\\]\\:shrink-0.bg-\\[\\#FFEDECB2\\]\\/70"
+    ).first.click()
+    page.wait_for_timeout(1000)
+    page.locator("button").filter(has_text="Close").click()
+    _screenshot(page, "test_07_close_delete_dialog")
+
     # Cancel delete region
     page.locator(
         ".inline-flex.items-center.justify-center.gap-2.whitespace-nowrap.text-sm.font-medium.transition-colors.focus-visible\\:outline-none.focus-visible\\:ring-1.focus-visible\\:ring-ring.disabled\\:pointer-events-none.disabled\\:opacity-50.\\[\\&_svg\\]\\:pointer-events-none.\\[\\&_svg\\]\\:size-4.\\[\\&_svg\\]\\:shrink-0.bg-\\[\\#FFEDECB2\\]\\/70"
     ).first.click()
-    page.wait_for_timeout(2000)
+    page.wait_for_timeout(1000)
     page.get_by_role("button", name="Cancel").click()
-    
+    _screenshot(page, "test_07_cancel_delete_dialog")
 
     # Delete region
     page.locator(

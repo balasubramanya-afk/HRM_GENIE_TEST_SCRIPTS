@@ -29,8 +29,22 @@ def test_edit_region(playwright: Playwright) -> None:
     page.wait_for_timeout(2000)
     _screenshot(page, "test_06_before_edit_region")
 
+    # Close edit region dialog via X button
+    click_first_edit_button(page)
+    page.wait_for_timeout(1000)
+    page.locator("button").filter(has_text="Close").click()
+    _screenshot(page, "test_06_close_edit_dialog")
+
+    # Cancel edit region
+    click_first_edit_button(page)
+    page.wait_for_timeout(1000)
+    page.get_by_role("button", name="Cancel").click()
+    _screenshot(page, "test_06_cancel_edit_dialog")
+
     # --- 1. Edit Region: Change Country to USA ---
     click_first_edit_button(page)
+    page.wait_for_timeout(1000)
+    _screenshot(page, "test_06_edit_region_popup_1")
     page.get_by_role("combobox", name="Country *").click()
     page.get_by_role("option", name="USA").click()
     page.get_by_role("button", name="Update").click()
@@ -41,6 +55,8 @@ def test_edit_region(playwright: Playwright) -> None:
 
     # --- 2. Edit Region: Change Country back to India and update Region Name ---
     click_first_edit_button(page)
+    page.wait_for_timeout(1000)
+    _screenshot(page, "test_06_edit_region_popup_2")
     page.get_by_role("combobox", name="Country *").click()
     page.get_by_role("option", name="India").click()
     page.get_by_role("textbox", name="Region *").click()
@@ -54,6 +70,8 @@ def test_edit_region(playwright: Playwright) -> None:
 
     # --- 3. Edit Region: Update Region Name, add Branch, and assign Region Head ---
     click_first_edit_button(page)
+    page.wait_for_timeout(1000)
+    _screenshot(page, "test_06_edit_region_popup_3")
     page.get_by_role("textbox", name="Region *").click()
     page.get_by_role("textbox", name="Region *").fill("South west")
     page.get_by_role("checkbox", name="Tumkur -").click()

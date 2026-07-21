@@ -39,7 +39,10 @@ def _screenshot(page: Page, name: str):
 def navigate_to_region(page: Page) -> None:
     """Navigates to the Region configuration page."""
     page.wait_for_load_state("networkidle")
-    page.locator("div").filter(has_text=re.compile(r"^HRM Configuration$")).click()
+    menu_trigger = page.locator("div").filter(has_text=re.compile(r"^HRM Configuration$")).first
+    state = menu_trigger.get_attribute("data-state")
+    if state == "closed" or state is None:
+        menu_trigger.click()
     page.get_by_role("button", name="Region").click()
     page.wait_for_load_state("networkidle")
 
