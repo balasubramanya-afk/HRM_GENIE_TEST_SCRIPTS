@@ -1,5 +1,10 @@
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).parent))
+
 from playwright.sync_api import Playwright, sync_playwright
-from test_01_login import login
+from config import login_as, _screenshot, close_toast
 from test_05_delete_files import delete_uploaded_files
 
 PDF_PATH = "/Users/bits-blr-sangiliboopathi/HRM_GENIE_TEST_SCRIPTS/Source_files/3-mb-sample-pdf-file.pdf"
@@ -22,7 +27,7 @@ def test_upload_files(playwright: Playwright) -> None:
     context = browser.new_context(no_viewport=True)
     page = context.new_page()
 
-    login(page)
+    login_as(page, "BUH")
 
     page.goto("https://qa.hrmgenie.outstrive.co/employee/general")
     page.wait_for_timeout(1000)
@@ -46,8 +51,12 @@ def test_upload_files(playwright: Playwright) -> None:
     upload_file(page, "docx-40")
     upload_file(page, "docx-41")
 
+    _screenshot(page, "test_03_upload_files")
+
     # Delete the uploaded files
     delete_uploaded_files(page)
+
+    close_toast(page)
 
     context.close()
     browser.close()

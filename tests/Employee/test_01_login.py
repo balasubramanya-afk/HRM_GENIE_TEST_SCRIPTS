@@ -1,29 +1,10 @@
-from playwright.sync_api import Page, Playwright, sync_playwright
-import re
-import datetime
+import sys
 from pathlib import Path
 
-BASE_URL = "https://qa.hrmgenie.outstrive.co/"
+sys.path.insert(0, str(Path(__file__).parent))
 
-# Save screenshots in the 'screenshots' folder inside my_leaves
-SCREENSHOT_BASE = Path(__file__).parent / "screenshots"
-
-def _screenshot(page: Page, name: str):
-    """Save screenshot with timestamp."""
-    SCREENSHOT_BASE.mkdir(parents=True, exist_ok=True)
-    ts = datetime.now().strftime("%Y%m%d_%H%M%S")
-    page.screenshot(path=SCREENSHOT_BASE / f"{name}_{ts}.png", full_page=True)
-
-def login(page):
-    page.goto("https://qa.hrmgenie.outstrive.co/login")
-    page.get_by_role("textbox", name="Enter email").click()
-    page.get_by_role("textbox", name="Enter email").fill("gattu.ashwitha@brilyant.com")
-    page.get_by_role("textbox", name="Enter password").click()
-    page.get_by_role("textbox", name="Enter password").fill("Ramesh@12345")
-    page.get_by_role("button", name="Show password").click()
-    page.get_by_role("button", name="Hide password").click()
-    page.get_by_role("button", name="Login").click()
-    page.wait_for_load_state("networkidle")
+from playwright.sync_api import Playwright, sync_playwright
+from config import login_as, _screenshot, close_toast
 
 
 def test_login(playwright: Playwright) -> None:
@@ -32,8 +13,9 @@ def test_login(playwright: Playwright) -> None:
     )
     context = browser.new_context(no_viewport=True)
     page = context.new_page()
-    login(page)
-
+    login_as(page, "BUH")
+    _screenshot(page, "test_01_login")
+    close_toast(page)
     context.close()
     browser.close()
 
