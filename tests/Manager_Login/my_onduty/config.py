@@ -164,11 +164,13 @@ def select_time_option(page: Page, label_name: str, time_value: str):
     ).first
     expect(combo).to_be_visible()
     combo.click()
-    page.wait_for_timeout(300)
+    page.wait_for_timeout(500)
 
-    option = page.locator("[role='option']:visible").filter(has_text=time_value).or_(
-        page.get_by_role("option", name=time_value, include_hidden=False)
+    # Avoid matching hidden native <option> tags by prioritizing div[role="option"] or non-option tags
+    option = page.locator("div[role='option']").filter(has_text=time_value).or_(
+        page.locator("[role='option']:not(option)").filter(has_text=time_value)
     ).first
     expect(option).to_be_visible()
     option.click()
     page.wait_for_timeout(300)
+

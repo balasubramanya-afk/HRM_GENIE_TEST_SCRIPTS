@@ -792,6 +792,9 @@
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_leaves/test_07_apply_leave_without_fields_validation.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_leaves/test_08_cancel_apply_leave_modal.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_leaves/test_09_cancel_delete_confirmation.py",
+    "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_leaves/test_10_overlapping_leave_validation.py",
+    "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_leaves/test_11_attachment_upload.py",
+    "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_leaves/test_12_half_day_leave.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/__init__.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/config.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_01_access_my_onduty_without_login.py",
@@ -2034,6 +2037,176 @@
       ],
       "coverage_pct": 100,
       "status": "covered"
+    },
+    "on_duty": {
+      "source_matches": [
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js",
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/wfhRoutes.js",
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/work-from-home/manager/my-wfh.tsx",
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/work-from-home/manager/page.tsx",
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/work-from-home/manager/team-wfh.tsx"
+      ],
+      "test_matches": [
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_01_access_my_onduty_without_login.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_02_view_my_onduty_default_filters.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_03_update_filters_get_updated_data.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_04_apply_my_onduty.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_05_edit_my_onduty.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_06_delete_my_onduty.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_07_apply_onduty_without_fields_validation.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_08_cancel_apply_onduty_modal.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_09_cancel_delete_confirmation.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_10_conflict_wfh_and_onduty_same_date.py"
+      ],
+      "source_match_count": 5,
+      "test_match_count": 10,
+      "source_presence_pct": 100,
+      "test_presence_pct": 100,
+      "actions": [
+        {
+          "name": "access_my_onduty_without_login",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_01_access_my_onduty_without_login.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "view_my_onduty_default_filters",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_02_view_my_onduty_default_filters.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "update_filters_get_updated_data",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_03_update_filters_get_updated_data.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "apply_my_onduty",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_04_apply_my_onduty.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "edit_my_onduty",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_05_edit_my_onduty.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "delete_my_onduty",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_06_delete_my_onduty.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "apply_onduty_without_fields_validation",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_07_apply_onduty_without_fields_validation.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "cancel_apply_onduty_modal",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_08_cancel_apply_onduty_modal.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "cancel_delete_confirmation",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_09_cancel_delete_confirmation.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "conflict_wfh_and_onduty_same_date",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_10_conflict_wfh_and_onduty_same_date.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "team_approvals_and_bulk_operations",
+          "status": "missing_in_automation",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [],
+          "source_match_count": 1,
+          "test_match_count": 0,
+          "coverage_pct": 0
+        }
+      ],
+      "coverage_pct": 91,
+      "status": "missing_in_automation"
     }
   }
 }

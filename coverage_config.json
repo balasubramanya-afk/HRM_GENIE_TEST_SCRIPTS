@@ -658,6 +658,107 @@
           "test_keywords": ["test_13_conflict_wfh_and_wfh_same_date.py"]
         }
       ]
+    },
+    {
+      "name": "on_duty",
+      "source_keywords": [
+        "backend/controllers/wfhController.js",
+        "backend/routes/wfhRoutes.js",
+        "frontend/src/pages/work-from-home/manager/page.tsx",
+        "frontend/src/pages/work-from-home/manager/my-wfh.tsx",
+        "frontend/src/pages/work-from-home/manager/team-wfh.tsx"
+      ],
+      "test_keywords": [
+        "Manager_Login/my_onduty/test_01_access_my_onduty_without_login.py",
+        "Manager_Login/my_onduty/test_02_view_my_onduty_default_filters.py",
+        "Manager_Login/my_onduty/test_03_update_filters_get_updated_data.py",
+        "Manager_Login/my_onduty/test_04_apply_my_onduty.py",
+        "Manager_Login/my_onduty/test_05_edit_my_onduty.py",
+        "Manager_Login/my_onduty/test_06_delete_my_onduty.py",
+        "Manager_Login/my_onduty/test_07_apply_onduty_without_fields_validation.py",
+        "Manager_Login/my_onduty/test_08_cancel_apply_onduty_modal.py",
+        "Manager_Login/my_onduty/test_09_cancel_delete_confirmation.py",
+        "Manager_Login/my_onduty/test_10_conflict_wfh_and_onduty_same_date.py"
+      ],
+      "actions": [
+        {
+          "name": "access_my_onduty_without_login",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["wfhController.js"],
+          "test_paths": ["Manager_Login/my_onduty/test_01_access_my_onduty_without_login.py"],
+          "test_keywords": ["test_01_access_my_onduty_without_login.py"]
+        },
+        {
+          "name": "view_my_onduty_default_filters",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["wfhController.js"],
+          "test_paths": ["Manager_Login/my_onduty/test_02_view_my_onduty_default_filters.py"],
+          "test_keywords": ["test_02_view_my_onduty_default_filters.py"]
+        },
+        {
+          "name": "update_filters_get_updated_data",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["wfhController.js"],
+          "test_paths": ["Manager_Login/my_onduty/test_03_update_filters_get_updated_data.py"],
+          "test_keywords": ["test_03_update_filters_get_updated_data.py"]
+        },
+        {
+          "name": "apply_my_onduty",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["createWFH"],
+          "test_paths": ["Manager_Login/my_onduty/test_04_apply_my_onduty.py"],
+          "test_keywords": ["test_04_apply_my_onduty.py"]
+        },
+        {
+          "name": "edit_my_onduty",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["updateWFH"],
+          "test_paths": ["Manager_Login/my_onduty/test_05_edit_my_onduty.py"],
+          "test_keywords": ["test_05_edit_my_onduty.py"]
+        },
+        {
+          "name": "delete_my_onduty",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["deleteWFH"],
+          "test_paths": ["Manager_Login/my_onduty/test_06_delete_my_onduty.py"],
+          "test_keywords": ["test_06_delete_my_onduty.py"]
+        },
+        {
+          "name": "apply_onduty_without_fields_validation",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["reason"],
+          "test_paths": ["Manager_Login/my_onduty/test_07_apply_onduty_without_fields_validation.py"],
+          "test_keywords": ["test_07_apply_onduty_without_fields_validation.py"]
+        },
+        {
+          "name": "cancel_apply_onduty_modal",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["wfhController.js"],
+          "test_paths": ["Manager_Login/my_onduty/test_08_cancel_apply_onduty_modal.py"],
+          "test_keywords": ["test_08_cancel_apply_onduty_modal.py"]
+        },
+        {
+          "name": "cancel_delete_confirmation",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["deleteWFH"],
+          "test_paths": ["Manager_Login/my_onduty/test_09_cancel_delete_confirmation.py"],
+          "test_keywords": ["test_09_cancel_delete_confirmation.py"]
+        },
+        {
+          "name": "conflict_wfh_and_onduty_same_date",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["checkOnDutyQuery"],
+          "test_paths": ["Manager_Login/my_onduty/test_10_conflict_wfh_and_onduty_same_date.py"],
+          "test_keywords": ["test_10_conflict_wfh_and_onduty_same_date.py"]
+        },
+        {
+          "name": "team_approvals_and_bulk_operations",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["approveWFH"],
+          "test_paths": [],
+          "test_keywords": []
+        }
+      ]
     }
   ]
 }

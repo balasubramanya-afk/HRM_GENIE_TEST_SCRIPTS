@@ -18,7 +18,9 @@ def test_update_filters_get_updated_data(page: Page):
     combobox.click()
     page.wait_for_timeout(500)
 
-    pending_opt = page.get_by_role("option", name="Pending").first
+    pending_opt = page.locator("div[role='option']").filter(has_text="Pending").or_(
+        page.locator("[role='option']:not(option)").filter(has_text="Pending")
+    ).first
     expect(pending_opt).to_be_visible()
     pending_opt.click()
     page.wait_for_timeout(3000)
