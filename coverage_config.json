@@ -215,7 +215,7 @@
     {
       "name": "document_type",
       "source_keywords": [
-        "frontend/src/pages/HRM-Config/document-type/page.tsx",
+        "frontend/src/pages/HRM-Config/document_type/page.tsx",
         "frontend/src/pages/HRM-Config/components/create-document-type-sheet.tsx",
         "frontend/src/pages/HRM-Config/components/edit-document-type-sheet.tsx",
         "frontend/src/pages/HRM-Config/components/delete-document-type-dialog.tsx",
@@ -233,14 +233,14 @@
       "actions": [
         {
           "name": "login_and_navigate",
-          "source_paths": ["frontend/src/pages/HRM-Config/document-type/page.tsx"],
+          "source_paths": ["frontend/src/pages/HRM-Config/document_type/page.tsx"],
           "source_keywords": ["Document Type", "HRM Configuration", "Enter email", "Enter password", "Login"],
           "test_paths": ["test_01_login.py"],
           "test_keywords": ["Document Type", "Enter email", "Enter password", "Login", "+ Document Type", "Search", "Actions", "Outstrive"]
         },
         {
           "name": "pagination_and_page_size",
-          "source_paths": ["frontend/src/pages/HRM-Config/document-type/page.tsx"],
+          "source_paths": ["frontend/src/pages/HRM-Config/document_type/page.tsx"],
           "source_keywords": ["TableFooter", "onPageChange", "onEntriesPerPageChange", "currentPage", "entriesPerPage"],
           "test_paths": ["test_02_pagination.py"],
           "test_keywords": ["Go to previous page", "Go to next page", "10", "20", "30", "40"]
@@ -248,7 +248,7 @@
         {
           "name": "create_document_type",
           "source_paths": [
-            "frontend/src/pages/HRM-Config/document-type/page.tsx",
+            "frontend/src/pages/HRM-Config/document_type/page.tsx",
             "frontend/src/pages/HRM-Config/components/create-document-type-sheet.tsx",
             "backend/controllers/documentTypeController.js",
             "backend/routes/documentTypeRoutes.js"
@@ -259,7 +259,7 @@
         },
         {
           "name": "search_document_type",
-          "source_paths": ["frontend/src/pages/HRM-Config/document-type/page.tsx"],
+          "source_paths": ["frontend/src/pages/HRM-Config/document_type/page.tsx"],
           "source_keywords": ["Search", "setSearchQuery"],
           "test_paths": ["test_04_search.py"],
           "test_keywords": ["Search", "created_document_type.txt", "to_be_visible"]
@@ -267,7 +267,7 @@
         {
           "name": "edit_document_type",
           "source_paths": [
-            "frontend/src/pages/HRM-Config/document-type/page.tsx",
+            "frontend/src/pages/HRM-Config/document_type/page.tsx",
             "frontend/src/pages/HRM-Config/components/edit-document-type-sheet.tsx",
             "backend/controllers/documentTypeController.js",
             "backend/routes/documentTypeRoutes.js"
@@ -279,7 +279,7 @@
         {
           "name": "delete_document_type",
           "source_paths": [
-            "frontend/src/pages/HRM-Config/document-type/page.tsx",
+            "frontend/src/pages/HRM-Config/document_type/page.tsx",
             "frontend/src/pages/HRM-Config/components/delete-document-type-dialog.tsx",
             "backend/controllers/documentTypeController.js",
             "backend/routes/documentTypeRoutes.js"
@@ -287,6 +287,337 @@
           "source_keywords": ["Delete", "handleDelete", "handleDeleteConfirm", "deleteDocumentType"],
           "test_paths": ["test_06_delete.py"],
           "test_keywords": ["Delete", "not_to_be_visible", "created_document_type.txt", "Employee", "Documents"]
+        }
+      ]
+    },
+    {
+      "name": "policies_hr",
+      "note": "Frontend: frontend/src/pages/policies/page.tsx + components/create-new-policy-sheet.tsx. Backend: companyPolicyController.js has CRUD. Frontend only exposes: search, create, view (popup), download, delete. updateCompanyPolicy exists in backend but NO edit UI is surfaced in the frontend.",
+      "source_keywords": [
+        "frontend/src/pages/policies/page.tsx",
+        "frontend/src/pages/policies/components/create-new-policy-sheet.tsx",
+        "backend/controllers/companyPolicyController.js",
+        "backend/routes/companyPolicyRoutes.js"
+      ],
+      "test_keywords": [
+        "test_01_login.py",
+        "test_02_search.py",
+        "test_03_create.py",
+        "test_04_view.py",
+        "test_05_delete.py",
+        "test_06_download.py"
+      ],
+      "actions": [
+        {
+          "name": "login_and_navigate",
+          "source_paths": ["frontend/src/pages/policies/page.tsx"],
+          "source_keywords": ["Company Policy", "Search what you need", "Create new Policy", "Outstrive"],
+          "test_paths": ["test_01_login.py"],
+          "test_keywords": ["Company Policy", "Create new Policy", "Search what you need", "Outstrive"]
+        },
+        {
+          "name": "search_policy",
+          "source_paths": ["frontend/src/pages/policies/page.tsx"],
+          "source_keywords": ["Search what you need", "searchQuery", "setSearchQuery", "filteredPolicies"],
+          "test_paths": ["test_02_search.py"],
+          "test_keywords": ["Search what you need", "random_policy"]
+        },
+        {
+          "name": "create_policy",
+          "source_paths": ["frontend/src/pages/policies/components/create-new-policy-sheet.tsx"],
+          "source_keywords": ["Create new Policy", "Policy Name", "Enter policy description", "Upload attachment", "Preview", "Create", "createPolicy", "/companyPolicy", "POST"],
+          "test_paths": ["test_03_create.py"],
+          "test_keywords": ["Create new Policy", "Policy Name *", "Enter policy description", "POSH_NEW.pdf", "Preview", "Create", "created_policy_name.txt"]
+        },
+        {
+          "name": "view_policy",
+          "source_paths": ["frontend/src/pages/policies/page.tsx"],
+          "source_keywords": ["View policy", "window.open", "policy.attachment", "_blank", "Eye"],
+          "test_paths": ["test_04_view.py"],
+          "test_keywords": ["View policy", "expect_popup", "page1"]
+        },
+        {
+          "name": "delete_policy",
+          "source_paths": ["frontend/src/pages/policies/page.tsx"],
+          "source_keywords": ["Delete policy", "Trash2", "handleDeletePolicy", "deletePolicyById", "/companyPolicy", "Are you sure", "Cancel", "Delete"],
+          "test_paths": ["test_05_delete.py"],
+          "test_keywords": ["Delete policy", "Delete", "created_policy_name.txt", "Search what you need"]
+        },
+        {
+          "name": "download_policy",
+          "source_paths": ["frontend/src/pages/policies/page.tsx"],
+          "source_keywords": ["DownloadButton", "downloadUrl", "policy.attachment"],
+          "test_paths": ["test_06_download.py"],
+          "test_keywords": ["expect_download", "downloaded_policy.pdf", "os.path.exists"]
+        }
+      ]
+    },
+    {
+      "name": "resignation_hr",
+      "note": "Frontend: frontend/src/pages/Resignation/hr-resignation.tsx. Has TableFooter with real pagination (currentPage, entriesPerPage, onPageChange). Has Excel_Export component for export. Has EmployeeDetailSheet for row detail/approve/deny. No edit feature exists.",
+      "source_keywords": [
+        "frontend/src/pages/Resignation/hr-resignation.tsx",
+        "frontend/src/pages/Resignation/components/employee-approve.tsx",
+        "backend/controllers/resignationController.js",
+        "backend/routes/resignationRoutes.js"
+      ],
+      "test_keywords": [
+        "test_01_login.py",
+        "test_02_filters.py",
+        "test_03_view_row.py",
+        "test_04_approve.py",
+        "test_05_reject.py",
+        "test_06_export.py"
+      ],
+      "actions": [
+        {
+          "name": "login_and_navigate",
+          "source_paths": ["frontend/src/pages/Resignation/hr-resignation.tsx"],
+          "source_keywords": ["All Resignation", "Search by name or ID", "Export", "Reset Filters", "Employee ID", "Employee Name", "Department", "Designation", "Manager", "Manager Status"],
+          "test_paths": ["test_01_login.py"],
+          "test_keywords": ["All Resignation", "Export", "Search by name or ID", "Reset Filters", "Employee ID", "Employee Name", "Department", "Designation", "Manager", "Manager Status"]
+        },
+        {
+          "name": "search_and_filters",
+          "source_paths": ["frontend/src/pages/Resignation/hr-resignation.tsx"],
+          "source_keywords": ["Search by name or ID", "setSearchQuery", "resetFilters", "Reset Filters"],
+          "test_paths": ["test_02_filters.py"],
+          "test_keywords": ["Search by name or ID", "Reset Filters", "emp_id", "emp_name"]
+        },
+        {
+          "name": "view_row_details",
+          "source_paths": ["frontend/src/pages/Resignation/hr-resignation.tsx", "frontend/src/pages/Resignation/components/employee-approve.tsx"],
+          "source_keywords": ["EmployeeDetailSheet", "onRowClick", "Employee Detail", "Reason For Leaving", "Employee Performance", "Approve", "Deny", "Write your comments here"],
+          "test_paths": ["test_03_view_row.py"],
+          "test_keywords": ["Employee Detail", "Reason For Leaving", "Employee Performance", "Approve", "Deny", "Write your comments here", "Close"]
+        },
+        {
+          "name": "approve_resignation",
+          "source_paths": ["frontend/src/pages/Resignation/components/employee-approve.tsx"],
+          "source_keywords": ["Approve", "approved_message", "onProcessSuccess"],
+          "test_paths": ["test_04_approve.py"],
+          "test_keywords": ["Approve", "Approved by automation script", "data-sonner-toast"]
+        },
+        {
+          "name": "reject_resignation",
+          "source_paths": ["frontend/src/pages/Resignation/components/employee-approve.tsx"],
+          "source_keywords": ["Deny", "approved_message", "onProcessSuccess"],
+          "test_paths": ["test_05_reject.py"],
+          "test_keywords": ["Deny", "Denied by automation script", "data-sonner-toast"]
+        },
+        {
+          "name": "export_resignations",
+          "source_paths": ["frontend/src/pages/Resignation/hr-resignation.tsx"],
+          "source_keywords": ["Excel_Export", "Export", "Excel (.xlsx)", "CSV (.csv)", "excelName", "Resignations"],
+          "test_paths": ["test_06_export.py"],
+          "test_keywords": ["Export", "Excel (.xlsx)", "CSV (.csv)", "exported_resignation.xlsx", "exported_resignation.csv"]
+        },
+        {
+          "name": "pagination",
+          "source_paths": ["frontend/src/pages/Resignation/hr-resignation.tsx"],
+          "source_keywords": ["TableFooter", "currentPage", "entriesPerPage", "onPageChange", "onEntriesPerPageChange"],
+          "test_paths": ["test_07_pagination.py"],
+          "test_keywords": ["Go to previous page", "Go to next page", "10", "20", "30"]
+        }
+      ]
+    },
+    {
+      "name": "time_schedule",
+      "note": "Frontend: frontend/src/pages/shift-schedules/page.tsx is a STATIC placeholder with no real API calls. It shows hardcoded Shift A / Shift B cards. Only Create (+Shift) and Edit (FileEdit icon) are wired in the actual working module. No Search, no Delete, no pagination in the static page. The real working shift module uses workScheduleController.js backend.",
+      "source_keywords": [
+        "frontend/src/pages/shift-schedules/page.tsx",
+        "backend/controllers/workScheduleController.js",
+        "backend/routes/workScheduleRoutes.js"
+      ],
+      "test_keywords": [
+        "test_01_login.py",
+        "test_02_create.py",
+        "test_03_edit.py"
+      ],
+      "actions": [
+        {
+          "name": "login_and_navigate",
+          "source_paths": ["frontend/src/pages/shift-schedules/page.tsx"],
+          "source_keywords": ["Shift Schedules", "Define and manage employee work shifts with ease", "+ Shift"],
+          "test_paths": ["test_01_login.py"],
+          "test_keywords": ["Shift Schedules", "Define and manage employee work shifts with ease", "+ Shift"]
+        },
+        {
+          "name": "create_shift",
+          "source_paths": ["frontend/src/pages/shift-schedules/page.tsx", "backend/controllers/workScheduleController.js"],
+          "source_keywords": ["+ Shift", "Shift *", "Applicable Departments", "Wednesday", "Saturday", "Create", "createWorkSchedule"],
+          "test_paths": ["test_02_create.py"],
+          "test_keywords": ["Shift", "30 Min", "Services", "Wednesday", "Saturday", "Create", "created_timeschedule.txt"]
+        },
+        {
+          "name": "edit_shift",
+          "source_paths": ["frontend/src/pages/shift-schedules/page.tsx", "backend/controllers/workScheduleController.js"],
+          "source_keywords": ["FileEdit", "Update", "updateWorkSchedule", "Shift *"],
+          "test_paths": ["test_03_edit.py"],
+          "test_keywords": ["_Update", "Update", "created_timeschedule.txt"]
+        }
+      ]
+    },
+    {
+      "name": "certifications_manager",
+      "note": "Frontend: frontend/src/pages/Certifications/view-certificate.tsx and components/ (create-certificate.tsx, edit-certificate.tsx, delete-certificate.tsx). Backend: certificateController.js and certificateRoutes.js. Features: Add Certification (Lifetime + Dated), Edit, Download, Delete. No search/filter UI exists in the frontend.",
+      "source_keywords": [
+        "frontend/src/pages/Certifications/view-certificate.tsx",
+        "frontend/src/pages/Certifications/components/create-certificate.tsx",
+        "frontend/src/pages/Certifications/components/edit-certificate.tsx",
+        "frontend/src/pages/Certifications/components/delete-certificate.tsx",
+        "backend/controllers/certificateController.js",
+        "backend/routes/certificateRoutes.js"
+      ],
+      "test_keywords": [
+        "test_01_login.py",
+        "test_02_create.py",
+        "test_03_edit.py",
+        "test_04_download.py",
+        "test_05_delete.py"
+      ],
+      "actions": [
+        {
+          "name": "login_and_navigate",
+          "source_paths": ["frontend/src/pages/Certifications/view-certificate.tsx"],
+          "source_keywords": ["Certifications", "Add Certification", "Outstrive"],
+          "test_paths": ["test_01_login.py"],
+          "test_keywords": ["Certifications", "Add Certification", "Outstrive"]
+        },
+        {
+          "name": "create_certification",
+          "source_paths": ["frontend/src/pages/Certifications/components/create-certificate.tsx", "backend/controllers/certificateController.js"],
+          "source_keywords": ["Add Certification", "Certificate name", "e.g., ID12345X", "Life time", "Select date", "Select from date", "Select to date", "Upload attachment", "Upload", "createCertificate"],
+          "test_paths": ["test_02_create.py"],
+          "test_keywords": ["Add Certification", "Certificate name", "e.g., ID12345X", "Life time", "Select date", "dummy_cert.pdf", "Upload", "created_certification_lifetime.txt", "created_certification_dated.txt"]
+        },
+        {
+          "name": "edit_certification",
+          "source_paths": ["frontend/src/pages/Certifications/components/edit-certificate.tsx", "backend/controllers/certificateController.js"],
+          "source_keywords": ["Edit", "Upload", "updateCertificate", "Certificate name", "Select date", "Go to the Next Month"],
+          "test_paths": ["test_03_edit.py"],
+          "test_keywords": ["Edit", "- Edited", "dummy_cert.pdf", "Upload", "created_certification_lifetime.txt"]
+        },
+        {
+          "name": "download_certification",
+          "source_paths": ["frontend/src/pages/Certifications/view-certificate.tsx"],
+          "source_keywords": ["Download", "aria-haspopup", "menuitem"],
+          "test_paths": ["test_04_download.py"],
+          "test_keywords": ["Download", "downloaded_certification.pdf", "os.path.exists"]
+        },
+        {
+          "name": "delete_certification",
+          "source_paths": ["frontend/src/pages/Certifications/components/delete-certificate.tsx", "backend/controllers/certificateController.js"],
+          "source_keywords": ["Delete", "deleteCertificate", "aria-haspopup", "menuitem"],
+          "test_paths": ["test_05_delete.py"],
+          "test_keywords": ["Delete", "created_certification_lifetime.txt", "created_certification_dated.txt", "to_have_count"]
+        }
+      ]
+    },
+    {
+      "name": "policies_manager",
+      "note": "Same frontend/backend as policies_hr but Manager role has READ-ONLY access: no Create, no Delete button shown. Only Search, View, and Download are available to Managers.",
+      "source_keywords": [
+        "frontend/src/pages/policies/page.tsx",
+        "backend/controllers/companyPolicyController.js",
+        "backend/routes/companyPolicyRoutes.js"
+      ],
+      "test_keywords": [
+        "test_01_login.py",
+        "test_02_search.py",
+        "test_03_view.py",
+        "test_04_download.py"
+      ],
+      "actions": [
+        {
+          "name": "login_and_navigate",
+          "source_paths": ["frontend/src/pages/policies/page.tsx"],
+          "source_keywords": ["Company Policy", "Search what you need", "Outstrive"],
+          "test_paths": ["test_01_login.py"],
+          "test_keywords": ["Company Policy", "Search what you need", "Outstrive"]
+        },
+        {
+          "name": "search_policy",
+          "source_paths": ["frontend/src/pages/policies/page.tsx"],
+          "source_keywords": ["Search what you need", "searchQuery", "filteredPolicies"],
+          "test_paths": ["test_02_search.py"],
+          "test_keywords": ["Search what you need", "random_policy"]
+        },
+        {
+          "name": "view_policy",
+          "source_paths": ["frontend/src/pages/policies/page.tsx"],
+          "source_keywords": ["View policy", "window.open", "_blank", "Eye"],
+          "test_paths": ["test_03_view.py"],
+          "test_keywords": ["View policy", "expect_popup"]
+        },
+        {
+          "name": "download_policy",
+          "source_paths": ["frontend/src/pages/policies/page.tsx"],
+          "source_keywords": ["DownloadButton", "downloadUrl", "policy.attachment"],
+          "test_paths": ["test_04_download.py"],
+          "test_keywords": ["expect_download", "downloaded_policy.pdf", "os.path.exists"]
+        }
+      ]
+    },
+    {
+      "name": "resignation_manager",
+      "note": "Frontend has two sub-tabs: my-resignation.tsx (employee applies own resignation) and team-resignation.tsx (manager views/approves/denies team). team-resignation.tsx has TableFooter with real pagination. No Export component on team-resignation. my-resignation has no export/pagination.",
+      "source_keywords": [
+        "frontend/src/pages/Resignation/my-resignation.tsx",
+        "frontend/src/pages/Resignation/team-resignation.tsx",
+        "frontend/src/pages/Resignation/components/employee-approve.tsx",
+        "backend/controllers/resignationController.js",
+        "backend/routes/resignationRoutes.js"
+      ],
+      "test_keywords": [
+        "test_01_login.py",
+        "test_02_manager_apply.py",
+        "test_03_search.py",
+        "test_04_approve.py",
+        "test_05_reject.py"
+      ],
+      "actions": [
+        {
+          "name": "login_and_navigate",
+          "source_paths": ["frontend/src/pages/Resignation/my-resignation.tsx", "frontend/src/pages/Resignation/team-resignation.tsx"],
+          "source_keywords": ["My Resignation", "Team Resignation", "Apply Resignation", "Resignation Applied", "Search by name or ID", "Reset Filters", "Employee ID", "Employee Name", "Reason for Leaving", "Manager Comment", "Status"],
+          "test_paths": ["test_01_login.py"],
+          "test_keywords": ["My Resignation", "Team Resignation", "Apply Resignation", "Search by name or ID", "Reset Filters", "Employee ID", "Employee Name", "Status"]
+        },
+        {
+          "name": "apply_resignation",
+          "source_paths": ["frontend/src/pages/Resignation/my-resignation.tsx", "frontend/src/pages/Resignation/components/resignation-form.tsx"],
+          "source_keywords": ["Apply Resignation", "Reason for Leaving", "Submit", "No resignation requests found"],
+          "test_paths": ["test_02_manager_apply.py"],
+          "test_keywords": ["Apply Resignation", "Reason for Leaving", "Submit", "No resignation requests found"]
+        },
+        {
+          "name": "search_team_resignation",
+          "source_paths": ["frontend/src/pages/Resignation/team-resignation.tsx"],
+          "source_keywords": ["Search by name or ID", "setSearchQuery", "resetFilters", "Reset Filters"],
+          "test_paths": ["test_03_search.py"],
+          "test_keywords": ["Team Resignation", "Search by name or ID", "Reset Filters"]
+        },
+        {
+          "name": "approve_team_resignation",
+          "source_paths": ["frontend/src/pages/Resignation/team-resignation.tsx", "frontend/src/pages/Resignation/components/employee-approve.tsx"],
+          "source_keywords": ["Approve", "Write your comments here", "Employee Detail", "onProcessSuccess"],
+          "test_paths": ["test_04_approve.py"],
+          "test_keywords": ["Team Resignation", "Approve", "Approved by automation script", "data-sonner-toast"]
+        },
+        {
+          "name": "reject_team_resignation",
+          "source_paths": ["frontend/src/pages/Resignation/team-resignation.tsx", "frontend/src/pages/Resignation/components/employee-approve.tsx"],
+          "source_keywords": ["Deny", "Write your comments here", "Employee Detail", "onProcessSuccess"],
+          "test_paths": ["test_05_reject.py"],
+          "test_keywords": ["Team Resignation", "Deny", "Denied by automation script", "data-sonner-toast"]
+        },
+        {
+          "name": "pagination_team_resignation",
+          "source_paths": ["frontend/src/pages/Resignation/team-resignation.tsx"],
+          "source_keywords": ["TableFooter", "currentPage", "entriesPerPage", "onPageChange", "onEntriesPerPageChange"],
+          "test_paths": ["test_06_pagination.py"],
+          "test_keywords": ["Go to previous page", "Go to next page", "10", "20", "30"]
         }
       ]
     }

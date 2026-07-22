@@ -35,11 +35,19 @@ def _make_paths(path_strings: List[str], base_dir: Path) -> List[Path]:
     paths: List[Path] = []
     for path_str in path_strings:
         candidate = Path(path_str)
-        if not candidate.is_absolute():
-            candidate = base_dir / path_str
-        if candidate.exists():
-            paths.append(candidate.resolve())
-    return paths
+        if candidate.is_absolute():
+            if candidate.exists():
+                paths.append(candidate.resolve())
+        else:
+            direct = base_dir / path_str
+            if direct.exists():
+                paths.append(direct.resolve())
+            else:
+                # Search recursively for the filename
+                for p in base_dir.rglob("*"):
+                    if p.is_file() and path_str in str(p):
+                        paths.append(p.resolve())
+    return list(set(paths))
 
 
 def _find_matches(paths: List[Path], keywords: List[str]) -> List[str]:
