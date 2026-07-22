@@ -1,5 +1,5 @@
 {
-  "source_dir": "/Users/bits-blr-bala/Documents/HRMS_NodeJs",
+  "source_dir": "/Users/bits-blr-kavyatn/HRMS_NodeJs",
   "test_dir": "tests",
   "features": [
     {
@@ -209,6 +209,336 @@
           "source_keywords": ["TableFooter", "currentPage", "entriesPerPage", "onPageChange", "onEntriesPerPageChange"],
           "test_paths": ["test_5_region.py"],
           "test_keywords": ["Go to previous page", "Go to next page", "10", "20", "30"]
+        }
+      ]
+    },
+    {
+      "name": "hrm_configuration_dashboard",
+      "source_keywords": [
+        "frontend/src/pages/Dashboard/page.tsx",
+        "frontend/src/pages/Dashboard/overview.tsx",
+        "frontend/src/pages/Dashboard/hr-overview.tsx",
+        "frontend/src/pages/Dashboard/components/quick-actions.tsx",
+        "frontend/src/pages/Dashboard/components/action-request.tsx",
+        "frontend/src/pages/Dashboard/components/holiday-list.tsx",
+        "frontend/src/pages/Dashboard/leave-stats/leave-analyatics.tsx",
+        "frontend/src/components/top-bar.tsx",
+        "backend/controllers/dashboardController.js",
+        "backend/routes/dashboardRoutes.js"
+      ],
+      "test_keywords": [
+        "test_01_access_dashboard_without_login.py",
+        "test_02_verify_logo_navigation.py",
+        "test_03_language_switcher.py",
+        "test_04_global_search.py",
+        "test_05_help_desk_navigation.py",
+        "test_06_dashboard_overview.py",
+        "test_07_quick_action_onboard.py",
+        "test_08_workforce_demographics.py",
+        "test_09_distribution_charts.py",
+        "test_10_leave_analytics.py",
+        "test_11_action_requests_and_announcements.py",
+        "test_12_logout.py"
+      ],
+      "actions": [
+        {
+          "name": "access_dashboard_without_login",
+          "source_paths": ["frontend/src/pages/Dashboard/page.tsx", "frontend/src/pages/Dashboard/overview.tsx"],
+          "source_keywords": ["Dashboard", "Overview", "Access Denied", "readHRDashboard", "readDashboard"],
+          "test_paths": ["HRM_Configuration/dashboard/test_01_access_dashboard_without_login.py"],
+          "test_keywords": ["Dashboard", "access", "without login"]
+        },
+        {
+          "name": "verify_logo_navigation",
+          "source_paths": ["frontend/src/components/top-bar.tsx"],
+          "source_keywords": ["Logo", "navigation", "top-bar"],
+          "test_paths": ["HRM_Configuration/dashboard/test_02_verify_logo_navigation.py"],
+          "test_keywords": ["logo", "navigation"]
+        },
+        {
+          "name": "language_switcher",
+          "source_paths": ["frontend/src/components/top-bar.tsx"],
+          "source_keywords": ["Language", "Translate", "functranslate", "useLanguage"],
+          "test_paths": ["HRM_Configuration/dashboard/test_03_language_switcher.py"],
+          "test_keywords": ["language", "English"]
+        },
+        {
+          "name": "global_search",
+          "source_paths": ["frontend/src/components/top-bar.tsx"],
+          "source_keywords": ["Search", "global"],
+          "test_paths": ["HRM_Configuration/dashboard/test_04_global_search.py"],
+          "test_keywords": ["Search"]
+        },
+        {
+          "name": "help_desk_navigation",
+          "source_paths": ["frontend/src/pages/Dashboard/page.tsx", "frontend/src/components/top-bar.tsx"],
+          "source_keywords": ["Help Desk", "Help", "handleHelpDeskClick", "helpDeskApi"],
+          "test_paths": ["HRM_Configuration/dashboard/test_05_help_desk_navigation.py"],
+          "test_keywords": ["Help Desk"]
+        },
+        {
+          "name": "dashboard_overview",
+          "source_paths": ["frontend/src/pages/Dashboard/overview.tsx", "backend/controllers/dashboardController.js"],
+          "source_keywords": ["Dashboard Overview", "getDashboardByHR", "readHRDashboard", "getDashboardByEmployeeId"],
+          "test_paths": ["HRM_Configuration/dashboard/test_06_dashboard_overview.py"],
+          "test_keywords": ["Overview"]
+        },
+        {
+          "name": "quick_actions",
+          "source_paths": ["frontend/src/pages/Dashboard/components/quick-actions.tsx", "frontend/src/pages/Dashboard/hr-overview.tsx"],
+          "source_keywords": ["Quick Action", "Onboard", "Leaves", "StatCard"],
+          "test_paths": ["HRM_Configuration/dashboard/test_07_quick_action_onboard.py"],
+          "test_keywords": ["Quick Action", "Onboard", "Leaves"]
+        },
+        {
+          "name": "workforce_demographics",
+          "source_paths": ["frontend/src/pages/Dashboard/hr-overview.tsx", "backend/controllers/dashboardController.js"],
+          "source_keywords": ["Workforce Demographics", "Demographics", "getDashboardByHR", "ageDistributionJson", "genderDistributionJson"],
+          "test_paths": ["HRM_Configuration/dashboard/test_08_workforce_demographics.py"],
+          "test_keywords": ["Demographics"]
+        },
+        {
+          "name": "distribution_charts",
+          "source_paths": ["frontend/src/pages/Dashboard/hr-overview.tsx", "backend/controllers/dashboardController.js"],
+          "source_keywords": ["Distribution", "Chart", "departmentDistributionJson", "departmentData"],
+          "test_paths": ["HRM_Configuration/dashboard/test_09_distribution_charts.py"],
+          "test_keywords": ["Distribution", "Chart"]
+        },
+        {
+          "name": "leave_analytics",
+          "source_paths": ["frontend/src/pages/Dashboard/leave-stats/leave-analyatics.tsx", "frontend/src/pages/Dashboard/hr-overview.tsx", "backend/controllers/dashboardController.js"],
+          "source_keywords": ["Leave Analytics", "LeaveAnalytics", "getDashboardLeavesAnalyticsByHR", "readDashboardLeaveStats"],
+          "test_paths": ["HRM_Configuration/dashboard/test_10_leave_analytics.py"],
+          "test_keywords": ["Leave Analytics", "Last 7 days", "Sick Leave", "Paternity Leave"]
+        },
+        {
+          "name": "action_requests_and_announcements",
+          "source_paths": ["frontend/src/pages/Dashboard/components/action-request.tsx", "frontend/src/pages/Dashboard/components/holiday-list.tsx", "backend/controllers/dashboardController.js"],
+          "source_keywords": ["Action Requests", "Announcements", "announcementQuery", "holidayResult"],
+          "test_paths": ["HRM_Configuration/dashboard/test_11_action_requests_and_announcements.py"],
+          "test_keywords": ["Action Requests", "Announcements"]
+        },
+        {
+          "name": "logout",
+          "source_paths": ["frontend/src/components/top-bar.tsx"],
+          "source_keywords": ["Log out", "logoutUser"],
+          "test_paths": ["HRM_Configuration/dashboard/test_12_logout.py"],
+          "test_keywords": ["Log out"]
+        }
+      ]
+    },
+    {
+      "name": "leave_types",
+      "source_keywords": [
+        "frontend/src/pages/leaves-types/page.tsx",
+        "frontend/src/pages/leaves-types/components/create-new-leavetype-sheet.tsx",
+        "frontend/src/pages/leaves-types/components/leave-delete-sheet.tsx",
+        "backend/controllers/leaveTypeController.js",
+        "backend/routes/leaveTypeRoutes.js"
+      ],
+      "test_keywords": [
+        "test_01_unauthorized_employee.py",
+        "test_02_cannot_acess_without_login.py",
+        "test_03_leave_type_page_opens.py",
+        "test_04_search_existing_leave.py",
+        "test_05_search_nonexisting_leave.py",
+        "test_06_verify_sandwich_disabled.py",
+        "test_07_verify_mandatory_fields.py",
+        "test_08_create_leave_type.py",
+        "test_09_edit_leave_type.py",
+        "test_10_verify_new_leave_employee.py",
+        "test_11_manager_can_apply_new_leave.py",
+        "test_12_delete_leave_type.py",
+        "test_13_navigate_to_work_location_from_leavetypes.py",
+        "test_14_login_buh_and_logout.py"
+      ],
+      "actions": [
+        {
+          "name": "access_control_and_security",
+          "source_paths": ["frontend/src/pages/leaves-types/page.tsx", "backend/routes/leaveTypeRoutes.js"],
+          "source_keywords": ["Leave Type", "Unauthorized", "Access Denied", "authMiddleware"],
+          "test_paths": ["HRM_Configuration/leave_types/test_01_unauthorized_employee.py", "HRM_Configuration/leave_types/test_02_cannot_acess_without_login.py"],
+          "test_keywords": ["unauthorized", "login", "access"]
+        },
+        {
+          "name": "view_leave_type_page",
+          "source_paths": ["frontend/src/pages/leaves-types/page.tsx", "backend/controllers/leaveTypeController.js"],
+          "source_keywords": ["Leave Types", "+ Add Leave Type", "getAllLeaves", "fetchLeaveTypes"],
+          "test_paths": ["HRM_Configuration/leave_types/test_03_leave_type_page_opens.py"],
+          "test_keywords": ["Leave Types", "+ Add Leave Type"]
+        },
+        {
+          "name": "search_leave_types",
+          "source_paths": ["frontend/src/pages/leaves-types/page.tsx"],
+          "source_keywords": ["Search by leave type name", "searchQuery", "filteredLeaveTypes"],
+          "test_paths": ["HRM_Configuration/leave_types/test_04_search_existing_leave.py", "HRM_Configuration/leave_types/test_05_search_nonexisting_leave.py"],
+          "test_keywords": ["Search", "No Leave Types Found"]
+        },
+        {
+          "name": "sandwich_leave_policy",
+          "source_paths": ["frontend/src/pages/leaves-types/page.tsx"],
+          "source_keywords": ["Sandwich Leave Policy", "sandwichPolicyEnabled", "fetchSandwichSetting", "updateSandwichPolicy"],
+          "test_paths": ["HRM_Configuration/leave_types/test_06_verify_sandwich_disabled.py"],
+          "test_keywords": ["Sandwich", "disabled"]
+        },
+        {
+          "name": "create_leave_type",
+          "source_paths": ["frontend/src/pages/leaves-types/components/create-new-leavetype-sheet.tsx", "backend/controllers/leaveTypeController.js"],
+          "source_keywords": ["+ Add Leave Type", "Create Leave Type", "createLeave", "formSchema", "CreateNewLeaveTypeSheet", "onSubmit"],
+          "test_paths": ["HRM_Configuration/leave_types/test_07_verify_mandatory_fields.py", "HRM_Configuration/leave_types/test_08_create_leave_type.py"],
+          "test_keywords": ["Add Leave Type", "Create", "Mandatory"]
+        },
+        {
+          "name": "edit_leave_type",
+          "source_paths": ["frontend/src/pages/leaves-types/page.tsx", "frontend/src/pages/leaves-types/components/create-new-leavetype-sheet.tsx", "backend/controllers/leaveTypeController.js"],
+          "source_keywords": ["Edit Leave Type", "Update Leave Type", "getLeaveById", "updateLeave", "handleEditClick"],
+          "test_paths": ["HRM_Configuration/leave_types/test_09_edit_leave_type.py"],
+          "test_keywords": ["Edit", "Update"]
+        },
+        {
+          "name": "employee_manager_application",
+          "source_paths": ["frontend/src/pages/Leave/my-leave.tsx", "backend/controllers/leaveController.js"],
+          "source_keywords": ["Leave", "applyLeave", "createLeave", "user_leave_balances"],
+          "test_paths": ["HRM_Configuration/leave_types/test_10_verify_new_leave_employee.py", "HRM_Configuration/leave_types/test_11_manager_can_apply_new_leave.py"],
+          "test_keywords": ["Apply Leave", "Leave Type"]
+        },
+        {
+          "name": "delete_leave_type",
+          "source_paths": ["frontend/src/pages/leaves-types/components/leave-delete-sheet.tsx", "backend/controllers/leaveTypeController.js"],
+          "source_keywords": ["deleting this leave type", "Delete", "deleteLeave", "LeaveDeleteSheet", "handleDelete"],
+          "test_paths": ["HRM_Configuration/leave_types/test_12_delete_leave_type.py"],
+          "test_keywords": ["Delete", "Confirm Delete"]
+        }
+      ]
+    },
+    {
+      "name": "dashboard_manager_login",
+      "source_keywords": [
+        "frontend/src/pages/Dashboard/page.tsx",
+        "frontend/src/pages/Dashboard/overview.tsx",
+        "frontend/src/pages/Dashboard/components/my-dashboard.tsx",
+        "frontend/src/pages/Dashboard/components/quick-actions.tsx",
+        "frontend/src/pages/Dashboard/components/team-dashboard.tsx",
+        "frontend/src/pages/Dashboard/components/team-overview.tsx",
+        "frontend/src/pages/Dashboard/components/holiday-list.tsx",
+        "frontend/src/components/top-bar.tsx",
+        "backend/controllers/dashboardController.js",
+        "backend/routes/dashboardRoutes.js"
+      ],
+      "test_keywords": [
+        "Manager_Login/dashboard/test_01_access_dashboard_without_login.py",
+        "Manager_Login/dashboard/test_02_verify_logo_navigation.py",
+        "Manager_Login/dashboard/test_03_language_switcher.py",
+        "Manager_Login/dashboard/test_04_global_search.py",
+        "Manager_Login/dashboard/test_05_help_desk_navigation.py",
+        "Manager_Login/dashboard/test_06_dashboard_overview.py",
+        "Manager_Login/dashboard/test_07_my_information.py",
+        "Manager_Login/dashboard/test_08_team_dashboard.py",
+        "Manager_Login/dashboard/test_09_team_overview.py",
+        "Manager_Login/dashboard/test_10_mark_attendance.py",
+        "Manager_Login/dashboard/test_11_leave_wfh.py",
+        "Manager_Login/dashboard/test_12_my_tasks.py",
+        "Manager_Login/dashboard/test_13_announcements_and_holidays.py",
+        "Manager_Login/dashboard/test_14_logout.py"
+      ],
+      "actions": [
+        {
+          "name": "access_dashboard_without_login",
+          "source_paths": ["frontend/src/pages/Dashboard/page.tsx", "backend/routes/dashboardRoutes.js"],
+          "source_keywords": ["Dashboard", "readDashboard", "authMiddleware"],
+          "test_paths": ["Manager_Login/dashboard/test_01_access_dashboard_without_login.py"],
+          "test_keywords": ["Dashboard", "access", "without login"]
+        },
+        {
+          "name": "verify_logo_navigation",
+          "source_paths": ["frontend/src/components/top-bar.tsx"],
+          "source_keywords": ["Logo", "navigation", "top-bar"],
+          "test_paths": ["Manager_Login/dashboard/test_02_verify_logo_navigation.py"],
+          "test_keywords": ["logo", "navigation"]
+        },
+        {
+          "name": "language_switcher",
+          "source_paths": ["frontend/src/components/top-bar.tsx"],
+          "source_keywords": ["Language", "Translate", "functranslate", "useLanguage"],
+          "test_paths": ["Manager_Login/dashboard/test_03_language_switcher.py"],
+          "test_keywords": ["language", "English"]
+        },
+        {
+          "name": "global_search",
+          "source_paths": ["frontend/src/components/top-bar.tsx"],
+          "source_keywords": ["Search", "global"],
+          "test_paths": ["Manager_Login/dashboard/test_04_global_search.py"],
+          "test_keywords": ["Search"]
+        },
+        {
+          "name": "help_desk_navigation",
+          "source_paths": ["frontend/src/pages/Dashboard/page.tsx"],
+          "source_keywords": ["Help Desk", "handleHelpDeskClick", "helpDeskApi"],
+          "test_paths": ["Manager_Login/dashboard/test_05_help_desk_navigation.py"],
+          "test_keywords": ["Help Desk"]
+        },
+        {
+          "name": "dashboard_overview",
+          "source_paths": ["frontend/src/pages/Dashboard/components/my-dashboard.tsx", "frontend/src/pages/Dashboard/overview.tsx"],
+          "source_keywords": ["My Dashboard", "Leave Balance", "Next Review", "Pending Leave Requests", "Attendance Overview", "StatCard"],
+          "test_paths": ["Manager_Login/dashboard/test_06_dashboard_overview.py"],
+          "test_keywords": ["Leave Balance", "Next Review", "Pending Leave Requests", "Attendance Overview"]
+        },
+        {
+          "name": "my_information",
+          "source_paths": ["frontend/src/pages/Dashboard/components/my-dashboard.tsx"],
+          "source_keywords": ["My Information", "Employee Id", "Job title", "Department", "InfoSection"],
+          "test_paths": ["Manager_Login/dashboard/test_07_my_information.py"],
+          "test_keywords": ["My Information", "Employee Id"]
+        },
+        {
+          "name": "team_dashboard",
+          "source_paths": ["frontend/src/pages/Dashboard/components/my-dashboard.tsx", "frontend/src/pages/Dashboard/components/team-dashboard.tsx"],
+          "source_keywords": ["Team Dashboard", "Team members", "Pending Approvals", "On Leave Today", "Pending Reviews", "MyTeamDashboardInfo"],
+          "test_paths": ["Manager_Login/dashboard/test_08_team_dashboard.py"],
+          "test_keywords": ["Team Dashboard", "Team members", "Pending Approvals"]
+        },
+        {
+          "name": "team_overview",
+          "source_paths": ["frontend/src/pages/Dashboard/components/team-overview.tsx"],
+          "source_keywords": ["Team Overview", "On Leave", "Probation", "Who is in", "Late Arrival", "Team_Overview"],
+          "test_paths": ["Manager_Login/dashboard/test_09_team_overview.py"],
+          "test_keywords": ["Team Overview", "On Leave", "Probation", "Who is in", "Late Arrival"]
+        },
+        {
+          "name": "mark_attendance",
+          "source_paths": ["frontend/src/pages/Dashboard/components/quick-actions.tsx"],
+          "source_keywords": ["Check-In", "Check-Out", "Total Hours", "CLOCK_IN", "attendanceData"],
+          "test_paths": ["Manager_Login/dashboard/test_10_mark_attendance.py"],
+          "test_keywords": ["Check-In", "Check-Out", "Total Hours"]
+        },
+        {
+          "name": "leave_wfh",
+          "source_paths": ["frontend/src/pages/Dashboard/components/quick-actions.tsx"],
+          "source_keywords": ["Apply For Leave", "Request WFH", "navigate"],
+          "test_paths": ["Manager_Login/dashboard/test_11_leave_wfh.py"],
+          "test_keywords": ["Apply For Leave", "Request WFH"]
+        },
+        {
+          "name": "my_tasks_and_performance",
+          "source_paths": ["frontend/src/pages/Dashboard/components/quick-actions.tsx"],
+          "source_keywords": ["My Tasks", "Team's Performance Reviews", "Reviews due", "My Performance", "Submit Self Assessment", "View Manager Feedback"],
+          "test_paths": ["Manager_Login/dashboard/test_12_my_tasks.py"],
+          "test_keywords": ["My Tasks", "Team's Performance Reviews", "Reviews due", "My Performance", "Submit Self Assessment", "View Manager Feedback"]
+        },
+        {
+          "name": "announcements_and_holidays",
+          "source_paths": ["frontend/src/pages/Dashboard/components/quick-actions.tsx", "frontend/src/pages/Dashboard/components/holiday-list.tsx"],
+          "source_keywords": ["Announcements", "Holidays", "announcementData", "currentMonthHolidayData"],
+          "test_paths": ["Manager_Login/dashboard/test_13_announcements_and_holidays.py"],
+          "test_keywords": ["Announcements", "Holidays"]
+        },
+        {
+          "name": "logout",
+          "source_paths": ["frontend/src/components/top-bar.tsx"],
+          "source_keywords": ["Log out", "logoutUser", "logout"],
+          "test_paths": ["Manager_Login/dashboard/test_14_logout.py"],
+          "test_keywords": ["Log out"]
         }
       ]
     }
