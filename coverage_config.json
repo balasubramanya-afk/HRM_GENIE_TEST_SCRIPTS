@@ -622,6 +622,320 @@
           ]
         }
       ]
+    },
+    {
+      "name": "organisation_info",
+      "source_keywords": [
+        "frontend/src/pages/setup/organisation-info/page.tsx",
+        "backend/controllers/profileController.js",
+        "backend/routes/profileRoutes.js",
+        "frontend/src/types/organisation-info.d.ts",
+        "frontend/src/store/slice/company-setting-slice.tsx"
+      ],
+      "test_keywords": [
+        "test_02_logo_upload.py",
+        "test_03_organization_details.py",
+        "test_04_regional_settings.py",
+        "test_05_primary_address.py",
+        "test_06_logo_edit.py"
+      ],
+      "actions": [
+        {
+          "name": "logo_upload_and_edit",
+          "source_paths": [
+            "frontend/src/pages/setup/organisation-info/page.tsx",
+            "backend/controllers/profileController.js"
+          ],
+          "source_keywords": [
+            "company_logo",
+            "company_logo_light",
+            "company_favicon",
+            "updateBusinessSetting",
+            "removeBusinessSetting",
+            "upload.fields"
+          ],
+          "test_paths": [
+            "Organization_Setup/test_02_logo_upload.py",
+            "Organization_Setup/test_06_logo_edit.py"
+          ],
+          "test_keywords": [
+            "logo-dark",
+            "logo-light",
+            "favicon",
+            "test_logo_upload",
+            "test_logo_edit",
+            "set_input_files"
+          ]
+        },
+        {
+          "name": "company_information",
+          "source_paths": [
+            "frontend/src/pages/setup/organisation-info/page.tsx",
+            "backend/controllers/profileController.js"
+          ],
+          "source_keywords": [
+            "company_name",
+            "company_website",
+            "company_email",
+            "company_mobile",
+            "company_domain_name",
+            "updateCompanySetting"
+          ],
+          "test_paths": [
+            "Organization_Setup/test_03_organization_details.py"
+          ],
+          "test_keywords": [
+            "test_organization_details",
+            "Company Name *",
+            "Company Website *",
+            "Company Email *",
+            "Mobile Number *",
+            "Domain Name *"
+          ]
+        },
+        {
+          "name": "system_settings",
+          "source_paths": [
+            "frontend/src/pages/setup/organisation-info/page.tsx",
+            "backend/controllers/profileController.js"
+          ],
+          "source_keywords": [
+            "employee_prefix",
+            "site_date_format",
+            "site_time_format",
+            "updateCompanySetting"
+          ],
+          "test_paths": [
+            "Organization_Setup/test_04_regional_settings.py"
+          ],
+          "test_keywords": [
+            "test_regional_settings",
+            "Employee Prefix *",
+            "Date Format",
+            "Time Format"
+          ]
+        },
+        {
+          "name": "primary_address",
+          "source_paths": [
+            "frontend/src/pages/setup/organisation-info/page.tsx",
+            "backend/controllers/profileController.js"
+          ],
+          "source_keywords": [
+            "company_address",
+            "company_country",
+            "company_state",
+            "company_city",
+            "company_zipcode",
+            "updateCompanySetting"
+          ],
+          "test_paths": [
+            "Organization_Setup/test_05_primary_address.py"
+          ],
+          "test_keywords": [
+            "test_primary_address",
+            "Primary Address *",
+            "City *",
+            "Post Code *"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "employee",
+      "source_keywords": [
+        "frontend/src/pages/Employee/general.tsx",
+        "frontend/src/pages/Employee/employee-details.tsx",
+        "frontend/src/pages/Employee/components/Details/details-tab.tsx",
+        "frontend/src/pages/Employee/components/userInfo.tsx",
+        "frontend/src/pages/Employee/components/UpdateEmployee/personal-info.tsx",
+        "frontend/src/pages/Employee/components/UpdateEmployee/addressInfo.tsx",
+        "frontend/src/pages/Employee/components/UpdateEmployee/emergencyInfo.tsx",
+        "backend/routes/employeeRoutes.js",
+        "backend/controllers/employeeController.js"
+      ],
+      "test_keywords": [
+        "test_01_login.py",
+        "test_02_submodules.py",
+        "test_03_upload_files.py",
+        "test_04_view_files.py",
+        "test_05_delete_files.py",
+        "test_06_team_members.py",
+        "test_07_indirect_reportees.py"
+      ],
+      "actions": [
+        {
+          "name": "login_as_buh",
+          "source_paths": [
+            "backend/controllers/employeeController.js"
+          ],
+          "source_keywords": [
+            "getBUHTeamEmployeeByEmployeeId"
+          ],
+          "test_paths": [
+            "Employee/test_01_login.py"
+          ],
+          "test_keywords": [
+            "login_as",
+            "BUH"
+          ]
+        },
+        {
+          "name": "load_submodules",
+          "source_paths": [
+            "frontend/src/pages/Employee/general.tsx",
+            "frontend/src/pages/Employee/employee-details.tsx",
+            "frontend/src/pages/Employee/components/Details/details-tab.tsx"
+          ],
+          "source_keywords": [
+            "General",
+            "Documents",
+            "Education",
+            "Experience",
+            "Certifications",
+            "Activity Logs"
+          ],
+          "test_paths": [
+            "Employee/test_02_submodules.py"
+          ],
+          "test_keywords": [
+            "employee/general",
+            "employee/documents",
+            "employee/profile",
+            "employee/education",
+            "employee/experience",
+            "employee/promotions",
+            "employee/team-employee",
+            "employee/indirect-report"
+          ]
+        },
+        {
+          "name": "upload_documents",
+          "source_paths": [
+            "backend/routes/employeeRoutes.js",
+            "backend/controllers/employeeController.js",
+            "frontend/src/pages/Employee/documents.tsx",
+            "frontend/src/pages/Employee/components/Onboard/add-documents.tsx"
+          ],
+          "source_keywords": [
+            "addEmployeeDocument",
+            "employee-document",
+            "Upload Selected File",
+            "docx-"
+          ],
+          "test_paths": [
+            "Employee/test_03_upload_files.py"
+          ],
+          "test_keywords": [
+            "Upload Selected File",
+            "docx-8",
+            "docx-9",
+            "docx-12",
+            "docx-13",
+            "docx-14",
+            "docx-15",
+            "docx-16",
+            "docx-17",
+            "docx-18",
+            "docx-39",
+            "docx-40",
+            "docx-41"
+          ]
+        },
+        {
+          "name": "view_documents",
+          "source_paths": [
+            "backend/routes/employeeRoutes.js",
+            "backend/controllers/employeeController.js",
+            "frontend/src/pages/Employee/documents.tsx"
+          ],
+          "source_keywords": [
+            "getEmployeeDocument",
+            "employee-document",
+            "getByIdEmployeeDocument"
+          ],
+          "test_paths": [
+            "Employee/test_04_view_files.py"
+          ],
+          "test_keywords": [
+            "expect_popup",
+            "popup_info",
+            "docx-13"
+          ]
+        },
+        {
+          "name": "delete_documents",
+          "source_paths": [
+            "backend/routes/employeeRoutes.js",
+            "backend/controllers/employeeController.js",
+            "frontend/src/pages/Employee/components/document-delete-dialog.tsx"
+          ],
+          "source_keywords": [
+            "delete_uploaded_files",
+            "document-delete-dialog",
+            "updateStatusEmployeeDocument",
+            "employee-document-status"
+          ],
+          "test_paths": [
+            "Employee/test_05_delete_files.py"
+          ],
+          "test_keywords": [
+            "delete_uploaded_files",
+            "Delete",
+            "docx-8"
+          ]
+        },
+        {
+          "name": "team_members_view_and_filter",
+          "source_paths": [
+            "frontend/src/pages/Employee/team-members.tsx",
+            "backend/controllers/employeeController.js"
+          ],
+          "source_keywords": [
+            "team-employee",
+            "getTeamEmployeeByEmployeeId",
+            "Reset Filters",
+            "All Designations",
+            "All Departments",
+            "All Locations"
+          ],
+          "test_paths": [
+            "Employee/test_06_team_members.py"
+          ],
+          "test_keywords": [
+            "Team's Members",
+            "All Designations",
+            "All Departments",
+            "All Locations",
+            "Reset Filters"
+          ]
+        },
+        {
+          "name": "indirect_reportees_view_and_filter",
+          "source_paths": [
+            "frontend/src/pages/Employee/indirect-report.tsx",
+            "backend/controllers/employeeController.js"
+          ],
+          "source_keywords": [
+            "indirect-report",
+            "getBUHTeamEmployeeByEmployeeId",
+            "Reset Filters",
+            "All Designations",
+            "All Departments",
+            "All Locations"
+          ],
+          "test_paths": [
+            "Employee/test_07_indirect_reportees.py"
+          ],
+          "test_keywords": [
+            "Indirect Reportees",
+            "All Designations",
+            "All Departments",
+            "All Locations",
+            "Reset Filters"
+          ]
+        }
+      ]
     }
   ]
 }
