@@ -22,9 +22,11 @@ def login_as(page: Page, role: str = "HR"):
     if role not in ROLE_CREDENTIALS:
         raise ValueError(f"Unknown role: {role}")
     email, pwd = ROLE_CREDENTIALS[role]
-    page.goto("https://qa.hrmgenie.outstrive.co/login")
-    page.get_by_role("textbox", name="Enter email").fill(email)
-    page.get_by_role("textbox", name="Enter password").fill(pwd)
+    page.goto("https://qa.hrmgenie.outstrive.co/login", wait_until="domcontentloaded")
+    email_field = page.locator("input[type='email'], input[name='email'], [placeholder*='email' i]").first
+    email_field.fill(email)
+    pwd_field = page.locator("input[type='password'], input[name='password'], [placeholder*='password' i]").first
+    pwd_field.fill(pwd)
     page.get_by_role("button", name="Login").click()
     page.wait_for_load_state("networkidle")
     print(f"Login successful as {role}")
