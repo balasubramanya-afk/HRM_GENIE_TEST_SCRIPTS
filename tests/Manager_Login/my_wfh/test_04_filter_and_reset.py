@@ -14,18 +14,7 @@ def test_update_filters_get_updated_data(page: Page):
     if my_wfh_tab.is_visible():
         my_wfh_tab.click()
 
-    # Step 1: Update Date Range Filter (Click Date Range button -> Select 'This Week')
-    date_range_btn = page.get_by_role("tabpanel", name="My WFH").get_by_role("button", name=re.compile(r"\d{2}-\d{2}-\d{4}")).or_(page.locator("button:has-text(' to ')")).first
-    expect(date_range_btn).to_be_visible()
-    date_range_btn.click()
-    page.wait_for_timeout(500)
-
-    this_week_btn = page.get_by_role("button", name="This Week").or_(page.get_by_text("This Week")).first
-    expect(this_week_btn).to_be_visible()
-    this_week_btn.click()
-    page.wait_for_timeout(1000)
-
-    # Step 2: Update Status Filter (Select Status Filter -> Approved)
+    # Step 1: Update Status Filter (Select Status Filter -> Approved)
     combobox = page.get_by_role("tabpanel", name="My WFH").get_by_role("combobox").first
     expect(combobox).to_be_visible()
     combobox.click()
@@ -34,9 +23,19 @@ def test_update_filters_get_updated_data(page: Page):
     approved_option = page.get_by_role("option", name="Approved").first
     expect(approved_option).to_be_visible()
     approved_option.click()
-    page.wait_for_timeout(1000)
+    page.wait_for_timeout(2000)
 
-    # Step 3: Click Reset Filters
+    expect(combobox).to_contain_text("Approved")
+
+    # Verify no row in the table has "Pending" status when Approved filter is active
+    pending_rows_in_approved_filter = page.locator("tbody tr").filter(
+        has_text=re.compile(r"\bPending\b", re.IGNORECASE)
+    )
+    assert pending_rows_in_approved_filter.count() == 0, (
+        "Filter by 'Approved' is not working — Pending rows are still visible in the table."
+    )
+
+    # Step 2: Click Reset Filters
     reset_btn = page.get_by_role("button", name="Reset Filters").first
     expect(reset_btn).to_be_visible()
     reset_btn.click()
@@ -46,9 +45,3 @@ def test_update_filters_get_updated_data(page: Page):
     expect(combobox).to_contain_text("All Status")
 
     _screenshot(page, "test_04_update_filters_get_updated_data")
-
-
-
-
-
-

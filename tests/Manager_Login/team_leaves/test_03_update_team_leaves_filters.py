@@ -20,7 +20,15 @@ def test_update_team_leaves_filters(page: Page):
         pending_opt = page.get_by_role("option", name="Pending").first
         if pending_opt.is_visible():
             pending_opt.click()
-            page.wait_for_timeout(1000)
+            page.wait_for_timeout(2000)
+
+            # Verify no row in the table has "Approved" status when Pending filter is active
+            approved_rows = page.locator("tbody tr").filter(
+                has_text=re.compile(r"\bApproved\b", re.IGNORECASE)
+            )
+            assert approved_rows.count() == 0, (
+                "Filter by 'Pending' is not working — Approved rows are still visible in the table."
+            )
 
     _screenshot(page, "test_03_filter_by_status")
 
@@ -35,7 +43,7 @@ def test_update_team_leaves_filters(page: Page):
         casual_opt = page.get_by_role("option", name="Casual Leave").or_(page.get_by_role("option", name="Sick Leave")).first
         if casual_opt.is_visible():
             casual_opt.click()
-            page.wait_for_timeout(1000)
+            page.wait_for_timeout(2000)
 
     _screenshot(page, "test_03_filter_by_leave_type")
 

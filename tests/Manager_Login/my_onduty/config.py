@@ -53,18 +53,17 @@ def get_picker_button(page: Page, label: str):
     candidates = [
         page.get_by_role("button", name=label),
         page.locator(f'button:has-text("{label}")'),
-        page.locator('button:has-text("Select date")'),
         page.locator('button[id="date"]'),
         page.locator('button[id^="date"]'),
         page.locator('button[aria-label*="date"]'),
     ]
     for loc in candidates:
         try:
-            if loc.count() and loc.first.is_visible():
+            if loc.count():
                 return loc.first
         except Exception:
             continue
-    return page.get_by_role("button", name=label).first
+    return page.get_by_role("button", name=label)
 
 def select_next_available_date(page: Page, start_offset: int = 0) -> bool:
     """Select the next available date in calendar popup."""
@@ -124,4 +123,50 @@ def select_next_available_date(page: Page, start_offset: int = 0) -> bool:
         months_tried += 1
         current_month_date = first_of_next_month(current_month_date)
 
-    return False
+def navigate_to_my_onduty(page: Page):
+    """Helper to navigate to My On Duty tab in Manager dashboard."""
+    page.goto("https://qa.hrmgenie.outstrive.co/leaves/on-duty")
+    page.wait_for_load_state("networkidle")
+    page.wait_for_timeout(1000)
+    my_onduty_tab = page.get_by_role("tab", name="My On Duty")
+    if my_onduty_tab.is_visible():
+        my_onduty_tab.click()
+
+def select_dropdown_option(page: Page, combobox, text: str):
+    """Select option in a standard <select> or custom Radix dropdown."""
+    try:
+        combobox.select_option(label=text, timeout=2000)
+        return
+    except Exception:
+        pass
+
+    try:
+        combobox.select_option(value=text, timeout=2000)
+        return
+    except Exception:
+        pass
+
+    # Fallback for custom div/button dropdowns
+    combobox.click()
+    page.wait_for_timeout(300)
+    page.get_by_role("option", name=text).or_(page.get_by_text(text)).first.click()
+    page.wait_for_timeout(300)
+
+def select_time_option(page: Page, label_name: str, time_value: str):
+    """Dynamically select a time option (e.g. '9:15 AM') for Start Time or End Time."""
+    from playwright.sync_api import expect
+    combo = page.get_by_role("combobox", name=label_name).or_(
+        page.locator(f"button:has-text('Select {label_name.lower().replace(' *', '')}')")
+    ).or_(
+        page.get_by_text(label_name).locator("..").locator("button, [role='combobox']")
+    ).first
+    expect(combo).to_be_visible()
+    combo.click()
+    page.wait_for_timeout(300)
+
+    option = page.locator("[role='option']:visible").filter(has_text=time_value).or_(
+        page.get_by_role("option", name=time_value, include_hidden=False)
+    ).first
+    expect(option).to_be_visible()
+    option.click()
+    page.wait_for_timeout(300)
