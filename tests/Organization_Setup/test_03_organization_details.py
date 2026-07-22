@@ -1,6 +1,6 @@
 import re
 from playwright.sync_api import Playwright, sync_playwright
-from test_01_login import login, navigate_to_organization_setup
+from config import login_as, navigate_to_organization_setup, _screenshot
 
 
 def test_organization_details(playwright: Playwright) -> None:
@@ -9,8 +9,9 @@ def test_organization_details(playwright: Playwright) -> None:
     )
     context = browser.new_context(no_viewport=True)
     page = context.new_page()
-    login(page)
+    login_as(page, "HR")
     navigate_to_organization_setup(page)
+    _screenshot(page, "test_03_before_org_details")
 
     # Navigate to Organization Details section
     page.locator("div").filter(has_text=re.compile(r"^Logo Light$")).first.click()
@@ -41,6 +42,7 @@ def test_organization_details(playwright: Playwright) -> None:
     page.get_by_role("textbox", name="Domain Name *").fill("outstrive.com")
     page.get_by_role("button", name="Save").click()
     page.wait_for_timeout(2000)  # wait for save to complete and section to settle
+    _screenshot(page, "test_03_org_details_saved")
 
     # Edit - change values and discard
     page.locator(
@@ -63,6 +65,7 @@ def test_organization_details(playwright: Playwright) -> None:
     page.get_by_role("textbox", name="Domain Name *").click()
     page.get_by_role("textbox", name="Domain Name *").fill("brilyant.com")
     page.get_by_role("button", name="Discard").first.click()
+    _screenshot(page, "test_03_org_details_discarded")
 
     # Verify original values persisted after discard
     page.get_by_text("outstrive.com").click()
@@ -79,6 +82,7 @@ def test_organization_details(playwright: Playwright) -> None:
     page.get_by_role("textbox", name="Domain Name *").click()
     page.get_by_role("textbox", name="Domain Name *").fill("outstrive.com")
     page.get_by_role("button", name="Save").click()
+    _screenshot(page, "test_03_org_details_updated")
 
     context.close()
     browser.close()

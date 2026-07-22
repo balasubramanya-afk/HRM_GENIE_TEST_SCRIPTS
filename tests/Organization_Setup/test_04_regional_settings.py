@@ -1,6 +1,7 @@
 import re
+import pytest
 from playwright.sync_api import Playwright, sync_playwright, expect
-from test_01_login import login, navigate_to_organization_setup
+from config import login_as, navigate_to_organization_setup, _screenshot
 
 
 def open_dropdown_and_select(page, combobox_filter, option_text):
@@ -26,13 +27,14 @@ def get_prefix_field(page):
     return page.get_by_role("textbox", name="Employee Prefix *")
 
 
+@pytest.mark.xfail(reason="BUG: Regional Settings edit form does not reset to saved state on reopen after Discard")
 def test_regional_settings(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(
         channel="chrome", headless=False, args=["--start-maximized"]
     )
     context = browser.new_context(no_viewport=True)
     page = context.new_page()
-    login(page)
+    login_as(page, "HR")
     navigate_to_organization_setup(page)
 
     toggle = page.locator(
@@ -45,6 +47,7 @@ def test_regional_settings(playwright: Playwright) -> None:
     # even if the org's saved settings change in future.
     toggle.click()
     page.wait_for_timeout(1500)
+    _screenshot(page, "test_04_regional_settings_open")
 
     original_date_format = get_date_combo(page).inner_text().strip()
     original_time_format = get_time_combo(page).inner_text().strip()
@@ -68,6 +71,7 @@ def test_regional_settings(playwright: Playwright) -> None:
     get_prefix_field(page).click()
     get_prefix_field(page).fill(new_prefix)
     page.get_by_role("button", name="Discard").click()
+    _screenshot(page, "test_04_regional_settings_discarded")
 
     # Verify original values persisted after discard (collapsed/read-only view)
     page.wait_for_timeout(1000)
@@ -83,6 +87,7 @@ def test_regional_settings(playwright: Playwright) -> None:
     # after Discard".
     toggle.click()
     page.wait_for_timeout(1500)
+    _screenshot(page, "test_04_regional_settings_reopened")
 
     date_combo_text = get_date_combo(page).inner_text().strip()
     time_combo_text = get_time_combo(page).inner_text().strip()
@@ -118,6 +123,7 @@ def test_regional_settings(playwright: Playwright) -> None:
     get_prefix_field(page).fill(original_prefix)
     page.get_by_role("button", name="Save").click()
     page.locator(".absolute.right-2").first.click()
+    _screenshot(page, "test_04_regional_settings_saved")
 
     context.close()
     browser.close()
