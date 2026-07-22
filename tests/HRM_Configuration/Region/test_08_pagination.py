@@ -13,7 +13,7 @@ from config import login_as, _screenshot, close_toast, navigate_to_region
 def create_region(page: Page, name: str) -> None:
     """Helper to create a single region with standard inputs."""
     page.get_by_role("main").get_by_role("button", name="Region").click()
-    page.wait_for_timeout(500)
+    page.wait_for_timeout(300)
     
     # Selecting the country
     page.get_by_role("combobox", name="Country *").click()
@@ -29,18 +29,19 @@ def create_region(page: Page, name: str) -> None:
     
     # Clicking create button
     page.get_by_role("button", name="Create").click()
-    page.wait_for_timeout(1000)
+    page.wait_for_timeout(500)
     close_toast(page)
-    page.wait_for_timeout(1000)
+    page.wait_for_timeout(300)
 
 def delete_pagination_regions(page: Page) -> None:
     """Deletes all regions starting with 'Pagination Region' from the database."""
     print("Searching for remaining 'Pagination Region' entries to delete...")
     search_input = page.get_by_role("textbox", name="Search", exact=True)
     search_input.click()
+    search_input.press("ControlOrMeta+a")
     search_input.fill("Pagination Region")
     search_input.press("Enter")
-    page.wait_for_timeout(1500)
+    page.wait_for_timeout(1000)
     
     while True:
         row = page.locator("table tbody tr").filter(has_text="Pagination Region").first
@@ -48,11 +49,11 @@ def delete_pagination_regions(page: Page) -> None:
             delete_btn = row.locator("button").last
             if delete_btn.is_visible():
                 delete_btn.click()
-                page.wait_for_timeout(1000)
+                page.wait_for_timeout(500)
                 page.get_by_role("button", name="Delete").click()
-                page.wait_for_timeout(1500)
+                page.wait_for_timeout(800)
                 close_toast(page)
-                page.wait_for_timeout(1000)
+                page.wait_for_timeout(300)
             else:
                 break
         else:
@@ -60,8 +61,24 @@ def delete_pagination_regions(page: Page) -> None:
             
     # Clear the search filter
     search_input.click()
+    search_input.press("ControlOrMeta+a")
     search_input.fill("")
     search_input.press("Enter")
+    page.wait_for_timeout(1000)
+
+def select_entries_per_page(page: Page, value: str) -> None:
+    """Helper to select entries per page option (e.g. '20', '30') from Radix select dropdown in TableFooter."""
+    # Locate the Radix select trigger in the footer (near 'Show' and 'entries')
+    footer_container = page.locator("div").filter(has_text=re.compile(r"Show.*entries")).last
+    trigger = footer_container.locator("button[role='combobox']")
+    if trigger.count() == 0:
+        trigger = page.locator("button[role='combobox']").last
+    trigger.click()
+    page.wait_for_timeout(500)
+    
+    # Click the option matching `value`
+    option = page.get_by_role("option", name=value, exact=True)
+    option.click()
     page.wait_for_timeout(1000)
 
 def test_pagination(playwright: Playwright) -> None:
@@ -81,7 +98,6 @@ def test_pagination(playwright: Playwright) -> None:
     delete_pagination_regions(page)
     
     # Step 3: Check current number of entries
-    # Check if the pagination info locator exists and is visible
     info_locator = page.get_by_text(re.compile(r"Showing \d+ to \d+ of \d+ entries"))
     total_entries = 0
     if info_locator.count() > 0 and info_locator.first.is_visible():
@@ -90,16 +106,16 @@ def test_pagination(playwright: Playwright) -> None:
         if match:
             total_entries = int(match.group(1))
     else:
-        # Count the row elements in table body (excluding headers)
         total_entries = page.locator("table tbody tr").count()
         
     print(f"Current total entries: {total_entries}")
     
-    # Step 4: Ensure we have at least 11 entries to show 2 pages
+    # Step 4: Ensure we have at least 21 entries to show 2 pages even at 20 entries per page
     created_regions = []
-    if total_entries < 11:
-        needed = 11 - total_entries
-        print(f"Creating {needed} additional regions to trigger pagination...")
+    MIN_REQUIRED = 21
+    if total_entries < MIN_REQUIRED:
+        needed = MIN_REQUIRED - total_entries
+        print(f"Creating {needed} additional regions to trigger multi-page & page-size pagination...")
         for i in range(needed):
             unique_name = f"Pagination Region {i}_{datetime.now().strftime('%M%S')}_{random.randint(10, 99)}"
             create_region(page, unique_name)
@@ -109,7 +125,7 @@ def test_pagination(playwright: Playwright) -> None:
         navigate_to_region(page)
         page.wait_for_timeout(2000)
     
-    # Check that pagination info shows at least 11 entries
+    # Check that pagination info shows at least 21 entries
     info_locator = page.get_by_text(re.compile(r"Showing 1 to 10 of \d+ entries"))
     expect(info_locator.first).to_be_visible()
     
@@ -161,10 +177,50 @@ def test_pagination(playwright: Playwright) -> None:
     page.wait_for_timeout(2000)
     expect(page_2_button).to_have_attribute("aria-current", "page")
     
-    # Step 8: Clean up created regions
+    # Step 8: Test entries per page switching (onEntriesPerPageChange)
+    print("Testing entries per page selection (onEntriesPerPageChange)...")
+    
+    # Navigate back to page 1 first
+    page_1_button.click()
+    page.wait_for_timeout(1500)
+    expect(page_1_button).to_have_attribute("aria-current", "page")
+    
+    # --- Switch to 20 entries per page ---
+    print("  Switching to 20 entries per page...")
+    select_entries_per_page(page, "20")
+    
+    info_20 = page.get_by_text(re.compile(r"Showing 1 to 20 of \d+ entries"))
+    expect(info_20.first).to_be_visible()
+    print("    ✓ Verified 'Showing 1 to 20 of N entries'")
+    _screenshot(page, "test_08_pagination_20_per_page")
+    
+    # Page 2 should still exist since total entries >= 21
+    expect(page_2_button).to_be_visible()
+    
+    # Navigate to page 2 at 20 entries per page to verify page 2 range (e.g. 21 to 21)
+    page_2_button.click()
+    page.wait_for_timeout(1500)
+    info_20_page2 = page.get_by_text(re.compile(r"Showing 21 to \d+ of \d+ entries"))
+    expect(info_20_page2.first).to_be_visible()
+    print("    ✓ Verified page 2 showing 'Showing 21 to N of N entries' at 20/page")
+    
+    # Navigate back to page 1
+    page_1_button.click()
+    page.wait_for_timeout(1500)
+    
+    # --- Switch back to 10 entries per page ---
+    print("  Switching back to 10 entries per page...")
+    select_entries_per_page(page, "10")
+    
+    info_10 = page.get_by_text(re.compile(r"Showing 1 to 10 of \d+ entries"))
+    expect(info_10.first).to_be_visible()
+    print("    ✓ Reverted to 10 entries per page successfully")
+    _screenshot(page, "test_08_pagination_back_to_10")
+    
+    # Step 9: Clean up created regions
     delete_pagination_regions(page)
     
-    print("Pagination validation successful!")
+    print("\nPagination validation (page navigation & entries per page selection) successful! ✓")
     
     context.close()
     browser.close()
