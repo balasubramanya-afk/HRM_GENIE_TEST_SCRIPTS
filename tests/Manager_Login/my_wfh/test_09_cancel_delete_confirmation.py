@@ -5,7 +5,7 @@ from .config import _screenshot, login_as
 def test_cancel_delete_confirmation(page: Page):
     """9. Negative: Click delete on WFH request but cancel confirmation dialog."""
     login_as(page, "Manager")
-    page.goto("https://qa.hrmgenie.outstrive.co/work-from-home")
+    page.goto("https://qa.hrmgenie.outstrive.co/leaves/work-from-home")
     page.wait_for_timeout(1000)
 
     my_wfh_tab = page.get_by_role("tab", name="My WFH")

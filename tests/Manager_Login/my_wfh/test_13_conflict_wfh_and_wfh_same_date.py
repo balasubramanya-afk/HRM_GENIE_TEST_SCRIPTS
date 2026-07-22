@@ -22,7 +22,7 @@ def test_conflict_wfh_and_wfh_same_date(page: Page):
     login_as(page, "Manager")
 
     # ── Step 1: Navigate to WFH and apply first WFH ──────────────────────────
-    page.goto("https://qa.hrmgenie.outstrive.co/work-from-home")
+    page.goto("https://qa.hrmgenie.outstrive.co/leaves/work-from-home")
     page.wait_for_load_state("networkidle")
     page.wait_for_timeout(1000)
 

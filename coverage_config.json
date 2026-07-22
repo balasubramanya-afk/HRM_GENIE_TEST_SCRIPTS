@@ -541,6 +541,123 @@
           "test_keywords": ["Log out"]
         }
       ]
+    },
+    {
+      "name": "work_from_home",
+      "source_keywords": [
+        "backend/controllers/wfhController.js",
+        "backend/routes/wfhRoutes.js",
+        "frontend/src/pages/leaves/work-from-home/page.tsx",
+        "frontend/src/pages/leaves/work-from-home/create-new-workfromfrom-sheet.tsx"
+      ],
+      "test_keywords": [
+        "Manager_Login/my_wfh/test_01_access_wfh_without_login.py",
+        "Manager_Login/my_wfh/test_02_view_wfh_default_filters.py",
+        "Manager_Login/my_wfh/test_03_apply_wfh.py",
+        "Manager_Login/my_wfh/test_04_filter_and_reset.py",
+        "Manager_Login/my_wfh/test_05_edit_wfh.py",
+        "Manager_Login/my_wfh/test_06_delete_wfh.py",
+        "Manager_Login/my_wfh/test_07_apply_wfh_without_fields_validation.py",
+        "Manager_Login/my_wfh/test_08_cancel_apply_wfh_modal.py",
+        "Manager_Login/my_wfh/test_09_cancel_delete_confirmation.py",
+        "Manager_Login/my_wfh/test_10_negative_wfh_balance.py",
+        "Manager_Login/my_wfh/test_11_conflict_wfh_and_onduty_same_date.py",
+        "Manager_Login/my_wfh/test_12_conflict_wfh_and_leave_same_date.py",
+        "Manager_Login/my_wfh/test_13_conflict_wfh_and_wfh_same_date.py"
+      ],
+      "actions": [
+        {
+          "name": "access_wfh_without_login",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["wfhController.js"],
+          "test_paths": ["Manager_Login/my_wfh/test_01_access_wfh_without_login.py"],
+          "test_keywords": ["test_01_access_wfh_without_login.py"]
+        },
+        {
+          "name": "view_wfh_default_filters",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["wfhController.js"],
+          "test_paths": ["Manager_Login/my_wfh/test_02_view_wfh_default_filters.py"],
+          "test_keywords": ["test_02_view_wfh_default_filters.py"]
+        },
+        {
+          "name": "apply_wfh",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["createWFH"],
+          "test_paths": ["Manager_Login/my_wfh/test_03_apply_wfh.py"],
+          "test_keywords": ["test_03_apply_wfh.py"]
+        },
+        {
+          "name": "filter_and_reset",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["status"],
+          "test_paths": ["Manager_Login/my_wfh/test_04_filter_and_reset.py"],
+          "test_keywords": ["test_04_filter_and_reset.py"]
+        },
+        {
+          "name": "edit_wfh",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["wfhController.js"],
+          "test_paths": ["Manager_Login/my_wfh/test_05_edit_wfh.py"],
+          "test_keywords": ["test_05_edit_wfh.py"]
+        },
+        {
+          "name": "delete_wfh",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["deleteWFH"],
+          "test_paths": ["Manager_Login/my_wfh/test_06_delete_wfh.py"],
+          "test_keywords": ["test_06_delete_wfh.py"]
+        },
+        {
+          "name": "apply_wfh_without_fields_validation",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["reason"],
+          "test_paths": ["Manager_Login/my_wfh/test_07_apply_wfh_without_fields_validation.py"],
+          "test_keywords": ["test_07_apply_wfh_without_fields_validation.py"]
+        },
+        {
+          "name": "cancel_apply_wfh_modal",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["wfhController.js"],
+          "test_paths": ["Manager_Login/my_wfh/test_08_cancel_apply_wfh_modal.py"],
+          "test_keywords": ["test_08_cancel_apply_wfh_modal.py"]
+        },
+        {
+          "name": "cancel_delete_confirmation",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["deleteWFH"],
+          "test_paths": ["Manager_Login/my_wfh/test_09_cancel_delete_confirmation.py"],
+          "test_keywords": ["test_09_cancel_delete_confirmation.py"]
+        },
+        {
+          "name": "negative_wfh_balance",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["wfhController.js"],
+          "test_paths": ["Manager_Login/my_wfh/test_10_negative_wfh_balance.py"],
+          "test_keywords": ["test_10_negative_wfh_balance.py"]
+        },
+        {
+          "name": "conflict_wfh_and_onduty_same_date",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["checkOnDutyQuery"],
+          "test_paths": ["Manager_Login/my_wfh/test_11_conflict_wfh_and_onduty_same_date.py"],
+          "test_keywords": ["test_11_conflict_wfh_and_onduty_same_date.py"]
+        },
+        {
+          "name": "conflict_wfh_and_leave_same_date",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["checkLeaveQuery"],
+          "test_paths": ["Manager_Login/my_wfh/test_12_conflict_wfh_and_leave_same_date.py"],
+          "test_keywords": ["test_12_conflict_wfh_and_leave_same_date.py"]
+        },
+        {
+          "name": "conflict_wfh_and_wfh_same_date",
+          "source_paths": ["backend/controllers/wfhController.js"],
+          "source_keywords": ["checkQuery"],
+          "test_paths": ["Manager_Login/my_wfh/test_13_conflict_wfh_and_wfh_same_date.py"],
+          "test_keywords": ["test_13_conflict_wfh_and_wfh_same_date.py"]
+        }
+      ]
     }
   ]
 }

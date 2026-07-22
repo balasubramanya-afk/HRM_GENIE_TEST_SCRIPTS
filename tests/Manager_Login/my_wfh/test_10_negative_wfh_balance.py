@@ -5,7 +5,7 @@ from .config import _screenshot, login_as, select_next_available_date, get_picke
 def test_negative_wfh_balance_validation(page: Page):
     """10. Verify Monthly WFH Balance display and negative balance calculation when applying WFH beyond limit."""
     login_as(page, "Manager")
-    page.goto("https://qa.hrmgenie.outstrive.co/work-from-home")
+    page.goto("https://qa.hrmgenie.outstrive.co/leaves/work-from-home")
     page.wait_for_load_state("networkidle")
     page.wait_for_timeout(1000)
 

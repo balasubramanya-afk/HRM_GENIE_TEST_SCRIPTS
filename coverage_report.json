@@ -23,6 +23,7 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/eSSLWebhookController.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/employeeController.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/holidayController.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/intranetController.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/kpikraController.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/leaveController.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/leaveTypeController.js",
@@ -34,11 +35,14 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/promotionController.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/recruitmentController.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/regionController.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/reportController.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/resignationController.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/rolesPermissionsController.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/salaryComponentsController.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/stateController.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/workScheduleController.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/middlewares/apiAuthMiddleware.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/middlewares/authMiddleware.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/middlewares/jobPortalMiddleware.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/models/attendanceModel.js",
@@ -64,6 +68,7 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/eSSLWebhookRoutes.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/employeeRoutes.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/holidayRoutes.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/intranetRoutes.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/kpikraRoutes.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/leaveRoutes.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/leaveTypeRoutes.js",
@@ -75,20 +80,28 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/promotionRoutes.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/recruitmentRoutes.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/regionRoutes.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/reportRoutes.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/resignationRoutes.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/rolesPermissionsRoutes.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/salaryComponentsRoutes.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/stateRoutes.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/wfhRoutes.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/workScheduleRoutes.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/services/apiClient.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/services/businessTravelService.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/services/claimService.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/services/intranetService.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/swagger.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/test_canvas.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/utils/googleAuth.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/utils/s3Upload.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/utils/utils.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/eslint.config.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/postcss.config.js",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/@types/country-region-data.d.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/App.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/assets/icons/icons.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/CustomDropdown.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/cards/employee-card.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/dropdowns/country-select.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/dropdowns/date-format-select.tsx",
@@ -100,6 +113,9 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/input/file-uploader.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/input/search-input.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/layout/root-layout.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/location-selector/city-selector.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/location-selector/country-selector.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/location-selector/state-selector.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/pagenator/generate-pages.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/pagenator/pagenator.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/protected-routes.tsx",
@@ -110,13 +126,18 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/re-useable/dailog/rejection-dailog.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/re-useable/date-range/date-input.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/re-useable/date-range/date-range-picker.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/re-useable/date-range/single-date-range.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/re-useable/download-button.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/re-useable/dropdown/multiselect-dropdown.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/re-useable/dropdown/searchable-dropdown.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/re-useable/excel-export/excel-export.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/re-useable/experience-bar-chart.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/re-useable/filter.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/re-useable/isPalindrome.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/re-useable/switch.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/rich-text-editor.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/sidebar/menu-items.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/sidebar/sidebar.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/sidebar/two-part-sidebar.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/skeleton/leave-details-skeleton.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/table/data-body.tsx",
@@ -145,6 +166,7 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/calendar.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/card.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/checkbox.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/circular-progress.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/collapsible.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/command.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/date-picker.tsx",
@@ -160,6 +182,7 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/pagination.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/password-input.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/popover.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/progress.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/radio-group-card.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/radio-group.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/ui/rating-input.tsx",
@@ -184,13 +207,18 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/components/validation-item.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/I18nProvider.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/auth.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/authorization/application-paths.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/authorization/index.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/authorization/routePermission.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/axios.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/i18n.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/language_translation/LanguageContext.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/language_translation/funcTranslate.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/language_translation/langtranslate.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/language_translation/locales/translations.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/salaryFormulas.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/config/translateStatic.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/data/applicaiton-status.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/data/job-skills.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/hooks/timeAndDateFormatter.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/hooks/use-api.ts",
@@ -198,8 +226,12 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/hooks/use-store.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/hooks/use-time.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/hooks/use-toast.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/lib/content-hashing.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/lib/date.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/lib/formateAmount.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/lib/helpers.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/lib/htmlParser.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/lib/htmlToText.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/lib/time-picker-utils.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/lib/utils.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/lib/validations/leave-form.ts",
@@ -222,6 +254,7 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Auth/otp-verification.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Auth/reset-email-success.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Auth/reset-password.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Auth/sso-callback.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Auth/success-page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Auth/update-password.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Certifications/all-certificates.tsx",
@@ -237,6 +270,7 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Dashboard/components/quick-actions.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Dashboard/components/team-dashboard.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Dashboard/components/team-overview.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Dashboard/dashboard-loader.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Dashboard/hr-overview.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Dashboard/leave-stats/filter-button.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Dashboard/leave-stats/leave-analyatics.tsx",
@@ -249,7 +283,9 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/all-employees.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/certifications.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/components/Activity-logs.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/components/AssignedStructure.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/components/Details/details-tab.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/components/Onboard/CompensationAssignment.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/components/Onboard/Update-Onboard/update-employee.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/components/Onboard/add-documents.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/components/Onboard/add-employee.tsx",
@@ -270,17 +306,21 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/general.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/indirect-report.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/job.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/my-structure.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/on-board.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/promotions.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/salary-details.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Employee/team-members.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-designation-sheet.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-designationdialog.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-document-type-sheet.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-new-department-sheet.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-new-location-sheet.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-region-sheet.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/delete-document-type-dialog.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/delete-employment-type-dialog.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/delete-region-sheet.tsx",
-    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/department-delete-dialog.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/designation-delete-dialog.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/edit-department-sheet.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/edit-designation-sheet.tsx",
@@ -288,14 +328,40 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/edit-location-sheet.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/edit-region-sheet.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/location-delete-dialog.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/department-manager/delete-department.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/department-manager/delete-designation.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/department-manager/department-form-sheet.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/department-manager/designation-form-sheet.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/department-manager/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/practice-maanger/delete-practices.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/practice-maanger/pages.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/practice-maanger/practice-form-sheet.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/sub-department/delete-sub_department.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/sub-department/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/sub-department/sub-department-form-sheet.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/designation/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/document_type/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/employment_type/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/investment-config/enableitdeclaration.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/investment-config/index.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/region/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/work-location/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/Teammember/buhead-review.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/Teammember/cxo-review.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/Teammember/hr-review.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/Teammember/manager-review.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/Teammember/team-member.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/bell-curve-configuration/add-rating.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/bell-curve-configuration/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/bell-distrubution-summery/bell-carve-analytics-chart.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/bell-distrubution-summery/bell-distribution-summery.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/bell-distrubution-summery/bell-distrubution-filters.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/bell-distrubution-summery/bell-distrubution-table.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/components/completed-goals.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/components/evaluation.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/components/pending-goals.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/components/review-team-table.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/components/skill-assessment-card.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/create-templates/components/delete-template-dialog.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/create-templates/page.tsx",
@@ -305,7 +371,26 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/evaluation/manager-evaluation.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/evaluation/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/evaluation/view.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/overview-pms/overview-pms-annual-review.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/overview-pms/overview-pms-cycles/overview-pms-cycles.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/overview-pms/overview-pms-cycles/pms-cycle.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/overview-pms/overview-pms.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/performance-evalution/agree-confirmation-dialog.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/performance-evalution/employee-profile.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/performance-evalution/evaluation-rating.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/performance-evalution/formValidate.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/performance-evalution/performance-evaluation.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/performance-evalution/review-confirmation-dialog.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/pms-cycle-template/pms-cycle-FormValidation.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/pms-cycle-template/pms-cycle-eligible-employees.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/pms-cycle-template/pms-cycle-form-review.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/pms-cycle-template/pms-cycle-formData.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/pms-cycle-template/pms-cycle-template.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/pms-exception-request/create-exception-dialog.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/pms-exception-request/formFields.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/pms-exception-request/formValidator.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/pms-exception-request/pms-overalltable.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/review-buh/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/review-cxo/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/review-hr/page.tsx",
@@ -313,6 +398,10 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/review-team-member/component/edit-template.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/review-team-member/component/manager-table-view.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/review-team-member/manageer-table-view.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/review-team-members-new/components/pms-review-export.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/review-team-members-new/components/review-team-filter.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/review-team-members-new/components/review-team-table.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/review-team-members-new/review-team-member-new.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/view-edit-template/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Internal-Performance/view-edit-template/view.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/KPI_KRA/all/components/employee-details.tsx",
@@ -323,6 +412,7 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/KPI_KRA/teams/components/edit-kpi-kra.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/KPI_KRA/teams/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/all-employees.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/components/Leave_DatePicker.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/components/all-employee-table.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/components/edit-leave-sheet.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/components/hr-edit-leavesheet.tsx",
@@ -331,19 +421,52 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/components/leave-sheet.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/components/leave-table.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/components/new-request-sheet.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/components/sandwich-alert-popup.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/components/team-leave-table.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/indirect-leaves.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/my-leave.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/team-leaves.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/utility/dates-combain.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/utility/hasWeekendBridge.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/utility/holiday-weekend-combination-policy.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/utility/normalize-date.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/utility/office-holiday-policy.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Leave/utility/weekend-policy.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-manager/attendance-correction-window.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-manager/attendance-manager-approval.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-manager/filters/attendance-correctoin-window-filter.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-manager/filters/attendance-manager-filter.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-manager/indirect-team-reporties.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-manager/my-attendance.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-manager/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-manager/raise-attendance-correction.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-manager/team-attendance.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/attendance-averages.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/attendance-overview-filters.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/attendance-trend-analyatics/analyatics-mockData.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/attendance-trend-analyatics/attendance-analyatics-linechart.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/attendance-trend-analyatics/attendance-trend-analysis.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/department-attendance-ranking.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/department-level-summary.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/employee-not-checkin.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/late-arrivals-department/late-arrivals-barchart.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/late-arrivals-department/late-arrivals-department.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/late-arrivals-department/late-arrivals-mockdata.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/leave-data.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/attendance-overview/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/components/correction-dialog.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/components/mark-attendance-logic.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/components/mark-attendance.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/components/new-checkin-checkout-dialog.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/components/new-employee-details.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/components/time-log-correction-reject-dialog.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/employee-attendance/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/hr-analytics/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/hr-attendance/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/manager-attendance/my-attendance.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/manager-attendance/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/manager-attendance/team-attendance.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/New-Attendance/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Performance/assign-goals/assigned-goals/componets/assign-goals.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Performance/assign-goals/assigned-goals/componets/assign-template-sheet.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Performance/assign-goals/assigned-goals/componets/pending-team.tsx",
@@ -376,23 +499,96 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Promotions/components/employee-promotiondetails.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Promotions/components/promotion-rejection.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Promotions/team-promotion.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/CFO-Approval/cfo-consultancies-list.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/consultancies-list.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/consultancy-approval.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/consultancy-details/components/about-consultancy.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/consultancy-details/components/all-applications.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/consultancy-details/components/all-jobs.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/consultancy-details/components/approve-consultancy.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/consultancy-details/components/reapproval-consultancy.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/consultancy-details/components/recheck-consultancy-request.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/consultancy-details/components/reject-consultancy.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/consultancy-details/consultancy-details.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/consultany-form.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/formFields.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/formValidator.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Consultancies/manage-consultancies.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Dashboard/applicants.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Dashboard/application-sources.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Dashboard/approvel-request.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Dashboard/candidate-application-status.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Dashboard/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Dashboard/scheduled-interview.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Job-position-list/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Job-position-list/position-filter.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Job-position-list/position-table.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Job-position-list/rounds-card.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Overview/application-source-intelligence/application-bar-chart.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Overview/application-source-intelligence/application-source-data-table.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Overview/application-source-intelligence/application-source-intelligence.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Overview/consultance_workflow.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Overview/filter-manager.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Overview/job-performance.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Overview/monthly-hiring-trend/monthly-hiring-line-chart.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Overview/monthly-hiring-trend/monthly-hiring-trend.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Overview/quick-view.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Overview/recruitment-overview.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Overview/round-wise-brackdown.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Settings/calendarInvites.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Settings/components/add-evaluation-questions.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Settings/hiring.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Settings/hiringsettinglist.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/Settings/selectionPanel.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/interview-list.tsx/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/activity.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/candidate-card.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/candidate-dialogs.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/candidate-header.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/evaluation/evaluation-question-item.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/evaluation/evaluation-tab.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/evaluation/feedback-questions.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/evaluation/feedback-review.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/evaluation/interviewdetails-card.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/evaluation.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/profile.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/types.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/candidates/use-candidate-profile.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/Apply_job.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/activity-timeline.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/application-status-dialog.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/application-status.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/applied-joblist.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/assign-interview.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/assign-slots.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/auto-form.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/candidate-profile.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/confirmoffer.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/create-newjob-sheet.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/edit-newjob-sheet.tsx",
-    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/job-details-priority.tsx",
-    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/job-details.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/job-filter.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/job-location-positions.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/job-view-card.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/manager-candidateprofile.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/offer-letter.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/onhold-offer.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/post-job-onboard-updated.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/post-job-onboard.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/reject-offer.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/review-status-change.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/components/themepicker-status.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/created-job.tsx",
-    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/page.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/job-details/approval-workflow.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/job-details/job-details.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/job-details/role-overview.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/job-details/role-snapshot.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/job-details/skills-required.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/jobs/jobs.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/open-role-requests/components/OpenRoleRequestTable.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/open-role-requests/components/job-approval-hr.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/open-role-requests/components/job-opening-request.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/open-role-requests/components/status-change-approval.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/open-role-requests/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/page.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/Recruitment/referrals/components/all-active-jobs.tsx",
@@ -447,8 +643,13 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/routes.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/redux.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/all-employee-slice.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/attendance/attendance-export.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/attendance/attendance-filter.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/attendance/attendance-overview.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/attendance/attendance-slice.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/branch-slice.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/company-setting-slice.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/consultancy-slice.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/dashboard-slice.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/department-slice.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/designation-slice.tsx",
@@ -456,10 +657,38 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/education-slice.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/employee-slice.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/employment-slice.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/employment-type-slice.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/hiring-slice.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/hiringquestions-slice.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/jobs/jobs-application-slice.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/jobs/jobs.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/onboardLeave-slice.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/pay-heads-slice.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/pay-structure-payload-slice.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/pay-structures-slice.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/payroll/it-declaration/house-property-income.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/payroll/it-declaration/hra-exception.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/payroll/it-declaration/it-declaration.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/payroll/it-declaration/other-investment.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/performance-mng/bell-carve-config.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/performance-mng/evaluation-sorce.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/performance-mng/performance-template.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/performance-mng/pms-cycle.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/performance-mng/pms-exception-slice.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/practice-slice.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/recruitment/activity-logs.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/recruitment/filter.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/recruitment/listed-jobs.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/recruitment/overview.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/recruitment/position-analytics.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/region/region.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/salary-components-slice.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/selectionpanel-slice.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/user-slice.tsx",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/work-schedule.tsx",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/store.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/announcement.d.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/api-payloads.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/attendance.d.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/auth.d.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/branches.ts",
@@ -482,9 +711,11 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/leaves-types.d.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/new-attendance.d.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/organisation-info.d.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/pdfmake.d.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/performance.d.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/permissions.d.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/policies.d.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/practice.d.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/promotion.d.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/region.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/resignation.d.ts",
@@ -492,8 +723,13 @@
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/table.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/work-schedule.d.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/types/workfromhome.d.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/utils/chartRegistry.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/utils/document-type-mapping.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/utils/export-dashboard-pdf.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/utils/jobUtils.ts",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/utils/safeFormulaEvaluator.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/vite-env.d.ts",
-    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/tailwind.config.js",
+    "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/tailwind.config.ts",
     "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/vite.config.ts"
   ],
   "test_files": [
@@ -527,6 +763,7 @@
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/HRM_Configuration/leave_types/test_12_delete_leave_type.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/HRM_Configuration/leave_types/test_13_navigate_to_work_location_from_leavetypes.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/HRM_Configuration/leave_types/test_14_login_buh_and_logout.py",
+    "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/HRM_Configuration/leave_types/test_15_no_duplicate_leave_type.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Leaves_E-to-E_Flow.py/Employee_leaves.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/dashboard/__init__.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/dashboard/config.py",
@@ -569,7 +806,6 @@
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_onduty/test_10_conflict_wfh_and_onduty_same_date.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/__init__.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/config.py",
-    "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/sample.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_01_access_wfh_without_login.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_02_view_wfh_default_filters.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_03_apply_wfh.py",
@@ -580,6 +816,9 @@
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_08_cancel_apply_wfh_modal.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_09_cancel_delete_confirmation.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_10_negative_wfh_balance.py",
+    "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_11_conflict_wfh_and_onduty_same_date.py",
+    "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_12_conflict_wfh_and_leave_same_date.py",
+    "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_13_conflict_wfh_and_wfh_same_date.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/team_leaves/__init__.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/team_leaves/config.py",
     "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/team_leaves/test_01_access_team_leaves_as_employee.py",
@@ -771,13 +1010,16 @@
         "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-new-department-sheet.tsx",
         "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/edit-department-sheet.tsx",
         "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/edit-designation-sheet.tsx",
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/department-manager/page.tsx",
         "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/page.tsx",
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/practice-maanger/pages.tsx",
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/sub-department/page.tsx",
         "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/designation/page.tsx"
       ],
       "test_matches": [
         "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/test_3_Department.py"
       ],
-      "source_match_count": 6,
+      "source_match_count": 9,
       "test_match_count": 1,
       "source_presence_pct": 100,
       "test_presence_pct": 100,
@@ -786,6 +1028,7 @@
           "name": "department_create_update",
           "status": "covered",
           "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/department-manager/page.tsx",
             "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-new-department-sheet.tsx",
             "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/departmentController.js",
             "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/departmentRoutes.js"
@@ -793,38 +1036,29 @@
           "test_matches": [
             "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/test_3_Department.py"
           ],
-          "source_match_count": 3,
+          "source_match_count": 4,
           "test_match_count": 1,
           "coverage_pct": 100
         },
         {
           "name": "sub_department_create_update",
-          "status": "missing_in_source",
-          "source_matches": [],
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/sub-department/sub-department-form-sheet.tsx"
+          ],
           "test_matches": [
             "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/test_3_Department.py"
           ],
-          "source_match_count": 0,
+          "source_match_count": 1,
           "test_match_count": 1,
-          "coverage_pct": 0
+          "coverage_pct": 100
         },
         {
           "name": "practice_create_update_delete",
-          "status": "missing_in_source",
-          "source_matches": [],
-          "test_matches": [
-            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/test_3_Department.py"
-          ],
-          "source_match_count": 0,
-          "test_match_count": 1,
-          "coverage_pct": 0
-        },
-        {
-          "name": "designation_create_update_delete",
           "status": "covered",
           "source_matches": [
-            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/designationController.js",
-            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/designationRoutes.js"
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/practice-maanger/pages.tsx",
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/practice-maanger/practice-form-sheet.tsx"
           ],
           "test_matches": [
             "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/test_3_Department.py"
@@ -832,77 +1066,111 @@
           "source_match_count": 2,
           "test_match_count": 1,
           "coverage_pct": 100
+        },
+        {
+          "name": "designation_create_update_delete",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-designationdialog.tsx",
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/department/department-manager/designation-form-sheet.tsx",
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/designationController.js",
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/designationRoutes.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/test_3_Department.py"
+          ],
+          "source_match_count": 4,
+          "test_match_count": 1,
+          "coverage_pct": 100
         }
       ],
-      "coverage_pct": 50,
-      "status": "missing_in_source"
+      "coverage_pct": 100,
+      "status": "covered"
     },
     "employment_type": {
-      "source_matches": [],
+      "source_matches": [
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx",
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/delete-employment-type-dialog.tsx",
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/employment_type/page.tsx",
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/store/slice/employment-type-slice.tsx"
+      ],
       "test_matches": [
         "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/test_4_Employment-type.py"
       ],
-      "source_match_count": 0,
+      "source_match_count": 4,
       "test_match_count": 1,
-      "source_presence_pct": 0,
+      "source_presence_pct": 100,
       "test_presence_pct": 100,
       "actions": [
         {
           "name": "create_employment_type",
-          "status": "missing_in_source",
-          "source_matches": [],
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/employment_type/page.tsx",
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx"
+          ],
           "test_matches": [
             "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/test_4_Employment-type.py"
           ],
-          "source_match_count": 0,
+          "source_match_count": 2,
           "test_match_count": 1,
-          "coverage_pct": 0
+          "coverage_pct": 100
         },
         {
           "name": "create_dialog_close_cancel",
-          "status": "missing_in_source",
-          "source_matches": [],
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx"
+          ],
           "test_matches": [
             "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/test_4_Employment-type.py"
           ],
-          "source_match_count": 0,
+          "source_match_count": 1,
           "test_match_count": 1,
-          "coverage_pct": 0
+          "coverage_pct": 100
         },
         {
           "name": "edit_employment_type",
-          "status": "missing_in_source",
-          "source_matches": [],
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/employment_type/page.tsx",
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx"
+          ],
           "test_matches": [
             "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/test_4_Employment-type.py"
           ],
-          "source_match_count": 0,
+          "source_match_count": 2,
           "test_match_count": 1,
-          "coverage_pct": 0
+          "coverage_pct": 100
         },
         {
           "name": "delete_employment_type",
-          "status": "missing_in_source",
-          "source_matches": [],
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/employment_type/page.tsx",
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/components/delete-employment-type-dialog.tsx"
+          ],
           "test_matches": [
             "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/test_4_Employment-type.py"
           ],
-          "source_match_count": 0,
+          "source_match_count": 2,
           "test_match_count": 1,
-          "coverage_pct": 0
+          "coverage_pct": 100
         },
         {
           "name": "pagination",
-          "status": "missing_in_both",
-          "source_matches": [],
+          "status": "missing_in_automation",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/frontend/src/pages/HRM-Config/employment_type/page.tsx"
+          ],
           "test_matches": [],
-          "source_match_count": 0,
+          "source_match_count": 1,
           "test_match_count": 0,
           "coverage_pct": 0
         }
       ],
-      "coverage_pct": 0,
-      "status": "missing_in_source"
+      "coverage_pct": 80,
+      "status": "missing_in_automation"
     },
     "region": {
       "source_matches": [
@@ -1560,6 +1828,204 @@
           ],
           "test_matches": [
             "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/dashboard/test_14_logout.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        }
+      ],
+      "coverage_pct": 100,
+      "status": "covered"
+    },
+    "work_from_home": {
+      "source_matches": [
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js",
+        "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/routes/wfhRoutes.js"
+      ],
+      "test_matches": [
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_01_access_wfh_without_login.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_02_view_wfh_default_filters.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_03_apply_wfh.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_04_filter_and_reset.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_05_edit_wfh.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_06_delete_wfh.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_07_apply_wfh_without_fields_validation.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_08_cancel_apply_wfh_modal.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_09_cancel_delete_confirmation.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_10_negative_wfh_balance.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_11_conflict_wfh_and_onduty_same_date.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_12_conflict_wfh_and_leave_same_date.py",
+        "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_13_conflict_wfh_and_wfh_same_date.py"
+      ],
+      "source_match_count": 2,
+      "test_match_count": 13,
+      "source_presence_pct": 100,
+      "test_presence_pct": 100,
+      "actions": [
+        {
+          "name": "access_wfh_without_login",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_01_access_wfh_without_login.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "view_wfh_default_filters",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_02_view_wfh_default_filters.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "apply_wfh",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_03_apply_wfh.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "filter_and_reset",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_04_filter_and_reset.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "edit_wfh",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_05_edit_wfh.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "delete_wfh",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_06_delete_wfh.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "apply_wfh_without_fields_validation",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_07_apply_wfh_without_fields_validation.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "cancel_apply_wfh_modal",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_08_cancel_apply_wfh_modal.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "cancel_delete_confirmation",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_09_cancel_delete_confirmation.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "negative_wfh_balance",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_10_negative_wfh_balance.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "conflict_wfh_and_onduty_same_date",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_11_conflict_wfh_and_onduty_same_date.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "conflict_wfh_and_leave_same_date",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_12_conflict_wfh_and_leave_same_date.py"
+          ],
+          "source_match_count": 1,
+          "test_match_count": 1,
+          "coverage_pct": 100
+        },
+        {
+          "name": "conflict_wfh_and_wfh_same_date",
+          "status": "covered",
+          "source_matches": [
+            "/Users/bits-blr-kavyatn/HRMS_NodeJs/backend/controllers/wfhController.js"
+          ],
+          "test_matches": [
+            "/Users/bits-blr-kavyatn/HRM_GENIE_TEST_SCRIPTS/tests/Manager_Login/my_wfh/test_13_conflict_wfh_and_wfh_same_date.py"
           ],
           "source_match_count": 1,
           "test_match_count": 1,

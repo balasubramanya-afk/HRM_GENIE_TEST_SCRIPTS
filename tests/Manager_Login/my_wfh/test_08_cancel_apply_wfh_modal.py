@@ -5,7 +5,7 @@ from .config import _screenshot, login_as
 def test_cancel_apply_wfh_modal(page: Page):
     """8. Negative: Open Apply WFH modal, enter details, and cancel modal without saving."""
     login_as(page, "Manager")
-    page.goto("https://qa.hrmgenie.outstrive.co/work-from-home")
+    page.goto("https://qa.hrmgenie.outstrive.co/leaves/work-from-home")
     page.wait_for_timeout(1000)
 
     my_wfh_tab = page.get_by_role("tab", name="My WFH")
