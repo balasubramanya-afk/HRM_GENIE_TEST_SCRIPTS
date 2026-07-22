@@ -27,7 +27,9 @@ def get_prefix_field(page):
     return page.get_by_role("textbox", name="Employee Prefix *")
 
 
-@pytest.mark.xfail(reason="BUG: Regional Settings edit form does not reset to saved state on reopen after Discard")
+@pytest.mark.xfail(
+    reason="BUGS REPORTED: 1) System Settings read-only view displays raw format codes instead of human-readable labels. 2) Edit form does not reset to saved state on reopen after Discard."
+)
 def test_regional_settings(playwright: Playwright) -> None:
     browser = playwright.chromium.launch(
         channel="chrome", headless=False, args=["--start-maximized"]
@@ -39,6 +41,19 @@ def test_regional_settings(playwright: Playwright) -> None:
 
     toggle = page.locator(
         "div:nth-child(3) > .flex.flex-col > .tracking-tight > .inline-flex"
+    )
+
+    # -------------------------------------------------------------------------
+    # BUG CHECK #1: Verify read-only view does not display raw PHP format codes
+    # (e.g. "d-m-Y", "g:i a", "H:i") instead of human-readable labels.
+    # -------------------------------------------------------------------------
+    readonly_card = page.locator("div:nth-child(3) > .flex.flex-col")
+    readonly_text = readonly_card.inner_text()
+    raw_code_patterns = [r"\bd-m-Y\b", r"\bm-d-Y\b", r"\bY-m-d\b", r"\bg:i\b", r"\bH:i\b", r"\bh:i\b"]
+    has_raw_code = any(re.search(pat, readonly_text, re.IGNORECASE) for pat in raw_code_patterns)
+    assert not has_raw_code, (
+        f"BUG: System Settings read-only view displays raw format code in '{readonly_text}' "
+        f"instead of human-readable label (e.g., 'DD-MM-YYYY (e.g., 31-12-2025)')."
     )
 
     # Open regional settings and capture the CURRENT saved values, whatever
@@ -77,14 +92,10 @@ def test_regional_settings(playwright: Playwright) -> None:
     page.wait_for_timeout(1000)
     page.get_by_text(original_prefix, exact=True).click()
 
-    # Re-open the edit form after discard and verify it reflects the
+    # -------------------------------------------------------------------------
+    # BUG CHECK #2: Re-open the edit form after discard and verify it reflects the
     # ORIGINAL captured values, not the values we typed before discarding.
-    #
-    # NOTE: As of this test run, HRMGenie has a defect where reopening the
-    # edit form after Discard shows the last-edited (unsaved) values instead
-    # of re-fetching the actual saved values. See bug report:
-    # "Regional Settings edit form does not reset to saved state on reopen
-    # after Discard".
+    # -------------------------------------------------------------------------
     toggle.click()
     page.wait_for_timeout(1500)
     _screenshot(page, "test_04_regional_settings_reopened")
