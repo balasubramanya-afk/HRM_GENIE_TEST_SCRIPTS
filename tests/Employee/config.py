@@ -20,10 +20,30 @@ def login_as(page: Page, role: str):
     if role not in ROLE_CREDENTIALS:
         raise ValueError(f"Unknown role: {role}")
     email, pwd = ROLE_CREDENTIALS[role]
+
     page.goto("https://qa.hrmgenie.outstrive.co/login")
-    page.get_by_role("textbox", name="Enter email").fill(email)
-    page.get_by_role("textbox", name="Enter password").fill(pwd)
-    page.get_by_role("button", name="Login").click()
+    page.wait_for_load_state("domcontentloaded")
+
+    # Check if already logged in / redirected away from login
+    if "/login" not in page.url:
+        print(f"Already authenticated as {role} (url: {page.url})")
+        return
+
+    email_field = page.get_by_placeholder("Enter email").or_(
+        page.locator("input[name='email']")
+    ).or_(page.get_by_role("textbox", name="Enter email")).first
+
+    email_field.wait_for(state="visible", timeout=15000)
+    email_field.fill(email)
+
+    password_field = page.get_by_placeholder("Enter password").or_(
+        page.locator("input[name='password']")
+    ).or_(page.get_by_role("textbox", name="Enter password")).first
+
+    password_field.fill(pwd)
+
+    login_button = page.get_by_role("button", name="Login").first
+    login_button.click()
     page.wait_for_load_state("networkidle")
     print(f"Login successful as {role}")
 
