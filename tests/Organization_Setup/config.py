@@ -24,6 +24,7 @@ def login_as(page: Page, role: str = "HR"):
     email, pwd = ROLE_CREDENTIALS[role]
     page.goto("https://qa.hrmgenie.outstrive.co/login", wait_until="domcontentloaded")
     email_field = page.locator("input[type='email'], input[name='email'], [placeholder*='email' i]").first
+    email_field.wait_for(state="visible", timeout=2500)
     email_field.fill(email)
     pwd_field = page.locator("input[type='password'], input[name='password'], [placeholder*='password' i]").first
     pwd_field.fill(pwd)

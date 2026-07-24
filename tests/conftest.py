@@ -161,3 +161,23 @@ def logged_in_page(page):
     page.wait_for_load_state("networkidle")
     print("Login successful. Reusing page for all tests.")
     yield page
+
+
+def pytest_runtest_logreport(report):
+    """Print the xfail bug description live in the terminal output.
+
+    When a test decorated with @pytest.mark.xfail fails (outcome = xfailed),
+    this hook extracts the 'reason' string and prints it immediately so it is
+    visible in both -v and -vs runs without needing to scroll to the summary.
+    """
+    if report.when == "call" and hasattr(report, "wasxfail"):
+        reason = report.wasxfail  # pytest stores the xfail reason here
+        if reason:
+            # Strip any leading/trailing whitespace for clean output
+            reason = reason.strip()
+            print(
+                f"\n  {'─' * 60}\n"
+                f"  🐛 BUG DESCRIPTION:\n"
+                f"  {reason}\n"
+                f"  {'─' * 60}"
+            )
