@@ -759,6 +759,118 @@
           "test_keywords": []
         }
       ]
+    },
+    {
+      "name": "my_leaves",
+      "source_keywords": [
+        "backend/controllers/leaveController.js",
+        "backend/routes/leaveRoutes.js",
+        "frontend/src/pages/Leave/my-leave.tsx",
+        "frontend/src/pages/Leave/components/leave-form.tsx",
+        "frontend/src/pages/Leave/components/leave-table.tsx",
+        "frontend/src/pages/Leave/components/edit-leave-sheet.tsx",
+        "frontend/src/pages/Leave/components/new-request-sheet.tsx"
+      ],
+      "test_keywords": [
+        "Manager_Login/my_leaves/test_01_access_my_leaves_without_login.py",
+        "Manager_Login/my_leaves/test_02_view_my_leaves_default_filters.py",
+        "Manager_Login/my_leaves/test_03_update_filters_get_updated_data.py",
+        "Manager_Login/my_leaves/test_04_apply_leave.py",
+        "Manager_Login/my_leaves/test_05_edit_leave.py",
+        "Manager_Login/my_leaves/test_06_delete_leave.py",
+        "Manager_Login/my_leaves/test_07_apply_leave_without_fields_validation.py",
+        "Manager_Login/my_leaves/test_08_cancel_apply_leave_modal.py",
+        "Manager_Login/my_leaves/test_09_cancel_delete_confirmation.py",
+        "Manager_Login/my_leaves/test_10_overlapping_leave_validation.py",
+        "Manager_Login/my_leaves/test_11_attachment_upload.py",
+        "Manager_Login/my_leaves/test_12_half_day_leave.py"
+      ],
+      "actions": [
+        {
+          "name": "access_my_leaves_without_login",
+          "source_paths": ["backend/controllers/leaveController.js"],
+          "source_keywords": ["leaveController.js"],
+          "test_paths": ["Manager_Login/my_leaves/test_01_access_my_leaves_without_login.py"],
+          "test_keywords": ["test_01_access_my_leaves_without_login.py"]
+        },
+        {
+          "name": "view_my_leaves_default_filters",
+          "source_paths": ["backend/controllers/leaveController.js"],
+          "source_keywords": ["leaveController.js"],
+          "test_paths": ["Manager_Login/my_leaves/test_02_view_my_leaves_default_filters.py"],
+          "test_keywords": ["test_02_view_my_leaves_default_filters.py"]
+        },
+        {
+          "name": "update_filters_get_updated_data",
+          "source_paths": ["backend/controllers/leaveController.js"],
+          "source_keywords": ["leaveController.js"],
+          "test_paths": ["Manager_Login/my_leaves/test_03_update_filters_get_updated_data.py"],
+          "test_keywords": ["test_03_update_filters_get_updated_data.py"]
+        },
+        {
+          "name": "apply_leave",
+          "source_paths": ["backend/controllers/leaveController.js"],
+          "source_keywords": ["createLeave"],
+          "test_paths": ["Manager_Login/my_leaves/test_04_apply_leave.py"],
+          "test_keywords": ["test_04_apply_leave.py"]
+        },
+        {
+          "name": "edit_leave",
+          "source_paths": ["backend/controllers/leaveController.js"],
+          "source_keywords": ["updateLeave"],
+          "test_paths": ["Manager_Login/my_leaves/test_05_edit_leave.py"],
+          "test_keywords": ["test_05_edit_leave.py"]
+        },
+        {
+          "name": "delete_leave",
+          "source_paths": ["backend/controllers/leaveController.js"],
+          "source_keywords": ["deleteLeave"],
+          "test_paths": ["Manager_Login/my_leaves/test_06_delete_leave.py"],
+          "test_keywords": ["test_06_delete_leave.py"]
+        },
+        {
+          "name": "apply_leave_without_fields_validation",
+          "source_paths": ["backend/controllers/leaveController.js"],
+          "source_keywords": ["leaveController.js"],
+          "test_paths": ["Manager_Login/my_leaves/test_07_apply_leave_without_fields_validation.py"],
+          "test_keywords": ["test_07_apply_leave_without_fields_validation.py"]
+        },
+        {
+          "name": "cancel_apply_leave_modal",
+          "source_paths": ["backend/controllers/leaveController.js"],
+          "source_keywords": ["leaveController.js"],
+          "test_paths": ["Manager_Login/my_leaves/test_08_cancel_apply_leave_modal.py"],
+          "test_keywords": ["test_08_cancel_apply_leave_modal.py"]
+        },
+        {
+          "name": "cancel_delete_confirmation",
+          "source_paths": ["backend/controllers/leaveController.js"],
+          "source_keywords": ["leaveController.js"],
+          "test_paths": ["Manager_Login/my_leaves/test_09_cancel_delete_confirmation.py"],
+          "test_keywords": ["test_09_cancel_delete_confirmation.py"]
+        },
+        {
+          "name": "overlapping_leave_validation",
+          "source_paths": ["backend/controllers/leaveController.js"],
+          "source_keywords": ["leaveController.js"],
+          "test_paths": ["Manager_Login/my_leaves/test_10_overlapping_leave_validation.py"],
+          "test_keywords": ["test_10_overlapping_leave_validation.py"]
+        },
+        {
+          "name": "attachment_upload",
+          "source_paths": ["backend/controllers/leaveController.js"],
+          "source_keywords": ["leaveController.js"],
+          "test_paths": ["Manager_Login/my_leaves/test_11_attachment_upload.py"],
+          "test_keywords": ["test_11_attachment_upload.py"]
+        },
+        {
+          "name": "half_day_leave",
+          "source_paths": ["backend/controllers/leaveController.js"],
+          "source_keywords": ["leaveController.js"],
+          "test_paths": ["Manager_Login/my_leaves/test_12_half_day_leave.py"],
+          "test_keywords": ["test_12_half_day_leave.py"]
+        }
+      ]
     }
   ]
 }
