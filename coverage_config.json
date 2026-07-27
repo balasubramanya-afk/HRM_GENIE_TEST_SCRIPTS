@@ -1,5 +1,9 @@
 {
-  "source_dir": "/Users/bits-blr-bala/Documents/HRMS_NodeJs",
+  "source_dir": "/Users/bits-blr-bhanuprakash/Desktop/HRMS_NodeJs",
+  "source_dirs": [
+    "/Users/bits-blr-bhanuprakash/Desktop/HRMS_NodeJs",
+    "/Users/bits-blr-bhanuprakash/Desktop/hrm-genie/backend"
+  ],
   "test_dir": "tests",
   "features": [
     {
@@ -123,43 +127,166 @@
     },
     {
       "name": "employment_type",
-      "source_keywords": ["frontend/src/pages/HRM-Config/employment_type/page.tsx", "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx", "frontend/src/pages/HRM-Config/components/delete-employment-type-dialog.tsx", "frontend/src/store/slice/employment-type-slice.tsx"],
-      "test_keywords": ["test_4_Employment-type.py"],
+      "source_keywords": [
+        "frontend/src/pages/HRM-Config/employment_type/page.tsx",
+        "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx",
+        "frontend/src/pages/HRM-Config/components/delete-employment-type-dialog.tsx",
+        "frontend/src/store/slice/employment-type-slice.tsx",
+        "src/modules/employment-type/employment-type.controller.ts",
+        "src/modules/employment-type/employment-type.service.ts"
+      ],
+      "test_keywords": [
+        "test_01_login.py",
+        "test_02_create.py",
+        "test_03_edit.py",
+        "test_04_delete.py",
+        "test_05_negitive.py"
+      ],
       "actions": [
         {
+          "name": "login_and_navigate",
+          "source_paths": [
+            "src/modules/employment-type/employment-type.controller.ts",
+            "frontend/src/pages/HRM-Config/employment_type/page.tsx"
+          ],
+          "source_keywords": [
+            "EmploymentTypeController",
+            "findAll",
+            "Employment Type"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Employment_Type/test_01_login.py"
+          ],
+          "test_keywords": [
+            "do_login",
+            "Employment Type"
+          ]
+        },
+        {
           "name": "create_employment_type",
-          "source_paths": ["frontend/src/pages/HRM-Config/employment_type/page.tsx", "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx"],
-          "source_keywords": ["+ Add Type", "createEmployment", "Add Employment", "employment_type", "is_active"],
-          "test_paths": ["test_4_Employment-type.py"],
-          "test_keywords": ["+ Add Type", "Add Employment", "e.g., Full Time", "switch", "Testing-", "Testing QA Task"]
+          "source_paths": [
+            "src/modules/employment-type/employment-type.controller.ts",
+            "src/modules/employment-type/employment-type.service.ts",
+            "frontend/src/pages/HRM-Config/employment_type/page.tsx"
+          ],
+          "source_keywords": [
+            "create",
+            "CreateEmploymentTypeDto",
+            "employment_type"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Employment_Type/test_02_create.py"
+          ],
+          "test_keywords": [
+            "+ Add Type",
+            "Add Employment",
+            "Full Time"
+          ]
         },
         {
           "name": "create_dialog_close_cancel",
-          "source_paths": ["frontend/src/pages/HRM-Config/employment_type/page.tsx", "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx"],
-          "source_keywords": ["Close", "Cancel", "handleClose", "setOpen(false)"],
-          "test_paths": ["test_4_Employment-type.py"],
-          "test_keywords": ["Close", "Cancel", "+ Add Type"]
+          "source_paths": [
+            "src/modules/employment-type/employment-type.service.ts",
+            "frontend/src/pages/HRM-Config/employment_type/page.tsx"
+          ],
+          "source_keywords": [
+            "create",
+            "employment_type"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Employment_Type/test_02_create.py",
+            "HRM_Configuration/Employment_Type/test_05_negitive.py"
+          ],
+          "test_keywords": [
+            "Cancel",
+            "+ Add Type"
+          ]
         },
         {
           "name": "edit_employment_type",
-          "source_paths": ["frontend/src/pages/HRM-Config/employment_type/page.tsx", "frontend/src/pages/HRM-Config/components/create-edit-employment-type.tsx"],
-          "source_keywords": ["Edit", "Update Employment", "updateEmployment", "selectedEmployment", "setSelectedEmployment"],
-          "test_paths": ["test_4_Employment-type.py"],
-          "test_keywords": ["Edit", "Update Employment", "switch", "Testing QA Task", "Testing QA QAA"]
+          "source_paths": [
+            "src/modules/employment-type/employment-type.controller.ts",
+            "src/modules/employment-type/employment-type.service.ts",
+            "frontend/src/pages/HRM-Config/employment_type/page.tsx"
+          ],
+          "source_keywords": [
+            "update",
+            "UpdateEmploymentTypeDto",
+            "employment_type"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Employment_Type/test_03_edit.py"
+          ],
+          "test_keywords": [
+            "Edit",
+            "Update Employment",
+            "switch"
+          ]
         },
         {
           "name": "delete_employment_type",
-          "source_paths": ["frontend/src/pages/HRM-Config/employment_type/page.tsx", "frontend/src/pages/HRM-Config/components/delete-employment-type-dialog.tsx"],
-          "source_keywords": ["EmploymentDeleteDialog", "Delete", "handleDelete", "onDelete", "setIsDeleteDialogOpen"],
-          "test_paths": ["test_4_Employment-type.py"],
-          "test_keywords": ["Delete", "Cancel", "Close"]
+          "source_paths": [
+            "src/modules/employment-type/employment-type.controller.ts",
+            "src/modules/employment-type/employment-type.service.ts",
+            "frontend/src/pages/HRM-Config/employment_type/page.tsx"
+          ],
+          "source_keywords": [
+            "remove",
+            "delete",
+            "employment_type"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Employment_Type/test_04_delete.py"
+          ],
+          "test_keywords": [
+            "Delete",
+            "Cancel"
+          ]
         },
         {
-          "name": "pagination",
-          "source_paths": ["frontend/src/pages/HRM-Config/employment_type/page.tsx"],
-          "source_keywords": ["TableFooter", "onPageChange", "onEntriesPerPageChange", "currentPage", "entriesPerPage"],
-          "test_paths": ["test_4_Employment-type.py"],
-          "test_keywords": []
+          "name": "negative_validation_employment_type",
+          "source_paths": [
+            "src/modules/employment-type/employment-type.service.ts"
+          ],
+          "source_keywords": [
+            "Employment type already exists",
+            "employment_type",
+            "BadRequestException"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Employment_Type/test_05_negitive.py"
+          ],
+          "test_keywords": [
+            "test_negative_employment_types",
+            "negative_01_cancel_add",
+            "negative_02_empty_add_submit",
+            "negative_03_duplicate_cancel",
+            "negative_04_duplicate_submit",
+            "negative_05_edit_empty_title",
+            "negative_06_cancel_delete",
+            "negative_07_confirm_delete"
+          ]
+        },
+        {
+          "name": "employee_experience_slice_thunks",
+          "source_paths": [
+            "frontend/src/store/slice/employment-slice.tsx"
+          ],
+          "source_keywords": [
+            "readEmploymentExp",
+            "createEmploymentExp",
+            "editEmploymentExp",
+            "deleteEmploymentExp"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Employment_Type/test_01_login.py",
+            "HRM_Configuration/Employment_Type/test_02_create.py",
+            "HRM_Configuration/Employment_Type/test_03_edit.py",
+            "HRM_Configuration/Employment_Type/test_04_delete.py"
+          ],
+          "test_keywords": [
+            "do_login"
+          ]
         }
       ]
     },
@@ -209,6 +336,689 @@
           "source_keywords": ["TableFooter", "currentPage", "entriesPerPage", "onPageChange", "onEntriesPerPageChange"],
           "test_paths": ["test_5_region.py"],
           "test_keywords": ["Go to previous page", "Go to next page", "10", "20", "30"]
+        }
+      ]
+    },
+    {
+      "name": "announcements",
+      "source_keywords": [
+        "frontend/src/pages/Announcements/page.tsx",
+        "frontend/src/pages/Announcements/components/create-announcement-sheet.tsx",
+        "frontend/src/pages/Announcements/components/edit-announcement-sheet.tsx",
+        "frontend/src/pages/Announcements/components/delete-announcements.tsx",
+        "frontend/src/pages/Announcements/components/announcement-view.tsx",
+        "backend/controllers/announcementsController.js",
+        "backend/routes/announcementsRoutes.js"
+      ],
+      "test_keywords": [
+        "test_02_create.py",
+        "test_03_edit.py",
+        "test_04_download.py",
+        "test_05_delete.py"
+      ],
+      "actions": [
+        {
+          "name": "create_announcement",
+          "source_paths": [
+            "frontend/src/pages/Announcements/components/create-announcement-sheet.tsx",
+            "backend/controllers/announcementsController.js"
+          ],
+          "source_keywords": [
+            "Add announcement",
+            "CreateAnnouncementSheet",
+            "createAnnouncement",
+            "POST",
+            "Announcement created successfully"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Announcements/test_02_create.py"
+          ],
+          "test_keywords": [
+            "Add announcement",
+            "Title *",
+            "Select date",
+            "Select reminder date",
+            "Select locations",
+            "Select departments",
+            "Description*",
+            "Create"
+          ]
+        },
+        {
+          "name": "edit_announcement",
+          "source_paths": [
+            "frontend/src/pages/Announcements/components/edit-announcement-sheet.tsx",
+            "backend/controllers/announcementsController.js"
+          ],
+          "source_keywords": [
+            "Edit",
+            "Update",
+            "updateAnnouncement",
+            "PUT",
+            "Announcement updated successfully"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Announcements/test_03_edit.py"
+          ],
+          "test_keywords": [
+            "Edit",
+            "Title *",
+            "Update"
+          ]
+        },
+        {
+          "name": "download_announcement",
+          "source_paths": [
+            "frontend/src/pages/Announcements/page.tsx"
+          ],
+          "source_keywords": [
+            "Download",
+            "handleDownload"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Announcements/test_04_download.py"
+          ],
+          "test_keywords": [
+            "Download"
+          ]
+        },
+        {
+          "name": "delete_announcement",
+          "source_paths": [
+            "frontend/src/pages/Announcements/components/delete-announcements.tsx",
+            "backend/controllers/announcementsController.js"
+          ],
+          "source_keywords": [
+            "Delete",
+            "deleteAnnouncement",
+            "DELETE",
+            "Announcement deleted"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Announcements/test_05_delete.py"
+          ],
+          "test_keywords": [
+            "Delete"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "attendance",
+      "source_keywords": [
+        "frontend/src/pages/New-Attendance/hr-attendance/page.tsx",
+        "frontend/src/pages/New-Attendance/components/correction-dialog.tsx",
+        "frontend/src/pages/New-Attendance/components/new-checkin-checkout-dialog.tsx",
+        "frontend/src/pages/New-Attendance/components/new-employee-details.tsx",
+        "frontend/src/pages/New-Attendance/components/time-log-correction-reject-dialog.tsx",
+        "backend/controllers/attendanceController.js",
+        "backend/routes/attendanceRoutes.js"
+      ],
+      "test_keywords": [
+        "test_01_login.py",
+        "test_02_filter.py",
+        "test_03_download.py",
+        "test_04_stat_cards.py",
+        "test_05_leave_types_distribution.py",
+        "test_06_pagination.py",
+        "test_07_tracker_view.py",
+        "test_08_tracker_filter.py",
+        "test_09_tracker_export.py",
+        "test_10_tracker_sort.py",
+        "test_11_report_view.py",
+        "test_12_report_filter.py",
+        "test_13_report_download.py",
+        "test_14_report_search.py"
+      ],
+      "actions": [
+        {
+          "name": "hr_login_navigate_attendance",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx",
+            "backend/controllers/attendanceController.js"
+          ],
+          "source_keywords": [
+            "fetchAttendanceData",
+            "getAllAttendance",
+            "Attendance"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_01_login.py"
+          ],
+          "test_keywords": [
+            "Attendance",
+            "overview",
+            "do_login"
+          ]
+        },
+        {
+          "name": "filter_date_department_designation",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "setSelectedDate",
+            "setSelectedDepartment",
+            "setSelectedDesignation",
+            "filteredData",
+            "All Departments",
+            "All Designation"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_02_filter.py"
+          ],
+          "test_keywords": [
+            "filter",
+            "date",
+            "Reset"
+          ]
+        },
+        {
+          "name": "download_excel_export",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "Excel_Export",
+            "transformedData",
+            "excelName"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_03_download.py"
+          ],
+          "test_keywords": [
+            "Download",
+            "Export",
+            "expect_download"
+          ]
+        },
+        {
+          "name": "stat_cards_attendance_marked",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "analyseData",
+            "attendance_marked_by",
+            "no_clock_ins",
+            "late_clock_ins",
+            "Last Synced at"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_04_stat_cards.py"
+          ],
+          "test_keywords": [
+            "stat",
+            "Attendance Marked",
+            "No Clock",
+            "Late Clock",
+            "overview"
+          ]
+        },
+        {
+          "name": "leave_types_distribution",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx",
+            "backend/controllers/attendanceController.js"
+          ],
+          "source_keywords": [
+            "leave",
+            "Leave",
+            "status",
+            "On Leave",
+            "absent"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_05_leave_types_distribution.py"
+          ],
+          "test_keywords": [
+            "Casual",
+            "Sick",
+            "leave_distribution",
+            "Leave"
+          ]
+        },
+        {
+          "name": "pagination",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "TableFooter",
+            "currentPage",
+            "entriesPerPage",
+            "onPageChange",
+            "onEntriesPerPageChange",
+            "paginatedData"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_06_pagination.py"
+          ],
+          "test_keywords": [
+            "pagination",
+            "page 2",
+            "page 3",
+            "exact=True"
+          ]
+        },
+        {
+          "name": "tracker_view",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "Employee Id",
+            "Employee Name",
+            "handleRowClick",
+            "onRowClick",
+            "DynamicTable"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_07_tracker_view.py"
+          ],
+          "test_keywords": [
+            "Attendance Tracker",
+            "Employee Id",
+            "Employee Name",
+            "tracker"
+          ]
+        },
+        {
+          "name": "tracker_filters_and_reset",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "handleResetFilters",
+            "Reset",
+            "filteredData",
+            "setSearchQuery",
+            "setSelectedDate",
+            "onReset"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_08_tracker_filter.py"
+          ],
+          "test_keywords": [
+            "Filters",
+            "Late Arrivals",
+            "Web Check-in",
+            "Reset"
+          ]
+        },
+        {
+          "name": "tracker_export",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "Excel_Export",
+            "Export",
+            "transformedData"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_09_tracker_export.py"
+          ],
+          "test_keywords": [
+            "Export",
+            "expect_download",
+            "tracker_export"
+          ]
+        },
+        {
+          "name": "tracker_column_sorting",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "sortable",
+            "sortKey",
+            "employee_ids",
+            "department_name",
+            "DynamicTable"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_10_tracker_sort.py"
+          ],
+          "test_keywords": [
+            "Employee Id",
+            "Department",
+            "sort",
+            "tracker_sort"
+          ]
+        },
+        {
+          "name": "report_view",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx",
+            "backend/controllers/attendanceController.js"
+          ],
+          "source_keywords": [
+            "getAllAttendance",
+            "getAttendanceByEmployeeId",
+            "getTeamAttendanceByEmployeeId",
+            "Employee Id",
+            "Employee Name",
+            "Manager Name"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_11_report_view.py"
+          ],
+          "test_keywords": [
+            "Report",
+            "Employee Id",
+            "Employee Name",
+            "Manager Name",
+            "report"
+          ]
+        },
+        {
+          "name": "report_filters_date_reset",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "handleResetFilters",
+            "setSelectedDate",
+            "filteredData",
+            "Reset Filters",
+            "dateRange"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_12_report_filter.py"
+          ],
+          "test_keywords": [
+            "Reset Filters",
+            "date",
+            "June",
+            "July",
+            "report_filter"
+          ]
+        },
+        {
+          "name": "report_download_xlsx_csv",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "Excel_Export",
+            "transformedData",
+            "Export",
+            "excelName"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_13_report_download.py"
+          ],
+          "test_keywords": [
+            "Export",
+            "Excel",
+            "CSV",
+            "expect_download",
+            "xlsx",
+            "csv"
+          ]
+        },
+        {
+          "name": "report_search_by_name",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/hr-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "Search by name or ID",
+            "setSearchQuery",
+            "searchQuery",
+            "matchesSearch"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendance/test_14_report_search.py"
+          ],
+          "test_keywords": [
+            "Search by name or email",
+            "Bhanu Prakash",
+            "search",
+            "Reset Filters"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "attendance_manager",
+      "source_keywords": [
+        "frontend/src/pages/New-Attendance/manager-attendance/page.tsx",
+        "frontend/src/pages/New-Attendance/manager-attendance/my-attendance.tsx",
+        "frontend/src/pages/New-Attendance/manager-attendance/team-attendance.tsx",
+        "backend/controllers/attendanceController.js",
+        "backend/routes/attendanceRoutes.js"
+      ],
+      "test_keywords": [
+        "test_1_login.py",
+        "test_2_my_attendance_filter.py",
+        "test_3_team_attendance_view.py",
+        "test_4_team_attendance_filter.py"
+      ],
+      "actions": [
+        {
+          "name": "manager_login_navigate_attendance",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "My Attendance",
+            "fetchAttendanceData",
+            "getAttendanceByEmployeeId",
+            "AttendanceTracker",
+            "attendance-tracker-new"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendence_Manager/test_1_login.py"
+          ],
+          "test_keywords": [
+            "Manager",
+            "attendance-tracker-new",
+            "My Attendance",
+            "do_login_manager"
+          ]
+        },
+        {
+          "name": "grace_period_work_schedule_checks",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "getTodayWorkSchedule",
+            "isWithinGracePeriod",
+            "getClockStatus",
+            "graceTime",
+            "scheduleType"
+          ],
+          "test_paths": [],
+          "test_keywords": []
+        },
+        {
+          "name": "timer_operations",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "startTimer",
+            "stopTimer",
+            "formatTimeFromSeconds",
+            "timerRef",
+            "runningTime"
+          ],
+          "test_paths": [],
+          "test_keywords": []
+        },
+        {
+          "name": "check_in_action",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/page.tsx",
+            "frontend/src/pages/New-Attendance/components/new-checkin-checkout-dialog.tsx",
+            "backend/controllers/attendanceController.js"
+          ],
+          "source_keywords": [
+            "handleCheckIn",
+            "clockInOut",
+            "Check-In",
+            "createAttendance",
+            "clock_in"
+          ],
+          "test_paths": [],
+          "test_keywords": []
+        },
+        {
+          "name": "check_out_action",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/page.tsx",
+            "frontend/src/pages/New-Attendance/components/new-checkin-checkout-dialog.tsx",
+            "backend/controllers/attendanceController.js"
+          ],
+          "source_keywords": [
+            "handleCheckOut",
+            "clockInOut",
+            "Check-Out",
+            "createAttendance",
+            "clock_out"
+          ],
+          "test_paths": [],
+          "test_keywords": []
+        },
+        {
+          "name": "submit_correction_request_general",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/page.tsx",
+            "frontend/src/pages/New-Attendance/components/correction-dialog.tsx",
+            "backend/controllers/attendanceController.js"
+          ],
+          "source_keywords": [
+            "createCorrectionRequest",
+            "handleSubmitCorrection",
+            "correction_request",
+            "CorrectionRequestDialog"
+          ],
+          "test_paths": [],
+          "test_keywords": []
+        },
+        {
+          "name": "submit_correction_request_cutoff",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/page.tsx",
+            "frontend/src/pages/New-Attendance/components/correction-dialog.tsx",
+            "backend/controllers/attendanceController.js"
+          ],
+          "source_keywords": [
+            "createErrorLinkCorrection",
+            "attendanceCorrectionRequest",
+            "Cut-off time for Check-In is over"
+          ],
+          "test_paths": [],
+          "test_keywords": []
+        },
+        {
+          "name": "view_leaves_data",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/page.tsx"
+          ],
+          "source_keywords": [
+            "myLeaveData",
+            "leaveData",
+            "isOnLeave"
+          ],
+          "test_paths": [],
+          "test_keywords": []
+        },
+        {
+          "name": "my_attendance_date_late_arrivals_filter",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/my-attendance.tsx"
+          ],
+          "source_keywords": [
+            "Late Arrivals",
+            "Filters",
+            "setSelectedDate",
+            "filteredData"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendence_Manager/test_2_my_attendance_filter.py"
+          ],
+          "test_keywords": [
+            "Filters",
+            "Late Arrivals",
+            "lucide-chevron-down"
+          ]
+        },
+        {
+          "name": "my_attendance_filter_reset",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/my-attendance.tsx"
+          ],
+          "source_keywords": [
+            "Reset",
+            "filteredData",
+            "handleResetFilters"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendence_Manager/test_2_my_attendance_filter.py"
+          ],
+          "test_keywords": [
+            "Reset"
+          ]
+        },
+        {
+          "name": "team_attendance_search",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/team-attendance.tsx"
+          ],
+          "source_keywords": [
+            "Search by shift type & status",
+            "setSearchQuery",
+            "searchQuery"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendence_Manager/test_3_team_attendance_view.py",
+            "HRM_Configuration/Attendence_Manager/test_4_team_attendance_filter.py"
+          ],
+          "test_keywords": [
+            "Search by shift type & status",
+            "1348"
+          ]
+        },
+        {
+          "name": "team_attendance_filters",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/team-attendance.tsx"
+          ],
+          "source_keywords": [
+            "Late Arrivals",
+            "Web Check-in",
+            "Filters",
+            "setSelectedDate"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendence_Manager/test_4_team_attendance_filter.py"
+          ],
+          "test_keywords": [
+            "Filters",
+            "Late Arrivals",
+            "Web Check-in"
+          ]
+        },
+        {
+          "name": "team_attendance_reset",
+          "source_paths": [
+            "frontend/src/pages/New-Attendance/manager-attendance/team-attendance.tsx"
+          ],
+          "source_keywords": [
+            "Reset",
+            "filteredData",
+            "handleResetFilters"
+          ],
+          "test_paths": [
+            "HRM_Configuration/Attendence_Manager/test_4_team_attendance_filter.py"
+          ],
+          "test_keywords": [
+            "Reset"
+          ]
         }
       ]
     }

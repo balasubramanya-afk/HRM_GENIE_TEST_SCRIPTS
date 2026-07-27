@@ -1,0 +1,12 @@
+{
+  "python.defaultInterpreterPath": "/Users/bits-blr-bhanuprakash/Desktop/HRM_GENIE_TEST_SCRIPTS/venv/bin/python",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}",
+    "${workspaceFolder}/venv/lib/python3.12/site-packages",
+    "${workspaceFolder}/tests/HRM_Configuration/Employment_Type",
+    "${workspaceFolder}/tests/HRM_Configuration/Announcements",
+    "${workspaceFolder}/tests/HRM_Configuration/Attendance",
+    "${workspaceFolder}/tests/HRM_Configuration/Attendence_Manager"
+  ],
+  "pyrefly.pythonPath": "/Users/bits-blr-bhanuprakash/Desktop/HRM_GENIE_TEST_SCRIPTS/venv/bin/python"
+}

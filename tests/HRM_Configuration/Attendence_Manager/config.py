@@ -2,7 +2,7 @@ from pathlib import Path
 from datetime import datetime
 from playwright.sync_api import Page
 
-SCREENSHOT_BASE = Path("screenshots") / "employment_type"
+SCREENSHOT_BASE = Path("screenshots") / "attendance_manager"
 
 ROLE_CREDENTIALS = {
     "HR": ("hr@out-strive.com", "HR@dmin06"),

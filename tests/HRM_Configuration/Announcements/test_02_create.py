@@ -19,7 +19,7 @@ def test_create_announcement(page):
 
     # Select location - click dropdown, then force-click the checkbox (it has pointer-events:none)
     page.locator("div").filter(has_text="Select locations").nth(4).click()
-    page.get_by_label("VIJAYAWADA").click(force=True)
+    page.get_by_label("Port Blair").click(force=True)
     # Click outside the dropdown to close it
     page.get_by_role("textbox", name="Title *").click()
 

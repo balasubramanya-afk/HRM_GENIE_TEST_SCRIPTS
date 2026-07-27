@@ -56,19 +56,33 @@ def _find_matches(paths: List[Path], keywords: List[str]) -> List[str]:
 def build_coverage_report(repo_root: Path) -> Dict[str, Dict]:
     config = _load_config(repo_root)
 
-    source_dir = Path(config.get("source_dir", ""))
-    test_dir = repo_root / config.get("test_dir", "tests")
+    # Support both legacy "source_dir" (string) and new "source_dirs" (list)
+    raw_source_dirs = config.get("source_dirs", None) or [config.get("source_dir", "")]
+    source_dirs: List[Path] = []
+    for sd in raw_source_dirs:
+        p = Path(sd)
+        if p.exists():
+            source_dirs.append(p)
+        else:
+            print(f"[WARN] source_dir not found, skipping: {p}")
 
-    if not source_dir.exists():
-        raise FileNotFoundError(f"Source directory not found: {source_dir}")
+    if not source_dirs:
+        raise FileNotFoundError(f"No valid source directories found: {raw_source_dirs}")
+
+    test_dir = repo_root / config.get("test_dir", "tests")
     if not test_dir.exists():
         raise FileNotFoundError(f"Test directory not found: {test_dir}")
 
-    source_files = _list_files(source_dir, [".ts", ".tsx", ".js", ".jsx", ".py"])
+    # Aggregate source files from all source directories
+    source_files: List[Path] = []
+    for sd in source_dirs:
+        source_files.extend(_list_files(sd, [".ts", ".tsx", ".js", ".jsx", ".py"]))
+    source_files = sorted(set(source_files))
+
     test_files = _list_files(test_dir, [".py"])
 
     report: Dict[str, Dict] = {
-        "source_dir": str(source_dir),
+        "source_dirs": [str(sd) for sd in source_dirs],
         "test_dir": str(test_dir),
         "source_files": [str(p) for p in source_files],
         "test_files": [str(p) for p in test_files],
@@ -83,7 +97,14 @@ def build_coverage_report(repo_root: Path) -> Dict[str, Dict]:
         source_paths = feature.get("source_paths", [])
         test_paths = feature.get("test_paths", [])
 
-        candidate_source_files = _make_paths(source_paths, source_dir) if source_paths else source_files
+        # Resolve source paths against each source_dir, use first match
+        if source_paths:
+            candidate_source_files = []
+            for sd in source_dirs:
+                candidate_source_files.extend(_make_paths(source_paths, sd))
+        else:
+            candidate_source_files = source_files
+
         candidate_test_files = _make_paths(test_paths, test_dir) if test_paths else test_files
 
         matched_source = _find_matches(candidate_source_files, source_keywords)
@@ -114,7 +135,12 @@ def build_coverage_report(repo_root: Path) -> Dict[str, Dict]:
                 action_source_paths = action.get("source_paths", [])
                 action_test_paths = action.get("test_paths", [])
 
-                action_source_candidates = _make_paths(action_source_paths, source_dir) if action_source_paths else source_files
+                action_source_candidates: List[Path] = []
+                if action_source_paths:
+                    for sd in source_dirs:
+                        action_source_candidates.extend(_make_paths(action_source_paths, sd))
+                else:
+                    action_source_candidates = source_files
                 action_test_candidates = _make_paths(action_test_paths, test_dir) if action_test_paths else test_files
 
                 action_source_matches = _find_matches(action_source_candidates, action_source_keywords)
@@ -179,7 +205,8 @@ def build_coverage_report(repo_root: Path) -> Dict[str, Dict]:
 def print_report(report: Dict[str, Dict]) -> None:
     print("Developer code vs automation coverage report")
     print("=" * 48)
-    print(f"Source directory: {report['source_dir']}")
+    source_dirs = report.get("source_dirs", [report.get("source_dir", "")])
+    print(f"Source directories: {', '.join(source_dirs)}")
     print(f"Test directory: {report['test_dir']}")
     print(f"Source files discovered: {len(report['source_files'])}")
     print(f"Test files discovered: {len(report['test_files'])}")
