@@ -2,7 +2,7 @@ import os
 import re
 import pytest
 from playwright.sync_api import Playwright, sync_playwright, expect
-from config import login_as, navigate_to_organization_setup
+from config import login_as, navigate_to_organization_setup, _screenshot
 
 INVALID_POST_CODES = [
     "",              # empty - required field
@@ -105,6 +105,8 @@ def test_empty_primary_address_blocked_on_save(playwright: Playwright) -> None:
 
         save_button = page.get_by_role("button", name=re.compile("save", re.I))
         save_button.click()
+        page.wait_for_timeout(500)
+        _screenshot(page, "test_10_empty_primary_address")
 
         is_invalid = address_field.evaluate(
             "el => !el.checkValidity() || el.getAttribute('aria-invalid') === 'true' || el.matches(':invalid')"
@@ -132,6 +134,8 @@ def test_invalid_post_code_rejected(playwright: Playwright, invalid_post_code: s
 
         save_button = page.get_by_role("button", name=re.compile("save", re.I))
         save_button.click()
+        page.wait_for_timeout(500)
+        _screenshot(page, f"test_10_invalid_post_code_{invalid_post_code if invalid_post_code else 'empty'}")
 
         error_message = page.get_by_text(re.compile("invalid|required|valid post ?code", re.I))
         expect(error_message).to_be_visible()
@@ -154,6 +158,9 @@ def test_state_options_scoped_to_selected_country(playwright: Playwright) -> Non
 
         state_dropdown = page.get_by_text("State", exact=False).locator("xpath=following::button[@role='combobox'][1]")
         state_dropdown.click()
+        page.wait_for_timeout(500)
+        _screenshot(page, "test_10_state_scoped_country")
+
         invalid_state_option = page.get_by_role("option", name="California", exact=True)
         expect(invalid_state_option).not_to_be_visible()
         close_address_editor(page)
@@ -176,6 +183,7 @@ def test_close_without_save_discards_address_changes(playwright: Playwright) -> 
         close_button = page.get_by_role("button", name=re.compile("close|cancel|discard", re.I)).first
         close_button.click()
         page.wait_for_timeout(500)
+        _screenshot(page, "test_10_close_discards_address")
 
         if original_city:
             expect(page.get_by_text(original_city).first).to_be_visible()
@@ -190,5 +198,3 @@ if __name__ == "__main__":
         test_invalid_post_code_rejected(playwright, "ABCDE")
         test_state_options_scoped_to_selected_country(playwright)
         test_close_without_save_discards_address_changes(playwright)
-
-
