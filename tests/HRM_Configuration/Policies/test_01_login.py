@@ -6,7 +6,7 @@ def test_login_and_navigate_to_policies(page):
     
     # Verify key elements are visible
     expect(page.get_by_role("heading", name="Company Policy")).to_be_visible()
-    expect(page.get_by_role("button", name="+ Create new Policy")).to_be_visible()
+    expect(page.get_by_role("button", name="Create new Policy")).to_be_visible()
     expect(page.get_by_placeholder("Search what you need")).to_be_visible()
     
     # Verify the footer text is visible on the page
